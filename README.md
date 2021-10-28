@@ -39,10 +39,24 @@ The general process of contributing on GitHub is widely documented however the o
 1. Update the project and then make a pull request!
 
 
+## Other Robotic and Autonomous Music Players
+
+Just for fun we thought it would be interesting to include other robotic music players. They range from the sublime to the wacky, but each one is beautiful. 
+
+- Squarepusher x Z-Machines https://www.youtube.com/watch?v=VkUq4sO4LQM&t=66s
+- Andrew Henry's self playing guitar https://www.youtube.com/watch?v=I_BBCmcAXcs
+- Waseda Flutist Robot https://www.youtube.com/watch?v=jx8U1FgILCE
+- The original Flute automaton - Floutiste https://www.youtube.com/watch?v=1TxrjpWGRXU
+- A variety of robotic players including violin, piano, guitar, bongos, xylophone and others https://www.youtube.com/watch?v=rwh_acqT6J0
+- Wintergaten - Marble machine https://www.youtube.com/watch?v=IvUU8joBb1Q
+- Automatica - Robots Vs Music https://www.youtube.com/watch?v=bAdqazixuRY
+- Music genie - Hierarchical Music https://www.youtube.com/playlist?list=PLjrJD5nSYNjoQebwV7TWPe83k7g2FjIO6
+
+
 
 ## Acknowledgements
 
-We want to thanks <b>Dr Charles Fox</b> for the inspiration for this project as well as <b>Andrew Henry</b>, whose <b><a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a></b> is not only amazing, but is something we hope our modularised fingering system may extend onto. 
+We want to thank <b>Dr Charles Fox</b> for the inspiration for this project as well as <b>Andrew Henry</b>, whose <b><a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a></b> is not only amazing, but is something we hope our modularised fingering system may extend onto. 
 
 
 
