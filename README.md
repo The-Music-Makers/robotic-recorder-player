@@ -31,11 +31,9 @@ The general process of contributing on GitHub is widely documented however the o
 
 1. Clone or fork the repository using GitHub desktop or the CLI into this location (CLI is recommended as this helps you become more familiar with Git in general). You can do this with the following command:
 
-'''
-
-git clone https://github.com/Kyle-Fogarty/music_makers.git
-
-'''
+    ```bash
+    git clone https://github.com/Kyle-Fogarty/music_makers
+    ```
 
 
 1. Update the project and then make a pull request!
@@ -44,7 +42,7 @@ git clone https://github.com/Kyle-Fogarty/music_makers.git
 
 ## Acknowledgements
 
-We want to thanks <b>Dr Charles Fox</b> for the inspiration for this project as well as Andrew Henry, whose <b><a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a></b> is not only amazing, but is something we hope our modularised fingering system may extend onto. 
+We want to thanks <b>Dr Charles Fox</b> for the inspiration for this project as well as <b>Andrew Henry</b>, whose <b><a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a></b> is not only amazing, but is something we hope our modularised fingering system may extend onto. 
 
 
 
