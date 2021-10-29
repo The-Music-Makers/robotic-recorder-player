@@ -11,7 +11,7 @@ This project is a Foundations of Robotics module project for the University of L
 
 ## Team
 
-1. Kyle Fogerty
+1. Kyle Fogarty
 
 1. Bethan Moncur
 
