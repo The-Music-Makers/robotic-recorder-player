@@ -21,8 +21,8 @@
 #define MICROSTEPS 1
 
 // All the wires needed for full functionality
-#define DIR 3
-#define STEP 2
+#define DIR 30
+#define STEP 32
 //Uncomment line to use enable/disable functionality
 //#define SLEEP 13
 
@@ -46,7 +46,7 @@ void loop() {
     /*
      * Moving motor one full revolution using the degree notation
      */
-    stepper.rotate(720);
+    stepper.rotate(360);
 
     /*
      * Moving motor to original position using steps
