@@ -11,10 +11,10 @@ Password: password
 
 Local Properties:
 
-Machine name: jukebox\ 
-Username: pi\
-Password: password\
-IP address: jukebox.wlan or 10.20.1.1\
+Machine name: jukebox
+Username: pi
+Password: password
+IP address: jukebox.wlan or 10.20.1.1
 
 Accessing SSH:
 
