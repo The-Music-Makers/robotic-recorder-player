@@ -16,5 +16,5 @@ The Raspberry Pi uses <code>port 22</code> (default) for SSH. You will then be p
 
 ### VNC
 
-To connect to the GUI, you can use the <a href="https://www.realvnc.com/en/connect/download/viewer/">REALVNC Viewer</a>. Once installed, simply enter the ip address of the Raspberry Pi (<code>10.20.1.1</code>) and then the local system username (<code>pi</code>) and password (<code>password</code>) when prompted.
+To connect to the GUI, you can use the <a href="https://www.realvnc.com/en/connect/download/viewer/">REALVNC Viewer</a>. Once installed, simply enter the IP address of the Raspberry Pi (<code>10.20.1.1</code>) and then the local system username (<code>pi</code>) and password (<code>password</code>) when prompted.
 
