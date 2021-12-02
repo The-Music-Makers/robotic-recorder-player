@@ -6,8 +6,8 @@ Raspberry Pi Headless Config:
 
 Network Properties:
 
-SSID: jukebox\\ 
-Password: password\\
+SSID: jukebox\
+Password: password\
 
 Local Properties:
 
