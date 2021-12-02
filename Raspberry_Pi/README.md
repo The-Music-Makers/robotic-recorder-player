@@ -1,4 +1,4 @@
-The Raspberry Pi 4B has been configured such that it can run headless over WiFi. Furthermore, forwarding has been configured such that any network connected to the <code>eth0</code> port will forward to the <code>wlan</code> port (i.e: Connecting the ethernet port to the University network will allow internet access over the broadcasted WiFi).
+The Raspberry Pi 4B, nicknamed <code>jukebox</code>, has been configured such that it can run headless over WiFi. Furthermore, forwarding has been configured such that any network connected to the <code>eth0</code> port will forward to the <code>wlan</code> port (i.e: Connecting the ethernet port to the University network will allow internet access over the broadcasted WiFi).
 
 ### Connecting to the Raspberry Pi
 
