@@ -115,13 +115,13 @@ float play_note(string note) {
     digitalWrite(solenoidPin3, LOW)
   }
 
-    if (fingering[note][6] == 1) {
+  if (fingering[note][6] == 1) {
     digitalWrite(solenoidPin2, HIGH)
   } else {
     digitalWrite(solenoidPin2, LOW)
   }
 
-    if (fingering[note][7] == 1) {
+  if (fingering[note][7] == 1) {
     digitalWrite(solenoidPin1, HIGH)
   } else {
     digitalWrite(solenoidPin1, LOW)
