@@ -1,4 +1,0 @@
-{
-    "board": "arduino:avr:uno",
-    "sketch": "src\\arduino_main\\arduino_main.ino"
-}
