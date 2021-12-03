@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include "BasicStepperDriver.h"
-// bethan - unsure what needs to be included for the arduino - maybe just "using namespace std;"
+// bethan - unsure what needs to be included for the arduino to run c++, i think there is a library for it
 #include <vector>
 #include <map>
 
