@@ -6,7 +6,7 @@ This project is an open source hardware project that is intended to be an automa
 
 It is developed to aid young and first time players to follow tunes, learn fingering and become more confident on their first instrument. There are also opportunities to increase the capability of the final artifact by employing AI techniques to help the player see where they can improve.
 
-This project is a Foundations of Robotics module project for the University of Lincoln MSc Robotics and Automated Systems program.
+This project is a Foundations of Robotics module project for the University of Lincoln <a href="https://www.lincoln.ac.uk/home/course/robasyms/">MSc Robotics and Automated Systems</a> program.
 
 
 ## Team
