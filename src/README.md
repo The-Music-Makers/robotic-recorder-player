@@ -5,7 +5,7 @@
 TBC
 
 <p float="left">
-  <img src="../../Documents/placeholder_image.png" height="300" />
+  <img src="../Documents/placeholder_image.png" height="300" />
 </p>
 
 
