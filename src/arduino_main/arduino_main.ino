@@ -22,6 +22,10 @@ Note notes[4] = {
 // usage: solenoidPins[2] returns pin corresponding to actuator covering hole 2
 int solenoidPins[10] = {2,3,4,5,6,7,8,9,10,11};
 
+byte cmdByte;
+byte noteByte;
+byte velByte;
+
 /////////////////////////
 //    FUNCTION DEFS    //
 /////////////////////////
@@ -65,4 +69,35 @@ void setup() {
 //      MAIN LOOP      //
 /////////////////////////
 
-void loop(){}
+void loop(){
+    
+    // read and parse a midi message - in future should probably change this to happen in separate chunks between stepper steps
+    if (Serial.available() >= 3){
+        cmdByte = Serial.read();
+        noteByte = Serial.read();
+        velByte = Serial.read();
+
+        #ifdef DEBUG
+        Serial.print("Cmd: ");
+        Serial.println(cmdByte);
+        Serial.print("Note: ");
+        Serial.println(noteByte);
+        Serial.print("Vel: ");
+        Serial.println(velByte);
+        #endif
+
+        // ignore bit-wise operations for now so don't separate channel and command
+        switch (cmdByte){
+            case 10010000: // note on ch 1
+                Serial.println("Note on received");
+                Serial.print("Offset note: ");
+                Serial.println(noteByte - 85);
+                break;
+            case 10000000: // note off ch 1
+
+                break;
+        }
+
+    }
+
+}
