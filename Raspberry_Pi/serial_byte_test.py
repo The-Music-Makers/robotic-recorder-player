@@ -22,17 +22,17 @@ while ser.in_waiting == 0:
 rb = ser.read()
 print('Sent byte: ', abyte, ' Received byte: ', rb, ' Type: ', type(rb))
 
-"""
+
 # using byte_math_test.ino where arduino reads a byte adds 1 sends it back, hopefully
 ser.write(abyte)
-sent_byte_as_int = int.from_bytes(abyte,byteorder='big') 
 while ser.in_waiting == 0:
     print('In waiting: ', ser.in_waiting)
     sleep(0.2)
 rb = ser.read()
+sent_byte_as_int = int.from_bytes(abyte,byteorder='big') 
 recv_byte_as_int = int.from_bytes(rb,byteorder='big')
 print('Sent byte: ', sent_byte_as_int, ' + 1 = ?', ' Received byte: ', recv_byte_as_int) # yay, it works
-"""
+
 
 an_int = 16
 now_a_byte = an_int.to_bytes(1,byteorder='big')
