@@ -77,7 +77,7 @@ void loop(){
         noteByte = Serial.read();
         velByte = Serial.read();
 
-        /*#ifdef DEBUG
+        #ifdef DEBUG
         Serial.print("Cmd: ");
         Serial.println(cmdByte);
         Serial.print("Note: ");
@@ -85,20 +85,21 @@ void loop(){
         Serial.print("Vel: ");
         Serial.println(velByte);
         #endif
-*/
-/*
+
         // ignore bit-wise operations for now so don't separate channel and command
         switch (cmdByte){
-            case 10010000: // note on ch 1
+            case 0x90: // note on ch 1
                 Serial.println("Note on received");
                 Serial.print("Offset note: ");
                 Serial.println(noteByte - 72); //c5 is note 72 (convention middle C is C4)
                 break;
-            case 10000000: // note off ch 1
-
+            case 0x80: // note off ch 1
+                Serial.println("Note off received");
+                Serial.print("Offset note: ");
+                Serial.println(noteByte - 72); //c5 is note 72 (convention middle C is C4)
                 break;
         }
-*/
+
     }
 
 }
