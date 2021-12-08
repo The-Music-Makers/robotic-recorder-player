@@ -9,10 +9,10 @@ print('Open: ', ser.is_open)
 # pyserial API docs: https://pyserial.readthedocs.io/en/latest/pyserial_api.html
 # useful resource: https://www.devdungeon.com/content/working-binary-data-python
 
+sleep(2) # to fix vs code doing funny things with arduino
+
 abyte = b'\xf0'
 print('A byte: ', abyte, ' Type: ', type(abyte))
-
-sleep(2) # to fix vs code doing funny things with arduino
 
 # using byte_test.ino where arduino just reads a byte and sends it back using Serial.write() - not print
 ser.write(abyte)
@@ -21,6 +21,18 @@ while ser.in_waiting == 0:
     sleep(0.2)
 rb = ser.read()
 print('Sent byte: ', abyte, ' Received byte: ', rb, ' Type: ', type(rb))
+
+"""
+# using byte_math_test.ino where arduino reads a byte adds 1 sends it back, hopefully
+ser.write(abyte)
+sent_byte_as_int = int.from_bytes(abyte,byteorder='big') 
+while ser.in_waiting == 0:
+    print('In waiting: ', ser.in_waiting)
+    sleep(0.2)
+rb = ser.read()
+recv_byte_as_int = int.from_bytes(rb,byteorder='big')
+print('Sent byte: ', sent_byte_as_int, ' + 1 = ?', ' Received byte: ', recv_byte_as_int) # yay, it works
+"""
 
 an_int = 16
 now_a_byte = an_int.to_bytes(1,byteorder='big')
