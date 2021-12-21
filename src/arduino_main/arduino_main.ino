@@ -1,7 +1,26 @@
+/*
+ *  Main Arduino sketch for Music Makers recorder.
+ *
+ *  Receives MIDI messages from a companion computer over the serial port.
+ *  Actuates solenoids to cover holes on recorder replication the action of fingers.
+ *  Actuates a single stepper motor, attached to a lead screw, to compress/expand an
+ *  artificial lung to blow air through the recorder.
+ * 
+ *  Authors
+ *  Date
+ * 
+ *  Licence
+ */
+
 // comment out to not compile debugging sections of code
 #define DEBUG
 
 #include "BasicStepperDriver.h"
+
+/////////////////////////
+//    DECLARATIONS &   //
+//      CONSTANTS      //
+/////////////////////////
 
 // define Note as a new type
 typedef struct{
@@ -38,12 +57,14 @@ const int solenoidPins[10] = {2,3,4,5,6,7,8,9,10,11};
 #define STEP_PIN 32
 #define INIT_RPM 100
 
+// create stepper object
 BasicStepperDriver stepper(MOTOR_STEPS, DIR_PIN,STEP_PIN);
 
 const int limitPin = 33;
 const int maxSteps = 1000; // worked out experimentally
 const int homeRPM = 200;
-int stepsRemaining; // steps remaining to max position
+int stepsToEnd; // steps remaining to max position
+const int endThreshold = 200; // after a note off, if motor is within this distance of end, it will home before another note is played
 
 // MIDI channels 1-16 are zero based so minus 1 for byte
 const byte channel = 0;
@@ -82,22 +103,38 @@ bool isInRange(byte note) {
 
 void doNoteOn(byte note, byte vel) {
 
+    // convert from MIDI note number to index in our note array
+    int ndx = note-noteOffset;
+
     // set fingers
-    setFingers(notes[note-noteOffset].fPattern);
+    setFingers(notes[ndx].fPattern);
 
     // start blowing
+    // set RPM corresponding to note
+    stepper.setRPM(notes[ndx].blowVel);
+    // set motor to move all steps it has remaining (as we don't know how many steps we'll need)
+    stepper.startMove(stepsToEnd);
 }
 
 void doNoteOff(byte vel) {
     
     // stop blowing
+    stepper.stop();
     
     // all fingers off - unneccesary to function but will de-energise solenoids to let them rest
     bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
     setFingers(fingersOff);
+
+    // if we are close to end, home the stepper before we play another note
+    if (stepsToEnd < endThreshold) {
+        homeStepper();
+    }
 }
 
 void homeStepper() {
+    // save current rpm so it can be reassigned after homing
+    int rpm = stepper.getCurrentRPM();
+    
     stepper.setRPM(homeRPM);
     stepper.startMove(-maxSteps*2); //double to make sure it definitely reaches home
     
@@ -108,7 +145,8 @@ void homeStepper() {
     
     //home reached
     stepper.stop();
-    stepsRemaining = maxSteps;
+    stepsToEnd = maxSteps;
+    stepper.setRPM(rpm); // set RPM to what it was before homing
 
     #ifdef DEBUG
     Serial.println("Stepper reached home");
@@ -151,10 +189,21 @@ void loop(){
 
     static byte currNote;
 
+    // if stepper at end then home and let move continue
+    if (stepsToEnd <= 0) {
+        homeStepper();
+        stepper.startMove(stepsToEnd); // so move can be continued
+    }
+
     // move another step at the right time
     // once nextAction called, program will sit in that function until the right time to pulse the motor.
     // its okay to call even if we don't want the motor to move because it will return if there are no steps to move.
-    stepper.nextAction();
+    // EDIT: whilst the above is okay, don't want to decrement stepsToEnd so if we're checking stepper is stopped we might as well put nextAction in the loop too
+    // stepper.getStepsRemaining() <= 0 probably quicker than stepper.getCurrentState() != stepper.STOPPED but should measure.
+    if (stepper.getStepsRemaining() <= 0) {
+        stepper.nextAction();
+        stepsToEnd--;   
+    }
 
     // if data availabe, read serial port in expectation of a MIDI message
     if (Serial.available() > 0) {
