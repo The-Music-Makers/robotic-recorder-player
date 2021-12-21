@@ -68,3 +68,6 @@ else:
     
     showHelp()
 
+if __name__ == "__main__":
+    # don't do anything - file is intended to be imported.
+    print("Please import module to an interactive session.")
