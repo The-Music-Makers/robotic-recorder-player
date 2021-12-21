@@ -1,6 +1,8 @@
 // comment out to not compile debugging sections of code
 #define DEBUG
 
+#include "BasicStepperDriver.h"
+
 // define Note as a new type
 typedef struct{
     bool fPattern[10]; // array of bools for finger pattern (10 holes to cover) 1 means hole covered
@@ -28,6 +30,20 @@ Note notes[arrSize] = {
 // define pins the solenoids are connected to in hole order starting with thumb
 // usage: solenoidPins[2] returns pin corresponding to actuator covering hole 2
 const int solenoidPins[10] = {2,3,4,5,6,7,8,9,10,11};
+
+// stepper setup
+#define MOTOR_STEPS 200
+#define MICROSTEPS 1
+#define DIR_PIN 30
+#define STEP_PIN 32
+#define INIT_RPM 100
+
+BasicStepperDriver stepper(MOTOR_STEPS, DIR_PIN,STEP_PIN);
+
+const int limitPin = 33;
+const int maxSteps = 1000; // worked out experimentally
+const int homeRPM = 200;
+int stepsRemaining; // steps remaining to max position
 
 // MIDI channels 1-16 are zero based so minus 1 for byte
 const byte channel = 0;
@@ -81,6 +97,26 @@ void doNoteOff(byte vel) {
     setFingers(fingersOff);
 }
 
+void homeStepper() {
+    stepper.setRPM(homeRPM);
+    stepper.startMove(-maxSteps*2); //double to make sure it definitely reaches home
+    
+    // while stepper not at limit pin, move towards it.
+    while (digitalRead(limitPin) != LOW) {
+        stepper.nextAction();
+    }
+    
+    //home reached
+    stepper.stop();
+    stepsRemaining = maxSteps;
+
+    #ifdef DEBUG
+    Serial.println("Stepper reached home");
+    #endif
+
+    return;
+}
+
 /////////////////////////
 //        SETUP        //
 /////////////////////////
@@ -94,12 +130,13 @@ void setup() {
         pinMode(solenoidPins[f], OUTPUT);
     }
 
-    // TESTING
-    delay(2000);
-    Serial.println("Set fingers note C5");
-    Serial.print("Freq: ");
-    Serial.println(notes[3].targetFreq);
-    setFingers(notes[3].fPattern);
+    stepper.begin(INIT_RPM, MICROSTEPS);
+
+    // set limit pin to read HIGH unless grounded by switch closed
+    pinMode(limitPin, INPUT_PULLUP);
+
+    homeStepper();
+
 }
 
 /////////////////////////
@@ -114,6 +151,12 @@ void loop(){
 
     static byte currNote;
 
+    // move another step at the right time
+    // once nextAction called, program will sit in that function until the right time to pulse the motor.
+    // its okay to call even if we don't want the motor to move because it will return if there are no steps to move.
+    stepper.nextAction();
+
+    // if data availabe, read serial port in expectation of a MIDI message
     if (Serial.available() > 0) {
         cmdByte = Serial.read();
         
