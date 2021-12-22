@@ -9,5 +9,5 @@ Note, these are intended for team members - not general makers.
 - Upload the sketch to the arduino.
 
 ## Send some MIDI messages
-- Suggested to use the utility as described in [this README](https://github.com/Kyle-Fogarty/music_makers/blob/main/Raspberry_Pi/README.md#using-the-jukebox_testingpy-utility)
+- Suggested to use the `jukebox_testing.py` utility as described in [this README](https://github.com/Kyle-Fogarty/music_makers/blob/main/Raspberry_Pi/README.md#using-the-jukebox_testingpy-utility)
 - Note this can be run from the RaspberryPi or any companion computer.
