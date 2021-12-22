@@ -18,3 +18,10 @@ The Raspberry Pi uses <code>port 22</code> (default) for SSH. You will then be p
 
 To connect to the GUI, you can use the <a href="https://www.realvnc.com/en/connect/download/viewer/">REALVNC Viewer</a>. Once installed, simply enter the IP address of the Raspberry Pi (<code>10.20.1.1</code>) and then the local system username (<code>pi</code>) and password (<code>password</code>) when prompted.
 
+### Using the `jukebox_testing.py` utility
+
+A small, hacky, but helpful utility to aid in testing by making it easier to send MIDI data to the Arduino and read any messages it sends back. To use:
+1. Set `Raspberry_Pi/` as the current directory.
+2. Enter an interactive python session.
+3. Run `from jukebox_testing import *`.
+4. Use as described by the prompts given.
