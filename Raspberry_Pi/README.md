@@ -22,6 +22,7 @@ To connect to the GUI, you can use the <a href="https://www.realvnc.com/en/conne
 
 A small, hacky, but helpful utility to aid in testing by making it easier to send MIDI data to the Arduino and read any messages it sends back. To use:
 1. Set `Raspberry_Pi/` as the current directory.
-2. Enter an interactive python session.
-3. Run `from jukebox_testing import *`.
-4. Use as described by the prompts given.
+2. Ensure the Serial port is correct in `jukebox_testing.py`.
+3. Enter an interactive python session.
+4. Run `from jukebox_testing import *`.
+5. Use as described by the prompts given.
