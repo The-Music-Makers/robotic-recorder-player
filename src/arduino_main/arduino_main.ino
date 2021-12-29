@@ -14,7 +14,7 @@ const int highNote = 87; //Eb5
 const int arrSize = highNote - lowNote + 1; //create array using this to check for consistency
 // define offset such that MIDInote - offset = index for note array
 // lowest note on our recorder C5 (84) so offset is 85.
-const int noteOffset = lowNote + 1;
+const int noteOffset = lowNote; //Review this line as change to noteOffset no longer required
 // create a list of Note structures
 // C5 is MIDI note 84 so we will access the desired note using that offset
 // note range C5 to D6 is 15 notes
