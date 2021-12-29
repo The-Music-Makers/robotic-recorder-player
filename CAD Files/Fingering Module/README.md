@@ -78,28 +78,22 @@ location where a solenoid is required for tune hole fingering.
 4. Insert a M3 bolt through solenoid container and through the M3 nut to tighten the solenoids into position. Only a light finger tight is required. If the plunger does not move freely and gets stuck carefully un-tighten the bolt and move the solenoid until the plunger moves freely.
 5. Repeat the above for each solenoid location in the container body and for the single container body
 6. connected solenoid circuit following the wiring diagram 
-  -   connect one solenoid contact to the common power rail.
-  -   connect the other solenoid contacts to the middle pin (pin C) of the darlington transistor.
-  -   connect the diode between the two solenoid contacts, make sure that the
+ -   connect one solenoid contact to the common power rail.
+ -   connect the other solenoid contacts to the middle pin (pin C) of the darlington transistor.
+ -   connect the diode between the two solenoid contacts, make sure that the
 white stripe on the diode is on the negative side of the connection. The
 diode acts as a power snubber preventing power spikes from the solenoid
 damaging the other electrical components.
-  -   connect the resistor to pin B of the transistor then to one of the digital
+ -   connect the resistor to pin B of the transistor then to one of the digital
 ports of the arduino, the port depends on the tune hole the solenoid seals
 down on, currently the thumb tune hole is to port 1 on the arduino.
-  - connect pin E of the transistor to the common ground rail.
+ - connect pin E of the transistor to the common ground rail.
 7. To attach the six solenoid container body to the recorder base frame insert a M3 nut in to the slot on either
 side of the six solenoid container body, then align the container body to the frame and insert
 the M3 bolt through the available holes. Finger tighten the bolt. Feel free to add padding between these contact points to reduce any vibration that may be seen during play. 
 
 
 ### Acknowledgements
-The page has been 'forked' from <b>Andrew Henry's</b>, GitLab whose <b><a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a> was the inspiration for this project. 
+The page has been 'forked' from <b>Andrew Henry's</b>, GitLab whose <b><a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a></b> was the inspiration for this project. 
 
 
-## back
-
-[Robot Guitar Hardware](../CAD files) ---
-[Arduino Firmware](../../Firmware) ---
-[Python API](../../Python API) ---
-[Documents](../../Documents)
