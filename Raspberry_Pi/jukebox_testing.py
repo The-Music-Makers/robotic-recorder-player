@@ -17,7 +17,7 @@ def playFile(filename):
         ser.write(msg.bin())
 
         while ser.in_waiting > 0:
-            print('Arduino says: ' + ser.readline())
+            print('Arduino says: ' + ser.readline().decode())
 
     print("Finished playing " + filename)
 
