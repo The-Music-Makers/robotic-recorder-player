@@ -78,16 +78,16 @@ location where a solenoid is required for tune hole fingering.
 4. Insert a M3 bolt through solenoid container and through the M3 nut to tighten the solenoids into position. Only a light finger tight is required. If the plunger does not move freely and gets stuck carefully un-tighten the bolt and move the solenoid until the plunger moves freely.
 5. Repeat the above for each solenoid location in the container body and for the single container body
 6. connected solenoid circuit following the wiring diagram 
-&nbsp;&nbsp;&nbsp;&nbsp;-   connect one solenoid contact to the common power rail.
-&nbsp;&nbsp;&nbsp;&nbsp;-   connect the other solenoid contacts to the middle pin (pin C) of the darlington transistor.
-&nbsp;&nbsp;&nbsp;&nbsp;-   connect the diode between the two solenoid contacts, make sure that the
+ -   connect one solenoid contact to the common power rail.
+ -   connect the other solenoid contacts to the middle pin (pin C) of the darlington transistor.
+ -   connect the diode between the two solenoid contacts, make sure that the
 white stripe on the diode is on the negative side of the connection. The
 diode acts as a power snubber preventing power spikes from the solenoid
 damaging the other electrical components.
-&nbsp;&nbsp;&nbsp;&nbsp;-   connect the resistor to pin B of the transistor then to one of the digital
+-   connect the resistor to pin B of the transistor then to one of the digital
 ports of the arduino, the port depends on the tune hole the solenoid seals
 down on, currently the thumb tune hole is to port 1 on the arduino.
-&nbsp;&nbsp;&nbsp;&nbsp;- connect pin E of the transistor to the common ground rail.
+-   connect pin E of the transistor to the common ground rail.
 7. To attach the six solenoid container body to the recorder base frame insert a M3 nut in to the slot on either
 side of the six solenoid container body, then align the container body to the frame and insert
 the M3 bolt through the available holes. Finger tighten the bolt. Feel free to add padding between these contact points to reduce any vibration that may be seen during play. 
