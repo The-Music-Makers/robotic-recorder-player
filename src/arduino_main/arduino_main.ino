@@ -27,7 +27,7 @@ Note notes[arrSize] = {
 
 // define pins the solenoids are connected to in hole order starting with thumb
 // usage: solenoidPins[2] returns pin corresponding to actuator covering hole 2
-const int solenoidPins[10] = {9,2,3,4,5,6,7,8,10,11};
+const int solenoidPins[10] = {2,3,4,5,6,7,8,9,10,11};
 
 // MIDI channels 1-16 are zero based so minus 1 for byte
 const byte channel = 0;
