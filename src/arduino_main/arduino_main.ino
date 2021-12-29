@@ -134,9 +134,6 @@ void loop(){
         Serial.println(cmdByte);
         #endif
 
-        Serial.println("Test");
-
-
         // if >= 128 it is a status byte so decode, else it's a surplus data byte so ignore
         if (cmdByte >= 128) {
 
