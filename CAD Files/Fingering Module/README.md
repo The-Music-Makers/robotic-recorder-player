@@ -67,7 +67,7 @@ The following are needed per-solenoids used:
 
 #### Fingering Module
 <p float="left">
-  <img src="../../Documents/single solenoid wiring diagram.PNG" height="300" />
+  <img src="../../Documents/singleSolenoidWiringDiagram.PNG" height="300" />
 </p>
 
 1. Print out the recorder base frame, six solenoid container, body single solenoid container body and two mounting vee-frames
