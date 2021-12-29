@@ -48,6 +48,7 @@ void setFingers(bool pattern[]){
         digitalWrite(solenoidPins[f], pattern[f]);
         
         #ifdef DEBUG
+          Serial.print("Pin ");
           Serial.print(solenoidPins[f]);
           Serial.print(": ");
           Serial.println(pattern[f]);
@@ -65,6 +66,12 @@ bool isInRange(byte note) {
 }
 
 void doNoteOn(byte note, byte vel) {
+
+    #ifdef DEBUG
+    Serial.println("Doing Note On");
+    Serial.print("Index:");
+    Serial.println(note-noteOffset);
+    #endif
 
     // set fingers
     setFingers(notes[note-noteOffset].fPattern);
@@ -112,9 +119,10 @@ void setup() {
 
 void loop(){
 
-    static byte cmdByte;
-    static byte noteByte;
-    static byte velByte;
+    // JB these don't need to be static
+    byte cmdByte;
+    byte noteByte;
+    byte velByte;
 
     static byte currNote;
 
@@ -131,17 +139,28 @@ void loop(){
 
         // if >= 128 it is a status byte so decode, else it's a surplus data byte so ignore
         if (cmdByte >= 128) {
-            Serial.print("Serial printline cmdByte: ");
-            Serial.println(cmdByte);
+
+            #ifdef DEBUG
+            Serial.println("CmdByte is a status byte. Inside if.");
+            #endif
+            
             switch (cmdByte) {
                 case noteOn:
 
-                    Serial.print("Note On Case: ");
-                    Serial.println(cmdByte);
-                
+                    #ifdef DEBUG
+                    Serial.println("NoteOn case");
+                    #endif
+
                     // read following data bytes
                     noteByte = Serial.read();
                     velByte = Serial.read();
+
+                    #ifdef DEBUG
+                    Serial.print("Note: ");
+                    Serial.println(noteByte);
+                    Serial.print("Vel: ");
+                    Serial.println(velByte);       
+                    #endif
 
                     if (isInRange(noteByte)) {
                         doNoteOn(noteByte, velByte);
@@ -151,9 +170,21 @@ void loop(){
                     break;
 
                 case noteOff:
+
+                    #ifdef DEBUG
+                    Serial.println("NoteOff case");
+                    #endif
+
                     // read following data bytes
                     noteByte = Serial.read();
                     velByte = Serial.read();
+
+                    #ifdef DEBUG
+                    Serial.print("Note: ");
+                    Serial.println(noteByte);
+                    Serial.print("Vel: ");
+                    Serial.println(velByte);       
+                    #endif
 
                     /* recorder only one note at time so any new note on cmd will overwrite a previous
                      * therefore must check the desired note to turn off is the one being played
