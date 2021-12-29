@@ -27,7 +27,7 @@ Note notes[arrSize] = {
 
 // define pins the solenoids are connected to in hole order starting with thumb
 // usage: solenoidPins[2] returns pin corresponding to actuator covering hole 2
-const int solenoidPins[10] = {2,3,4,5,6,7,8,9,10,11};
+const int solenoidPins[10] = {9,2,3,4,5,6,7,8,10,11};
 
 // MIDI channels 1-16 are zero based so minus 1 for byte
 const byte channel = 0;
@@ -92,14 +92,18 @@ void setup() {
     // set all solenoid pins for OUTPUT
     for (int f=0;f<10;f++){
         pinMode(solenoidPins[f], OUTPUT);
+        digitalWrite(solenoidPins[f], HIGH);
+        delay(100);
+        digitalWrite(solenoidPins[f], LOW);
     }
 
     // TESTING
-    delay(2000);
+    /*delay(2000);
     Serial.println("Set fingers note C5");
     Serial.print("Freq: ");
     Serial.println(notes[3].targetFreq);
     setFingers(notes[3].fPattern);
+    */
 }
 
 /////////////////////////
@@ -122,10 +126,19 @@ void loop(){
         Serial.println(cmdByte);
         #endif
 
+        Serial.println("Test");
+
+
         // if >= 128 it is a status byte so decode, else it's a surplus data byte so ignore
         if (cmdByte >= 128) {
+            Serial.print("Serial printline cmdByte: ");
+            Serial.println(cmdByte);
             switch (cmdByte) {
                 case noteOn:
+
+                    Serial.print("Note On Case: ");
+                    Serial.println(cmdByte);
+                
                     // read following data bytes
                     noteByte = Serial.read();
                     velByte = Serial.read();

@@ -29,7 +29,7 @@ def sendMsg(msg):
     sleep(0.2) # wait for arduino to do stuff
 
     while ser.in_waiting > 0:
-        print('Arduino says: ' + ser.readline())
+        print('Arduino says: ' + ser.readline().decode())
 
 def showHelp():
     print('''
@@ -37,7 +37,7 @@ def showHelp():
                                         HELP
                                         ‾‾‾‾
             To send a single message use sendMsg(msg) where msg is a mido message 
-            object e.g msg = mido.Message('note_on', note=60, velocity=64]).
+            object e.g msg = mido.Message('note_on', note=60, velocity=64).
             sendMsg(msg) will print anything the arduino sends to the command line.
 
             To play a MIDI file use playFile(filename). The working directory must 
@@ -59,7 +59,7 @@ print('''
 ''')
 
 try: 
-    ser = serial.Serial('COM3', 9600, timeout=0.1)
+    ser = serial.Serial('/dev/cu.usbmodem14201', 9600, timeout=0.1)
 except serial.SerialException:
     print("Error opening serial port.")
 else:
