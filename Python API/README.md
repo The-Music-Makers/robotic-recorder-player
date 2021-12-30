@@ -45,9 +45,9 @@ A small, hacky, but helpful utility to aid in testing by making it easier to sen
 
 ## How to Use the API  
  There are two API commands within the Python script. 
- -  Msg(msg) where msg is a mido message object e.g msg = mido.Message('note_on', note=60, velocity=64). sendMsg(msg) will print anything the arduino sends to the command line.
+ -  Msg(msg) where msg is a mido message object e.g msg = mido.Message('note_on', note=60, velocity=64). The use the command first create your message then use sendMsg(msg) to send the newly created note to the recorder and also print anything the arduino sends to the command line.
 
-- To play a MIDI file use playFile(filename). The working directory must  be the music_makers repo root and the MIDI file must be saved in  midi_examples. Specify filename as a string and the function will print anything the arduino sends to the command line.
+- To play a MIDI file use the playFile(filename) command. The working directory must  be the music_makers repo root and the MIDI file must be saved in  midi_examples. Specify filename as a string and the function will print anything the arduino sends to the command line.
 
 Help at anytime can be found by using the command showHelp().
 
