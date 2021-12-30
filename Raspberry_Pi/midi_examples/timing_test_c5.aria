@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seqview xscroll="605.000000" yscroll="0" zoom="100">
+<sequence maintempo="120" measureAmount="16" currentTrack="0" beatResolution="960" internalName="Timing test" fileFormatVersion="4" channelManagement="auto" metronome="false">
+
+<measure  firstMeasure="0" denom="4" num="4"/>
+
+<tempo>
+</tempo>
+<text>
+</text>
+<copyright>
+</copyright>
+<defaultkeysig keytype="2" keysymbolamount="0" />
+
+
+<track name="Recorder1" id="0" channel="0" muted="false" soloed="false" volume="100" default_volume="80">
+  <key type="C" />
+  <editors height="128">
+    <score enabled="false" musical_notation="true" linear_notation="true" g_clef="true" f_clef="true" scroll="0.547945"/>
+    <keyboard enabled="true" scroll="0.417001" proportion="1.000000"/>
+    <guitar enabled="false"/>
+    <drum enabled="false" scroll="0.000000"/>
+    <controller enabled="false" controller="7"/>
+  </editors>
+  <magneticgrid divider="8" triplet="false" dotted="false"/>
+  <instrument id="74"/>
+  <drumkit id="0" collapseView="false"/>
+  <guitartuning  string0="67" string1="72" string2="76" string3="81" string4="86" string5="91"/>
+
+  <note pitch="59" start="0" end="3840" volume="80" selected="true"/>
+  <note pitch="59" start="7680" end="11520" volume="80" selected="true"/>
+  <note pitch="59" start="15360" end="17280" volume="80" selected="true"/>
+  <note pitch="59" start="19200" end="21120" volume="80" selected="true"/>
+  <note pitch="59" start="23040" end="24960" volume="80" selected="true"/>
+  <note pitch="59" start="26880" end="28800" volume="80" selected="true"/>
+  <note pitch="59" start="30720" end="31680" volume="80" selected="true"/>
+  <note pitch="59" start="34560" end="35520" volume="80" selected="true"/>
+  <note pitch="59" start="38400" end="39360" volume="80" selected="true"/>
+  <note pitch="59" start="40320" end="41280" volume="80" selected="true"/>
+  <note pitch="59" start="42240" end="43200" volume="80" selected="true"/>
+  <note pitch="59" start="44160" end="45120" volume="80" selected="true"/>
+  <note pitch="59" start="46080" end="46560" volume="80" selected="true"/>
+  <note pitch="59" start="48000" end="48480" volume="80" selected="true"/>
+  <note pitch="59" start="49920" end="50400" volume="80" selected="true"/>
+  <note pitch="59" start="50880" end="51360" volume="80" selected="true"/>
+  <note pitch="59" start="51840" end="52320" volume="80" selected="true"/>
+  <note pitch="59" start="52800" end="53280" volume="80" selected="true"/>
+  <note pitch="59" start="53760" end="55200" volume="80" selected="true"/>
+  <note pitch="59" start="55680" end="56160" volume="80" selected="true"/>
+  <note pitch="59" start="56640" end="57120" volume="80" selected="true"/>
+  <note pitch="59" start="57600" end="59040" volume="80" selected="true"/>
+  <note pitch="59" start="59520" end="60000" volume="80" selected="true"/>
+  <note pitch="59" start="60480" end="60960" volume="80" selected="true"/>
+</track>
+
+</sequence></seqview>
