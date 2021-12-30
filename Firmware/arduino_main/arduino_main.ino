@@ -9,8 +9,8 @@ typedef struct{
 } Note;
 
 // define notes recorder can play
-const int lowNote = 84; //C5
-const int highNote = 87; //Eb5
+const int lowNote = 72; //C5
+const int highNote = 86; //D6
 const int arrSize = highNote - lowNote + 1; //create array using this to check for consistency
 // define offset such that MIDInote - offset = index for note array
 // lowest note on our recorder C5 (84) so offset is 85.
@@ -18,16 +18,29 @@ const int noteOffset = lowNote; //Review this line as change to noteOffset no lo
 // create a list of Note structures
 // C5 is MIDI note 84 so we will access the desired note using that offset
 // note range C5 to D6 is 15 notes
+
 Note notes[arrSize] = {
-  {{1,1,1,1,1,1,1,1,1,1}, 523, 0}, //C5
-  {{1,1,1,1,1,1,1,1,1,0}, 554, 0}, //Db5
-  {{1,1,1,1,1,1,1,1,0,0}, 587, 0}, //D5
-  {{1,1,1,1,1,1,1,0,0,0}, 622, 0}, //Eb5
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 523, 0}, //C5 (MIDI 72) https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, 554, 0}, //Db5 (MIDI 73)
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, 587, 0}, //D5 (MIDI 74)
+  {{ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, 622, 0}, //Eb5 (MIDI 75)
+  {{ 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 }, 659, 0}, //E5 (MIDI 76)
+  {{ 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 }, 698, 0}, //F5 (MIDI 77)
+  {{ 1, 1, 1, 1, 0, 1, 1, 1, 0, 0 }, 740, 0}, //Gb5 (MIDI 78)
+  {{ 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 }, 784, 0}, //G5 (MIDI 79)
+  {{ 1, 1, 1, 0, 1, 1, 1, 0, 0, 0 }, 831, 0}, //Ab5 (MIDI 80)
+  {{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 880, 0}, //A5 (MIDI 81)
+  {{ 1, 1, 0, 1, 1, 0, 0, 0, 0, 0 }, 932, 0}, //Bb5 (MIDI 82)
+  {{ 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 }, 988, 0}, //B5 (MIDI 83)
+  {{ 1, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, 1047, 0}, //C6 (MIDI 84)
+  {{ 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 1109, 0}, //Db6 (MIDI 85)
+  {{ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, 1175, 0}, //D6 (MIDI 86)
 };
+
 
 // define pins the solenoids are connected to in hole order starting with thumb
 // usage: solenoidPins[2] returns pin corresponding to actuator covering hole 2
-const int solenoidPins[10] = {2,3,4,5,6,7,8,9,10,11};
+const int solenoidPins[10] = {11,2,3,4,5,6,7,8,9,10}; //Note Pin 11 is thumbhole
 
 // MIDI channels 1-16 are zero based so minus 1 for byte
 const byte channel = 0;
@@ -140,6 +153,8 @@ void loop(){
             #ifdef DEBUG
             Serial.println("CmdByte is a status byte. Inside if.");
             #endif
+
+          Serial.println("NOTE STARTS HERE");
             
             switch (cmdByte) {
                 case noteOn:
