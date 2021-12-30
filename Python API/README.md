@@ -6,8 +6,8 @@
 Some additional libraries are required to allow the program to run these are:
 
 - [python 3.7](https://www.python.org/downloads/release/python-370/) is required to run the Python API
-- the [pyserial](https://pyserial.readthedocs.io/en/latest/pyserial.html) library is used to provide the backends support to connect to the Aurdino.
-- the [time](https://docs.python.org/3/library/time.html#module-time) library is used to provide the timing and delays in the python script.
+- The [pyserial](https://pyserial.readthedocs.io/en/latest/pyserial.html) library is used to provide the backends support to connect to the Aurdino.
+- The [time](https://docs.python.org/3/library/time.html#module-time) library is used to provide the timing and delays in the python script.
 - [MIDO](https://mido.readthedocs.io/en/latest/#) is required for working with MIDI messages and ports
 
 ### Building
@@ -49,5 +49,5 @@ A small, hacky, but helpful utility to aid in testing by making it easier to sen
 
 - To play a MIDI file use playFile(filename). The working directory must  be the music_makers repo root and the MIDI file must be saved in  midi_examples. Specify filename as a string and the function will print anything the arduino sends to the command line.
 
-- Help at anytime can be found by using the command showHelp().
+Help at anytime can be found by using the command showHelp().
 
