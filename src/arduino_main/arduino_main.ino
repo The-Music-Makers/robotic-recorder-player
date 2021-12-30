@@ -163,6 +163,10 @@ void loop(){
                         doNoteOn(noteByte, velByte);
                         currNote = noteByte;
                     }
+                    else {
+                      Serial.print("NOTE OUT OF RANGE");
+                    }
+                 
                     
                     break;
 
