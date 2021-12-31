@@ -1,20 +1,20 @@
 # Music Makers
 
-## Firmware
+## API
 
 TBC
 
 <p float="left">
-  <img src="../../Documents/placeholder_image.png" height="300" />
+  <img src="../Documents/placeholder_image.png" height="300" />
 </p>
 
 
-## Features
+## Getting Started
 
 1. TBC
 
 
-## Set Up
+## How to Use the Program
 
 TBC
 
@@ -30,13 +30,8 @@ TBC
 
 # Dependencies
 
-
-## Upload
-
-# Settings
-
 TBC
 
-## Known Issues
+## API Commands
 
 TBC

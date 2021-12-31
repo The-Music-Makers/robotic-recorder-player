@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seqview xscroll="680.000000" yscroll="0" zoom="100">
+<sequence maintempo="120" measureAmount="16" currentTrack="0" beatResolution="960" internalName="chromatic_scale" fileFormatVersion="4" channelManagement="auto" metronome="false">
+
+<measure  firstMeasure="0" denom="4" num="4"/>
+
+<tempo>
+</tempo>
+<text>
+</text>
+<copyright>
+</copyright>
+<defaultkeysig keytype="2" keysymbolamount="0" />
+
+
+<track name="Untitled" id="0" channel="0" muted="false" soloed="false" volume="100" default_volume="80">
+  <key type="C" />
+  <editors height="128">
+    <score enabled="false" musical_notation="true" linear_notation="true" g_clef="true" f_clef="true" scroll="0.547945"/>
+    <keyboard enabled="true" scroll="0.387668" proportion="1.000000"/>
+    <guitar enabled="false"/>
+    <drum enabled="false" scroll="0.000000"/>
+    <controller enabled="false" controller="7"/>
+  </editors>
+  <magneticgrid divider="1" triplet="false" dotted="false"/>
+  <instrument id="74"/>
+  <drumkit id="0" collapseView="false"/>
+  <guitartuning  string0="67" string1="72" string2="76" string3="81" string4="86" string5="91"/>
+
+  <note pitch="59" start="0" end="3840" volume="80"/>
+  <note pitch="58" start="3840" end="7680" volume="80"/>
+  <note pitch="57" start="7680" end="11520" volume="80"/>
+  <note pitch="56" start="11520" end="15360" volume="80"/>
+  <note pitch="55" start="15360" end="19200" volume="80"/>
+  <note pitch="54" start="19200" end="23040" volume="80"/>
+  <note pitch="53" start="23040" end="26880" volume="80"/>
+  <note pitch="52" start="26880" end="30720" volume="80"/>
+  <note pitch="51" start="30720" end="34560" volume="80"/>
+  <note pitch="50" start="34560" end="38400" volume="80"/>
+  <note pitch="49" start="38400" end="42240" volume="80"/>
+  <note pitch="48" start="42240" end="46080" volume="80"/>
+  <note pitch="47" start="46080" end="49920" volume="80"/>
+  <note pitch="46" start="49920" end="53760" volume="80"/>
+  <note pitch="45" start="53760" end="57600" volume="80"/>
+</track>
+
+</sequence></seqview>
