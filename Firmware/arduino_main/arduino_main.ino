@@ -40,7 +40,9 @@ Note notes[arrSize] = {
 
 // define pins the solenoids are connected to in hole order starting with thumb
 // usage: solenoidPins[2] returns pin corresponding to actuator covering hole 2
-const int solenoidPins[10] = {11,2,3,4,5,6,7,8,9,10}; //Note Pin 11 is thumbhole
+// Pin 7 & 8 are for the first double hole and 9 & 10 for the second
+// Pin 11 is thumbhole
+const int solenoidPins[10] = {11,2,3,4,5,6,7,8,9,10}; 
 
 // MIDI channels 1-16 are zero based so minus 1 for byte
 const byte channel = 0;
@@ -97,6 +99,7 @@ void doNoteOff(byte vel) {
     // stop blowing
     
     // all fingers off - unneccesary to function but will de-energise solenoids to let them rest
+    // Update so that there is a check and only de-energise those that aren't needed on the following note
     bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
     setFingers(fingersOff);
 }
@@ -110,12 +113,24 @@ void setup() {
     Serial.begin(9600);
     
     // set all solenoid pins for OUTPUT
-    for (int f=0;f<10;f++){
-        pinMode(solenoidPins[f], OUTPUT);
-        digitalWrite(solenoidPins[f], HIGH);
-        delay(100);
-        digitalWrite(solenoidPins[f], LOW);
+    for (int f=0;f<8;f++){
+
+        if(f < 7) // sets solenoid pins 1,2,3,4,5,6
+        { 
+          pinMode(solenoidPins[f], OUTPUT);
+          digitalWrite(solenoidPins[f], HIGH);
+          delay(100);
+          digitalWrite(solenoidPins[f], LOW);
+        }
+        else // sets servo pins 7,8,9,10
+        {
+          Servo Servo7; 
+          Servo Servo8;
+          Servo Servo9;
+          Servo Servo10;
+        }
     }
+
 
     // TESTING
     /*delay(2000);
