@@ -1,6 +1,6 @@
 // Music Makers
 
-// BlowA Note Test Program - Note A - 
+// Blower Note Test Program - Note A - 
 // Activate pins 11, 2 & 3 only (thumb and first two middle body holes) and blower using pins 12 & 13
 
 // Garry Clawson
@@ -50,6 +50,11 @@ void loop() {
     digitalWrite(stepPin, LOW);
     delayMicroseconds(500);
   }
+
+  // Set the fingers into off position
+  digitalWrite(solenoidPin11, LOW);
+  digitalWrite(solenoidPin2, LOW);
+  digitalWrite(solenoidPin3, LOW);
   
   delay(1000);
   // Set the spinning direction counterclockwise:
@@ -63,8 +68,4 @@ void loop() {
     delayMicroseconds(500);
   }
   
-  // Set the fingers into off position
-  digitalWrite(solenoidPin11, LOW);
-  digitalWrite(solenoidPin2, LOW);
-  digitalWrite(solenoidPin3, LOW);
 }
