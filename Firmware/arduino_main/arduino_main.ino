@@ -113,22 +113,14 @@ void setup() {
     Serial.begin(9600);
     
     // set all solenoid pins for OUTPUT
-    for (int f=0;f<8;f++){
+    for (int f=0;f<10;f++){
 
-        if(f < 7) // sets solenoid pins 1,2,3,4,5,6
-        { 
-          pinMode(solenoidPins[f], OUTPUT);
-          digitalWrite(solenoidPins[f], HIGH);
-          delay(100);
-          digitalWrite(solenoidPins[f], LOW);
-        }
-        else // sets servo pins 7,8,9,10
-        {
-          Servo Servo7; 
-          Servo Servo8;
-          Servo Servo9;
-          Servo Servo10;
-        }
+        pinMode(solenoidPins[f], OUTPUT);
+        digitalWrite(solenoidPins[f], HIGH);
+        delay(100);
+        digitalWrite(solenoidPins[f], LOW);
+      }
+
     }
 
 
@@ -169,7 +161,7 @@ void loop(){
             Serial.println("CmdByte is a status byte. Inside if.");
             #endif
 
-          Serial.println("NOTE STARTS HERE");
+            Serial.println("NOTE STARTS HERE");
             
             switch (cmdByte) {
                 case noteOn:
@@ -189,6 +181,7 @@ void loop(){
                     Serial.println(velByte);       
                     #endif
 
+                    // If note is valid then do NoteOn function 
                     if (isInRange(noteByte)) {
                         doNoteOn(noteByte, velByte);
                         currNote = noteByte;
