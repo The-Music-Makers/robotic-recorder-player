@@ -114,13 +114,10 @@ void setup() {
     
     // set all solenoid pins for OUTPUT
     for (int f=0;f<10;f++){
-
         pinMode(solenoidPins[f], OUTPUT);
         digitalWrite(solenoidPins[f], HIGH);
         delay(100);
         digitalWrite(solenoidPins[f], LOW);
-      }
-
     }
 
 
