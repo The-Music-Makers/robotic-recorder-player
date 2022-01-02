@@ -44,12 +44,14 @@ You will need the following components:
 
 - 1 off 3D printed four solenoid container body (for two double tune hole solenoids)
 
-- 11 off M3 nut and bolt, 1 for each solenoid and servo to add tension and keep secured in position [UK](https://www.amazon.co.uk/Screw-Bolts-Stainless-Steel-340pcs/dp/B08RRW6B3H/ref=sr_1_12?dchild=1&keywords=M3+nut+and+bolt&qid=1614263398&sr=8-12)
+- 10 off M3 nut and bolt, 1 for each solenoid to add tension and keep secured in position [UK](https://www.amazon.co.uk/Screw-Bolts-Stainless-Steel-340pcs/dp/B08RRW6B3H/ref=sr_1_12?dchild=1&keywords=M3+nut+and+bolt&qid=1614263398&sr=8-12)
 
 
-The following are needed per double tune hole servo use (two double tune holes in total):
+The following are needed per double tune hole solenoid use (two double tune holes in total):
 
-- 2 off 3D printed fingerpads (one for each solenoid)
+- 1 off 3D printed medium fingerpad (for larger hole in the double tune hole)
+
+- 1 off 3D printed small fingerpad (for smaller hole in the double tune hole)
 
 - 1 off 3D printed extension arm (one for each solenoid fingerpad)
 
