@@ -46,17 +46,18 @@ void loop() {
   for (int i = 0; i < 5 * stepsPerRevolution; i++) {
     // These four lines result in 1 step:
     digitalWrite(stepPin, HIGH);
-    delayMicroseconds(500);
+    delayMicroseconds(650); //Sets speed of motor between 300 - 500 is best. Lower = faster
     digitalWrite(stepPin, LOW);
-    delayMicroseconds(500);
-  }
+    delayMicroseconds(650);
+  } 
 
   // Set the fingers into off position
   digitalWrite(solenoidPin11, LOW);
   digitalWrite(solenoidPin2, LOW);
   digitalWrite(solenoidPin3, LOW);
-  
+   
   delay(1000);
+  
   // Set the spinning direction counterclockwise:
   digitalWrite(dirPin, LOW);
   //Spin the stepper motor 5 revolutions fast:
@@ -67,5 +68,5 @@ void loop() {
     digitalWrite(stepPin, LOW);
     delayMicroseconds(500);
   }
-  
+
 }
