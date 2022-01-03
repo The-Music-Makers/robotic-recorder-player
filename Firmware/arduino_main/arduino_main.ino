@@ -40,7 +40,9 @@ Note notes[arrSize] = {
 
 // define pins the solenoids are connected to in hole order starting with thumb
 // usage: solenoidPins[2] returns pin corresponding to actuator covering hole 2
-const int solenoidPins[10] = {11,2,3,4,5,6,7,8,9,10}; //Note Pin 11 is thumbhole
+// Pin 7 & 8 are for the first double hole and 9 & 10 for the second
+// Pin 11 is thumbhole
+const int solenoidPins[10] = {11,2,3,4,5,6,7,8,9,10}; 
 
 // MIDI channels 1-16 are zero based so minus 1 for byte
 const byte channel = 0;
@@ -97,6 +99,7 @@ void doNoteOff(byte vel) {
     // stop blowing
     
     // all fingers off - unneccesary to function but will de-energise solenoids to let them rest
+    // Update so that there is a check and only de-energise those that aren't needed on the following note
     bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
     setFingers(fingersOff);
 }
@@ -116,6 +119,7 @@ void setup() {
         delay(100);
         digitalWrite(solenoidPins[f], LOW);
     }
+
 
     // TESTING
     /*delay(2000);
@@ -154,7 +158,7 @@ void loop(){
             Serial.println("CmdByte is a status byte. Inside if.");
             #endif
 
-          Serial.println("NOTE STARTS HERE");
+            Serial.println("NOTE STARTS HERE");
             
             switch (cmdByte) {
                 case noteOn:
@@ -174,6 +178,7 @@ void loop(){
                     Serial.println(velByte);       
                     #endif
 
+                    // If note is valid then do NoteOn function 
                     if (isInRange(noteByte)) {
                         doNoteOn(noteByte, velByte);
                         currNote = noteByte;

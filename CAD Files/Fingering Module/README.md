@@ -36,21 +36,24 @@ You will need the following components:
 
 - 12V battery is needed to power the modules [UK](https://www.amazon.co.uk/SUNPADOW-Battery-Airplane-Quadcopter-Helicopter/dp/B08Q79M7QB/ref=sr_1_2?dchild=1&keywords=12V+LIPO&qid=1614255912&sr=8-2)
 
-- 7 off JF-0530B solenoids [UK](https://www.amazon.co.uk/Rtengtunn-JF-0530B-Push-Pull-Gangbei-0530B-Electromagnet/dp/B08291L2XL/ref=sr_1_7?dchild=1&keywords=JF-0530B&qid=1614263171&sr=8-7)
+- 10 off JF-0530B solenoids [UK](https://www.amazon.co.uk/Rtengtunn-JF-0530B-Push-Pull-Gangbei-0530B-Electromagnet/dp/B08291L2XL/ref=sr_1_7?dchild=1&keywords=JF-0530B&qid=1614263171&sr=8-7)
 
 - 1 off 3-D printed six solenoid container body (for finger tune hole solenoids)
 
 - 1 off 3-D printed single solenoid container body (for thumb tune hole solenoid)
 
-- 2 off 3D printed mounting vee-frame (one vee-frame supports two servos for double tune holes)
+- 1 off 3D printed four solenoid container body (for two double tune hole solenoids)
 
-- 11 off M3 nut and bolt, 1 for each solenoid and servo to add tension and keep secured in position [UK](https://www.amazon.co.uk/Screw-Bolts-Stainless-Steel-340pcs/dp/B08RRW6B3H/ref=sr_1_12?dchild=1&keywords=M3+nut+and+bolt&qid=1614263398&sr=8-12)
+- 10 off M3 nut and bolt, 1 for each solenoid to add tension and keep secured in position [UK](https://www.amazon.co.uk/Screw-Bolts-Stainless-Steel-340pcs/dp/B08RRW6B3H/ref=sr_1_12?dchild=1&keywords=M3+nut+and+bolt&qid=1614263398&sr=8-12)
 
 
-The following are needed per double tune hole servo use (two double tune holes in total):
-- 2 off MG90S Servo motor [UK](https://www.amazon.co.uk/Servo-Motor-MG90S-Geared-Helicopter/dp/B07FQMTLD4/ref=sr_1_4_sspa?dchild=1&keywords=MG90S+Servo+motor&qid=1614264154&sr=8-4-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyVkpGUUtWSzAxN1dKJmVuY3J5cHRlZElkPUEwNDUwMzc2MjFEVlo2QzIwTDQ0TyZlbmNyeXB0ZWRBZElkPUEwMTkxMjI2Mk9QVFpOQzI5RUpJUiZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)
+The following are needed per double tune hole solenoid use (two double tune holes in total):
 
-- 2 off 3D printed servo fingerpads (one for each servo)
+- 1 off 3D printed medium fingerpad (for larger hole in the double tune hole)
+
+- 1 off 3D printed small fingerpad (for smaller hole in the double tune hole)
+
+- 1 off 3D printed extension arm (one for each solenoid fingerpad)
 
 
 The following are needed per-solenoids used:
@@ -76,7 +79,7 @@ supports and remove any other stray parts from the printing process
 location where a solenoid is required for tune hole fingering. 
 3. Push the solenoid wires through the holes at the rear of the container body and insert a solenoid into each seating position (one for each tune hole across the recorder), making sure that the solenoid plunger can freely move up and down. 
 4. Insert a M3 bolt through solenoid container and through the M3 nut to tighten the solenoids into position. Only a light finger tight is required. If the plunger does not move freely and gets stuck carefully un-tighten the bolt and move the solenoid until the plunger moves freely.
-5. Repeat the above for each solenoid location in the container body and for the single container body
+5. Repeat the above for each solenoid location in the six seater container body, the single container body and four seater container body
 6. connected solenoid circuit following the wiring diagram 
  -   connect one solenoid contact to the common power rail.
  -   connect the other solenoid contacts to the middle pin (pin C) of the darlington transistor.
