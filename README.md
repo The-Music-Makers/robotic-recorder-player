@@ -4,21 +4,6 @@
 
 This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. 
 
-It is developed to aid young and first time players to follow tunes, learn fingering and become more confident on their first instrument. There are also opportunities to increase the capability of the final artifact by employing AI techniques to help the player see where they can improve.
-
-This project is a Foundations of Robotics module project for the University of Lincoln <a href="https://www.lincoln.ac.uk/home/course/robasyms/">MSc Robotics and Automated Systems</a> program.
-
-
-## Team
-
-1. Kyle Fogarty
-
-1. Bethan Moncur
-
-1. James Bennett
-
-1. Garry Clawson
-
 
 ## How to Contribute
 
@@ -34,7 +19,6 @@ The general process of contributing on GitHub is widely documented however the o
     ```bash
     git clone https://github.com/Kyle-Fogarty/music_makers
     ```
-
 
 1. Update the project and then make a pull request!
 
