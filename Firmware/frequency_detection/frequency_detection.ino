@@ -38,8 +38,8 @@ void loop() {
   
     for(int i=0; i<SAMPLES; i++)
     { unsigned long microseconds = micros();    
-      vReal[i] = analogRead(MICROPHONE_PIN); // Obtain Sample
-      vIm[i] = 0;
+      FFTReal[i] = analogRead(MICROPHONE_PIN); // Obtain Sample
+      FFTIm[i] = 0;
       while(micros() < (microseconds + sampling_period_us)){}
     }
  
