@@ -42,21 +42,21 @@ const int noteOffset = lowNote; //Review this line as change to noteOffset no lo
 // note range C5 to D6 is 15 notes
 
 Note notes[arrSize] = {
-  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 523, 0}, //C5 (MIDI 72) https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies
-  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, 554, 0}, //Db5 (MIDI 73)
-  {{ 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, 587, 0}, //D5 (MIDI 74)
-  {{ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, 622, 0}, //Eb5 (MIDI 75)
-  {{ 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 }, 659, 0}, //E5 (MIDI 76)
-  {{ 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 }, 698, 0}, //F5 (MIDI 77)
-  {{ 1, 1, 1, 1, 0, 1, 1, 1, 0, 0 }, 740, 0}, //Gb5 (MIDI 78)
-  {{ 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 }, 784, 0}, //G5 (MIDI 79)
-  {{ 1, 1, 1, 0, 1, 1, 1, 0, 0, 0 }, 831, 0}, //Ab5 (MIDI 80)
-  {{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 880, 0}, //A5 (MIDI 81)
-  {{ 1, 1, 0, 1, 1, 0, 0, 0, 0, 0 }, 932, 0}, //Bb5 (MIDI 82)
-  {{ 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 }, 988, 0}, //B5 (MIDI 83)
-  {{ 1, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, 1047, 0}, //C6 (MIDI 84)
-  {{ 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 1109, 0}, //Db6 (MIDI 85)
-  {{ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, 1175, 0}, //D6 (MIDI 86)
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 523, 200}, //C5 (MIDI 72) https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, 554, 210}, //Db5 (MIDI 73)
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, 587, 220}, //D5 (MIDI 74)
+  {{ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, 622, 230}, //Eb5 (MIDI 75)
+  {{ 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 }, 659, 240}, //E5 (MIDI 76)
+  {{ 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 }, 698, 250}, //F5 (MIDI 77)
+  {{ 1, 1, 1, 1, 0, 1, 1, 1, 0, 0 }, 740, 260}, //Gb5 (MIDI 78)
+  {{ 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 }, 784, 270}, //G5 (MIDI 79)
+  {{ 1, 1, 1, 0, 1, 1, 1, 0, 0, 0 }, 831, 280}, //Ab5 (MIDI 80)
+  {{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 880, 290}, //A5 (MIDI 81)
+  {{ 1, 1, 0, 1, 1, 0, 0, 0, 0, 0 }, 932, 300}, //Bb5 (MIDI 82)
+  {{ 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 }, 988, 310}, //B5 (MIDI 83)
+  {{ 1, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, 1047, 320}, //C6 (MIDI 84)
+  {{ 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 1109, 330}, //Db6 (MIDI 85)
+  {{ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, 1175, 340}, //D6 (MIDI 86)
 };
 
 
@@ -67,17 +67,17 @@ const int solenoidPins[10] = {11,2,3,4,5,6,7,8,9,10}; //Note Pin 11 is thumbhole
 // stepper setup
 #define MOTOR_STEPS 200
 #define MICROSTEPS 1
-#define DIR_PIN 30
-#define STEP_PIN 32
+#define DIR_PIN 12
+#define STEP_PIN 13
 #define INIT_RPM 100
 
 // create stepper object
 BasicStepperDriver stepper(MOTOR_STEPS, DIR_PIN,STEP_PIN);
 
-const int limitPin = 33;
-const int maxSteps = 1000; // worked out experimentally
+//const int limitPin = 33;
+const int maxSteps = 2000; // worked out experimentally
 const int homeRPM = 200;
-int stepsToEnd; // steps remaining to max position
+int stepsToEnd = maxSteps; // steps remaining to max position
 const int endThreshold = 200; // after a note off, if motor is within this distance of end, it will home before another note is played
 
 // MIDI channels 1-16 are zero based so minus 1 for byte
@@ -132,6 +132,12 @@ void doNoteOn(byte note, byte vel) {
     // start blowing
     // set RPM corresponding to note
     stepper.setRPM(notes[ndx].blowVel);
+    
+    Serial.print("Stepper.getRPM():");
+    Serial.println(stepper.getRPM());
+
+    Serial.print("STEPS TO END");
+    Serial.println(stepsToEnd);
     // set motor to move all steps it has remaining (as we don't know how many steps we'll need)
     stepper.startMove(stepsToEnd);
 }
@@ -147,21 +153,25 @@ void doNoteOff(byte vel) {
 
     // if we are close to end, home the stepper before we play another note
     if (stepsToEnd < endThreshold) {
+        Serial.print("END THRESHHOLD REACHED");
         homeStepper();
     }
 }
 
 void homeStepper() {
+
+    Serial.print("HOME STEPPER ROUTINE");
+  
     // save current rpm so it can be reassigned after homing
     int rpm = stepper.getCurrentRPM();
     
     stepper.setRPM(homeRPM);
-    stepper.startMove(-maxSteps*2); //double to make sure it definitely reaches home
+    stepper.move(-(maxSteps-stepsToEnd)); //double to make sure it definitely reaches home
     
     // while stepper not at limit pin, move towards it.
-    while (digitalRead(limitPin) != LOW) {
-        stepper.nextAction();
-    }
+    //while (digitalRead(limitPin) != LOW) {
+    //    stepper.nextAction();
+    //}
     
     //home reached
     stepper.stop();
@@ -181,7 +191,7 @@ void homeStepper() {
 
 void setup() {
     
-    Serial.begin(9600);
+    Serial.begin(115200); //9600
     
     // set all solenoid pins for OUTPUT
     for (int f=0;f<10;f++){
@@ -194,7 +204,7 @@ void setup() {
     stepper.begin(INIT_RPM, MICROSTEPS);
 
     // set limit pin to read HIGH unless grounded by switch closed
-    pinMode(limitPin, INPUT_PULLUP);
+    //pinMode(limitPin, INPUT_PULLUP);
 
     homeStepper();
 
@@ -222,6 +232,7 @@ void loop(){
 
     // if stepper at end then home and let move continue
     if (stepsToEnd <= 0) {
+        Serial.println("RUN OUT OF STEPS");
         homeStepper();
         stepper.startMove(stepsToEnd); // so move can be continued
     }
@@ -231,9 +242,9 @@ void loop(){
     // its okay to call even if we don't want the motor to move because it will return if there are no steps to move.
     // EDIT: whilst the above is okay, don't want to decrement stepsToEnd so if we're checking stepper is stopped we might as well put nextAction in the loop too
     // stepper.getStepsRemaining() <= 0 probably quicker than stepper.getCurrentState() != stepper.STOPPED but should measure.
-    if (stepper.getStepsRemaining() <= 0) {
+    if (stepper.getStepsRemaining() > 0) {
         stepper.nextAction();
-        stepsToEnd--;   
+        stepsToEnd--;  
     }
 
     // if data availabe, read serial port in expectation of a MIDI message

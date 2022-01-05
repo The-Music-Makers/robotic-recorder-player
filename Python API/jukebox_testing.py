@@ -21,6 +21,12 @@ def playFile(filename):
 
     print("Finished playing " + filename)
 
+
+def read():
+    while ser.in_waiting > 0:
+        print('Arduino says: ' + ser.readline().decode())
+
+
 def sendMsg(msg):
     """Sends MIDI message with reporting. Construct MIDI message using mido.Message() and pass as argument to function."""
     # midi msg converted to a byte array and sent via serial port
@@ -60,7 +66,7 @@ print('''
 ''')
 
 try:
-    ser = serial.Serial('/dev/cu.usbmodem14201', 9600, timeout=0.1) #Note: the string should be COM3 or whatever port you connect your Arduino 
+    ser = serial.Serial('/dev/cu.usbmodem14201', 115200, timeout=0.5) #Note: the string should be COM3 or whatever port you connect your Arduino 
 except serial.SerialException:
     print("Error opening serial port.")
 else:
