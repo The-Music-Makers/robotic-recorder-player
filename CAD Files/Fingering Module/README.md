@@ -17,7 +17,7 @@ You will need to print the following parts in order to build your robot recorder
 
 2) [Fingering Module](Fingering Module) 
 
-[Fingering Module](Fingering Module)
+[Fingering Module](fingering module)
 
 2) A 350mm x 250mm x 20mm piece of wood (plywood is ideal) used to mount the fingering module components and act as a base frame for the recorder robot. This will be placed in the recorder base frame stand.
 
