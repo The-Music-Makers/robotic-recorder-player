@@ -4,7 +4,7 @@
 
 This automation for the recorder robot player separated into two modules
 
-tand [Bellow](recorder_base_frame_stand.stl).
+tand [Bellow](Bellow Module).
 
 ## 3D printed parts
 
