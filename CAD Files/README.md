@@ -10,6 +10,6 @@ tand [Bellow](below_module).
 
 You will need to print the following parts in order to build your robot recorder player:
 
-1) [Bellow Module](Bellow Module) 
+1) [Bellow Module](Bellow_Module) 
 
-2) [Fingering Module](Fingering Module) 
+2) [Fingering Module](Fingering_Module) 
