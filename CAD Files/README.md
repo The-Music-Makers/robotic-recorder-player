@@ -4,12 +4,10 @@
 
 This automation for the recorder robot player separated into two modules
 
-tand [Bellow](below_module).
-
 ## 3D printed parts
 
 You will need to print the following parts in order to build your robot recorder player:
 
-1) [Bellow Module](Bellow_Module) 
+1) [Bellow Module](Bellow%20Module) 
 
-2) [Fingering Module](Fingering_Module) 
+2) [Fingering Module](Fingering%20Module) 
