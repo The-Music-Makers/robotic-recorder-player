@@ -2,7 +2,7 @@
 
 ## Automated Recorder: CAD Files
 
-This automation for the recorder robot player separated into two modules
+The automation for the recorder robot player is separated into two modules
 
 ## 3D printed parts
 
