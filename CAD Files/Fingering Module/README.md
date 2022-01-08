@@ -9,7 +9,7 @@
 
 You will need the following prepared parts (some may require printing) in order to build the Fingering module.
 
-1) Recorder base frame stand [top](recorder_base_frame_stand_top_slider.stl) and [botom](recorder_base_frame_stand_bottom.stl). This consists of two separate components which will need printing individually.
+1) Recorder base frame stand [top](recorder_base_frame_stand_top_slider.stl) and [bottom](recorder_base_frame_stand_bottom.stl). This consists of two separate components which will need printing individually.
 
 2) A 350mm x 250mm x 20mm piece of wood (plywood is ideal) used to mount the fingering module components and act as a base frame for the recorder robot. This will be placed in the recorder base frame stand.
 
