@@ -11,8 +11,8 @@
 //More info: https://www.makerguides.com
 
 // Define stepper motor connections and steps per revolution:
-#define dirPin 12
-#define stepPin 13
+#define dirPin 4
+#define stepPin 5
 #define stepsPerRevolution 200
 
 int solenoidPin11 = 11; 
@@ -39,16 +39,16 @@ void loop() {
   digitalWrite(solenoidPin2, HIGH);
   digitalWrite(solenoidPin3, HIGH);
   
-  // Set the spinning direction clockwise:
+  // Set the spinning direction clockwise: i.e. DOWN
   digitalWrite(dirPin, HIGH);
   
   // Spin the stepper motor 5 revolutions fast:
-  for (int i = 0; i < 5 * stepsPerRevolution; i++) {
+  for (int i = 0; i < 22 * stepsPerRevolution; i++) {
     // These four lines result in 1 step:
     digitalWrite(stepPin, HIGH);
-    delayMicroseconds(650); //Sets speed of motor between 300 - 500 is best. Lower = faster
+    delayMicroseconds(700); //Sets speed of motor between 300 - 500 is best. Lower = faster
     digitalWrite(stepPin, LOW);
-    delayMicroseconds(650);
+    delayMicroseconds(700);
   } 
 
   // Set the fingers into off position
@@ -58,10 +58,10 @@ void loop() {
    
   delay(1000);
   
-  // Set the spinning direction counterclockwise:
+  // Set the spinning direction counterclockwise: i.e. UP
   digitalWrite(dirPin, LOW);
   //Spin the stepper motor 5 revolutions fast:
-  for (int i = 0; i < 5 * stepsPerRevolution; i++) {
+  for (int i = 0; i < 22 * stepsPerRevolution; i++) {
     // These four lines result in 1 step:
     digitalWrite(stepPin, HIGH);
     delayMicroseconds(500);
