@@ -47,7 +47,7 @@ def showHelp():
             object e.g msg = mido.Message('note_on', note=60, velocity=64).
             sendMsg(msg) will print anything the arduino sends to the command line.
 
-            To play a MIDI file use playFile(filename). The working directory must 
+            To play a MIDI file use playFile('filename'). The working directory must 
             be the music_makers repo root and the MIDI file must be saved in 
             midi_examples. Specify filename as a string and the function will print
             anything the arduino sends to the command line.

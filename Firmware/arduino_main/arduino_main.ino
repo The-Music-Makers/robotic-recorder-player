@@ -30,6 +30,13 @@ typedef struct{
     int blowVel;
 } Note;
 
+//add program start time
+unsigned long startMillis;
+unsigned long currentMillis;
+
+//add count to show how many notes have been played
+unsigned int count = 0;
+
 // define notes recorder can play
 const int lowNote = 72; //C5
 const int highNote = 86; //D6
@@ -76,7 +83,7 @@ BasicStepperDriver stepper(MOTOR_STEPS, DIR_PIN,STEP_PIN);
 
 //const int limitPin = 33;
 const int maxSteps = 2000; // worked out experimentally
-const int homeRPM = 200;
+const int homeRPM = 300;
 int stepsToEnd = maxSteps; // steps remaining to max position
 const int endThreshold = 200; // after a note off, if motor is within this distance of end, it will home before another note is played
 
@@ -99,10 +106,10 @@ void setFingers(bool pattern[]){
         digitalWrite(solenoidPins[f], pattern[f]);
         
         #ifdef DEBUG
-          Serial.print("Pin ");
-          Serial.print(solenoidPins[f]);
-          Serial.print(": ");
-          Serial.println(pattern[f]);
+          //Serial.print("Pin ");
+          //Serial.print(solenoidPins[f]);
+          //Serial.print(": ");
+          //Serial.println(pattern[f]);
         #endif
     }
 }
@@ -121,9 +128,9 @@ void doNoteOn(byte note, byte vel) {
     // convert from MIDI note number to index in our note array
     int ndx = note-noteOffset;
     #ifdef DEBUG
-    Serial.println("Doing Note On");
-    Serial.print("Index:");
-    Serial.println(note-noteOffset);
+    //Serial.println("Doing Note On");
+    //Serial.print("Index:");
+    //Serial.println(note-noteOffset);
     #endif
 
     // set fingers
@@ -132,12 +139,14 @@ void doNoteOn(byte note, byte vel) {
     // start blowing
     // set RPM corresponding to note
     stepper.setRPM(notes[ndx].blowVel);
-    
-    Serial.print("Stepper.getRPM():");
-    Serial.println(stepper.getRPM());
 
-    Serial.print("STEPS TO END");
-    Serial.println(stepsToEnd);
+    //supporting print statments for debugging stepper
+    //Serial.print("Stepper.getRPM():");
+    //Serial.println(stepper.getRPM());
+
+    //Serial.print("STEPS TO END: ");
+    //Serial.println(stepsToEnd);
+    
     // set motor to move all steps it has remaining (as we don't know how many steps we'll need)
     stepper.startMove(stepsToEnd);
 }
@@ -153,14 +162,14 @@ void doNoteOff(byte vel) {
 
     // if we are close to end, home the stepper before we play another note
     if (stepsToEnd < endThreshold) {
-        Serial.print("END THRESHHOLD REACHED");
+        Serial.println("END THRESHHOLD REACHED");
         homeStepper();
     }
 }
 
 void homeStepper() {
 
-    Serial.print("HOME STEPPER ROUTINE");
+    //Serial.print("HOME STEPPER ROUTINE");
   
     // save current rpm so it can be reassigned after homing
     int rpm = stepper.getCurrentRPM();
@@ -179,7 +188,7 @@ void homeStepper() {
     stepper.setRPM(rpm); // set RPM to what it was before homing
 
     #ifdef DEBUG
-    Serial.println("Stepper reached home");
+    //Serial.println("Stepper reached home");
     #endif
 
     return;
@@ -190,6 +199,8 @@ void homeStepper() {
 /////////////////////////
 
 void setup() {
+
+    startMillis = millis(); //initial program start time
     
     Serial.begin(115200); //9600
     
@@ -223,6 +234,8 @@ void setup() {
 
 void loop(){
 
+
+
     // JB these don't need to be static
     byte cmdByte;
     byte noteByte;
@@ -252,24 +265,33 @@ void loop(){
         cmdByte = Serial.read();
         
         #ifdef DEBUG
-        Serial.print("Cmd: ");
-        Serial.println(cmdByte);
+        //Serial.print("Cmd: ");
+        //Serial.println(cmdByte);
         #endif
+
+        currentMillis = millis(); //gets current time 
 
         // if >= 128 it is a status byte so decode, else it's a surplus data byte so ignore
         if (cmdByte >= 128) {
 
             #ifdef DEBUG
-            Serial.println("CmdByte is a status byte. Inside if.");
+            //Serial.println("CmdByte is a status byte. Inside if.");
             #endif
 
-          Serial.println("NOTE STARTS HERE");
+            //Serial.println("NOTE STARTS HERE");
             
             switch (cmdByte) {
                 case noteOn:
 
+                    // Counts courrent number of Note Ons
+                    count++;
+
                     #ifdef DEBUG
                     Serial.println("NoteOn case");
+                    Serial.print("Time in ms: ");
+                    Serial.println( currentMillis);
+                    Serial.print("Notes played: ");
+                    Serial.println(count);
                     #endif
 
                     // read following data bytes
@@ -277,10 +299,10 @@ void loop(){
                     velByte = Serial.read();
 
                     #ifdef DEBUG
-                    Serial.print("Note: ");
-                    Serial.println(noteByte);
-                    Serial.print("Vel: ");
-                    Serial.println(velByte);       
+                    //Serial.print("Note: ");
+                    //Serial.println(noteByte);
+                    //Serial.print("Vel: ");
+                    //Serial.println(velByte);       
                     #endif
 
                     if (isInRange(noteByte)) {
@@ -298,6 +320,8 @@ void loop(){
 
                     #ifdef DEBUG
                     Serial.println("NoteOff case");
+                    Serial.print("Time in ms: ");
+                    Serial.println( currentMillis);
                     #endif
 
                     // read following data bytes
@@ -305,10 +329,10 @@ void loop(){
                     velByte = Serial.read();
 
                     #ifdef DEBUG
-                    Serial.print("Note: ");
-                    Serial.println(noteByte);
-                    Serial.print("Vel: ");
-                    Serial.println(velByte);       
+                    //Serial.print("Note: ");
+                    //Serial.println(noteByte);
+                    //Serial.print("Vel: ");
+                    //Serial.println(velByte);       
                     #endif
 
                     /* recorder only one note at time so any new note on cmd will overwrite a previous
@@ -324,7 +348,7 @@ void loop(){
                 default:
                     // don't know how to handle the command so ignore
                     #ifdef DEBUG
-                    Serial.print("Don't understand command. Ignoring.");
+                    Serial.println("Don't understand command. Ignoring.");
                     #endif
                     break;
             }
