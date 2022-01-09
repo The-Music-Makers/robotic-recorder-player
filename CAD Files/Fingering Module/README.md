@@ -4,7 +4,7 @@
 
 
 <p float="left">
-  <img src="../../Documents/fingering_module_assembly_overview.png" height="300" />
+  <img src="../../Documents/fingering_module_assembly_overview_with_frame.png" height="300" />
 </p>
 
 You will need the following prepared parts (some may require printing) in order to build the Fingering module.
