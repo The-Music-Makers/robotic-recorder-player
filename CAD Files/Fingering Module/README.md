@@ -9,11 +9,27 @@
 
 You will need the following prepared parts (some may require printing) in order to build the Fingering module.
 
-1) Recorder base frame stand [top](recorder_base_frame_stand_top_slider.stl) and [bottom](recorder_base_frame_stand_bottom.stl). This consists of two separate components which will need printing individually.
+1) 1 x 3D printed recorder base frame [bottom](recorder_base_frame_stand_bottom.stl). 
 
-2) 2 x off recorder [clamps](recorder_clamp.stl) that will hold the recorder in position during play
+2) 1 x 3D printed recorder base frame stand [top](recorder_base_frame_stand_top_slider.stl). This fits to the base frame bottom creating a clamp for the mounting frame.
 
-3) A single 350mm x 250mm x 20mm piece of wood (plywood is ideal) used to mount the fingering module components and act as a base frame for the recorder robot. This will be placed in the recorder base frame stand.
+3) 2 x 3D printed recorder [clamps](recorder_clamp.stl) that will hold the recorder in position during play
+
+4) 1 x 3-D printed [five solenoid container body](one_seater_container_body.stl) (for finger tune hole solenoids)
+
+5) 1 x 3-D printed [single solenoid container body](one_seater_container_body.stl) (for thumb tune hole solenoid)
+
+6) 1 x 3D printed [four solenoid container body](four_seater_container_body.stl) (for two double tune hole solenoids)
+
+7) 6 x 3D printed [finger pads](finger_pads_middle_joint.stl) (one for each of the recorder middle joint five solenoids and one for the single thumb solenoid)
+
+8) 2 x 3D printed large fingerpads (for larger hole in the double tune hole)
+
+8) 2 x 3D printed small fingerpads (for smaller hole in the double tune hole)
+
+9) 2 x 3D printed extension arms (one for each of the large double hole solenoid fingerpads)
+
+10) 1 x 350mm x 250mm x 20mm piece of wood (plywood is ideal) used to mount the fingering module components and act as a base frame for the recorder robot. This will be placed in the recorder base frame stand.
 
 Most printers should be able to print the parts, with all parts being able to fit on a 150mmx140mm build plate.
 
@@ -42,26 +58,10 @@ You will need the following components:
 
 - 10 off JF-0530B solenoids [UK](https://www.amazon.co.uk/Rtengtunn-JF-0530B-Push-Pull-Gangbei-0530B-Electromagnet/dp/B08291L2XL/ref=sr_1_7?dchild=1&keywords=JF-0530B&qid=1614263171&sr=8-7)
 
-- 1 off 3-D printed five solenoid container body (for finger tune hole solenoids)
-
-- 1 off 3-D printed single solenoid container body (for thumb tune hole solenoid)
-
-- 1 off 3D printed four solenoid container body (for two double tune hole solenoids)
-
 - 10 off M3 nut and bolt, 1 for each solenoid to add tension and keep secured in position [UK](https://www.amazon.co.uk/Screw-Bolts-Stainless-Steel-340pcs/dp/B08RRW6B3H/ref=sr_1_12?dchild=1&keywords=M3+nut+and+bolt&qid=1614263398&sr=8-12)
 
 
-The following are needed per double tune hole solenoid use (two double tune holes in total):
-
-- 1 off 3D printed large fingerpad (for larger hole in the double tune hole)
-
-- 1 off 3D printed small fingerpad (for smaller hole in the double tune hole)
-
-- 1 off 3D printed extension arm (one for each solenoid fingerpad)
-
-
 The following are needed per-solenoids used:
-- 3-D printed solenoid fingerpads
 
 - TIP120 Darlington Transistor [UK](https://www.amazon.co.uk/BOJACK-Epitaxial-Transistor-Darlington-Transistors/dp/B08D8SJPCG/ref=sr_1_4?dchild=1&keywords=TIP120+Darlington+Transistor&qid=1614263478&sr=8-4)
 
