@@ -45,7 +45,7 @@ On an Ultimaker 2+, we achieved good results with the following settings:
 Parts have been printed using PLA and TPU (TPU for the fingerpads) all with good results. The print was not affected very much by the print settings. However, printing slower and with smaller layer height will improve the print quality. Tree supports where found to be easier to remove from prints in post processing although normal supports can be used instead. 
 
 
-## Bill of materials
+## Bill of Materials
 The robot recorder player relies on readily available hobby electronics components. The components can be changed for other makes or types but changing the components will have an effect on how each module operates, for some types of woodwind instruments changes may be needed to allow the modules to operate as desired. Links have been provided for UK suppliers for the components used to create the module, these suppliers are not the only source of the components and they can be bought from other suppliers or locations. 
 
 You will need the following components:
@@ -72,9 +72,9 @@ The following are needed per-solenoids used:
 - 1N4001 Diode [UK](https://www.amazon.co.uk/ExcLent-100Pcs-1N4001-50V-Diode/dp/B07J3ZT55G/ref=sr_1_8?dchild=1&keywords=1N4001+Diode&qid=1614263550&sr=8-8)
 
 
-### Build instructions
+## Build Instructions
 
-#### Fingering Module
+## Fingering Module
 <p float="left">
   <img src="../../Documents/singleSolenoidWiringDiagram.PNG" height="300" />
 </p>
