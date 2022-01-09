@@ -12,17 +12,17 @@ You will need the following prepared parts (some will require 3D printing) in or
 
 1) 1 off 3D printed recorder base frame stand [bottom](recorder_base_frame_stand_bottom.stl). 
 
-2) 1 off 3D printed recorder base frame stand [top](recorder_base_frame_stand_top_slider.stl). This fits to the base frame bottom creating a clamp for the plywood mounting frame.
+2) 1 off 3D printed recorder base frame stand [top](recorder_base_frame_stand_top.stl). This fits to the base frame bottom creating a clamp for the plywood mounting frame.
 
 3) 2 off 3D printed recorder [clamps](recorder_clamp.stl) that will hold the recorder in position on the plywood mounting frame
 
-4) 1 off 3D printed [five solenoid container body](one_seater_container_body.stl) (for finger tune hole solenoids)
+4) 1 off 3D printed [five solenoid container body](five_seater_container_body.stl) (for finger tune hole solenoids)
 
 5) 1 off 3D printed [single solenoid container body](one_seater_container_body.stl) (for thumb tune hole solenoid)
 
 6) 1 off 3D printed [four solenoid container body](four_seater_container_body.stl) (for two double tune hole solenoids)
 
-7) 6 off 3D printed [square finger pads](finger_pads_middle_joint.stl) (one for each of the recorder middle joint five solenoids and one for the single thumb solenoid)
+7) 6 off 3D printed [square finger pads](square_finger_pad.stl) (one for each of the recorder middle joint five solenoids and one for the single thumb solenoid)
 
 8) 2 off 3D printed [large fingerpads](double_hole_finger_pad_large.stl) (for larger hole in the double tune hole)
 
