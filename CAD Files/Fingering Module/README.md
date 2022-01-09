@@ -30,6 +30,7 @@ You will need the following prepared parts (some will require 3D printing) in or
 
 9) 2 off 3D printed [extension arms](double_tune_hole_extension_arms.stl) (one for each of the double tune hole large fingerpads)
 
+### Printing 
 
 Most printers should be able to print the parts, with all parts being able to fit on a 150mmx140mm build plate.
 
@@ -46,7 +47,7 @@ Parts have been printed using PLA and TPU (TPU for the fingerpads) all with good
 
 
 ## Bill of Materials
-The robot recorder player relies on readily available hobby electronics components. The components can be changed for other makes or types but changing the components will have an effect on how each module operates, for some types of woodwind instruments changes may be needed to allow the modules to operate as desired. Links have been provided for UK suppliers for the components used to create the module, these suppliers are not the only source of the components and they can be bought from other suppliers or locations. 
+The robot recorder player relies on readily available hobby electronics components in the spirit of the CERN-OHL-W. The components can be changed for other makes or types but changing the components will have an effect on how each module operates, for some types of woodwind instruments changes may be needed to allow the modules to operate as desired. Links have been provided for UK suppliers for the components used to create the module, these suppliers are not the only source of the components and they can be bought from other suppliers or locations. 
 
 You will need the following components:
 
