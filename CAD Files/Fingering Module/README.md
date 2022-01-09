@@ -11,7 +11,7 @@ You will need the following prepared parts (some may require printing) in order 
 
 1) Recorder base frame stand [top](recorder_base_frame_stand_top_slider.stl) and [bottom](recorder_base_frame_stand_bottom.stl). This consists of two separate components which will need printing individually.
 
-2) 2 x off recorder[clamps](recorder_clamp.stl) that will hold the recorder in position during play
+2) 2 x off recorder [clamps](recorder_clamp.stl) that will hold the recorder in position during play
 
 3) A single 350mm x 250mm x 20mm piece of wood (plywood is ideal) used to mount the fingering module components and act as a base frame for the recorder robot. This will be placed in the recorder base frame stand.
 
