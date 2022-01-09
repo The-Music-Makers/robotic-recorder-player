@@ -1,6 +1,5 @@
-# Music Makers
 
-## Fingering Module
+# Fingering Module
 
 
 <p float="left">
