@@ -21,13 +21,13 @@ You will need the following prepared parts (some may require printing) in order 
 
 6) 1 x 3D printed [four solenoid container body](four_seater_container_body.stl) (for two double tune hole solenoids)
 
-7) 6 x 3D printed [finger pads](finger_pads_middle_joint.stl) (one for each of the recorder middle joint five solenoids and one for the single thumb solenoid)
+7) 6 x 3D printed [square finger pads](finger_pads_middle_joint.stl) (one for each of the recorder middle joint five solenoids and one for the single thumb solenoid)
 
-8) 2 x 3D printed large fingerpads (for larger hole in the double tune hole)
+8) 2 x 3D printed [large fingerpads](double_hole_finger_pad_large.stl) (for larger hole in the double tune hole)
 
-8) 2 x 3D printed small fingerpads (for smaller hole in the double tune hole)
+8) 2 x 3D printed [small fingerpads](double_hole_finger_pad_small.stl) (for smaller hole in the double tune hole)
 
-9) 2 x 3D printed extension arms (one for each of the large double hole solenoid fingerpads)
+9) 2 x 3D printed [extension arms](double_tune_hole_extension_arms.stl) (one for each of the double tune hole large fingerpads)
 
 10) 1 x 350mm x 250mm x 20mm piece of wood (plywood is ideal) used to mount the fingering module components and act as a base frame for the recorder robot. This will be placed in the recorder base frame stand.
 
