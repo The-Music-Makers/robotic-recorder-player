@@ -76,7 +76,7 @@ The following is needed on a per build basis:
 
 ## Build Instructions
 
-## Fingering Module
+### Fingering Module
 <p float="left">
   <img src="../../Documents/singleSolenoidWiringDiagram.PNG" height="300" />
 </p>
