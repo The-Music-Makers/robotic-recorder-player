@@ -88,16 +88,16 @@ location where a solenoid is required for tune hole fingering.
 4. Insert a M3 bolt through solenoid container and through the M3 nut to tighten the solenoids into position. Only a light finger tight is required. If the plunger does not move freely and gets stuck carefully un-tighten the bolt and move the solenoid until the plunger moves freely.
 5. Repeat the above for each solenoid location in the five seater container body, the single container body and four seater container body
 6. connected solenoid circuit following the wiring diagram 
- -   connect one solenoid contact to the common power rail.
- -   connect the other solenoid contacts to the middle pin (pin C) of the darlington transistor.
- -   connect the diode between the two solenoid contacts, make sure that the
+    -   connect one solenoid contact to the common power rail.
+    -   connect the other solenoid contacts to the middle pin (pin C) of the darlington transistor.
+    -   connect the diode between the two solenoid contacts, make sure that the
 white stripe on the diode is on the negative side of the connection. The
 diode acts as a power snubber preventing power spikes from the solenoid
 damaging the other electrical components.
--   connect the resistor to pin B of the transistor then to one of the digital
+    -   connect the resistor to pin B of the transistor then to one of the digital
 ports of the arduino, the port depends on the tune hole the solenoid seals
 down on, currently the thumb tune hole is to port 1 on the arduino.
--   connect pin E of the transistor to the common ground rail.
+    -   connect pin E of the transistor to the common ground rail.
 7. Once the connections are made attach the finger pads to each of the the required solenoids. The square fingerpads with a concave seal should be used on the five seat container body solenoids. The small domed finger pads are intended for the two 3mm diameter holes in double tune holes. The large domed finger pads are intended for the 4mm diameter holes in the double tone holes.
 8. Mark out on the plywood mounting frame the position of each tone hole and the top edge and bottom edge of the recorder. When placing the solenoid container bodies into position onto the mounting frame, it is important to not mount them further than 10mm from the top and bottom edges of the recorder otherwise the solenoids will not seal against the holes when actuated. 
 8. To attach the five solenoid container body to the recorder base frame insert a M3 nut in to the slot on the top and bottom of the container body, then align the container bodies as required to cover the holes and previously marked out. This may require some further measurements and tweaking on the plywood mounting frame.  
