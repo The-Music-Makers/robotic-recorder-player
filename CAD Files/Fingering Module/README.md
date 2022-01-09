@@ -42,7 +42,7 @@ On an Ultimaker 2+, we achieved good results with the following settings:
 - print speed 80 mm/s
 - supports where required for the recorder base frame.
 
-Parts have been printed using PLA and TPU (TPU for the fingerpads) all with good results. The print was not affected very much by the print settings. However, printing slower and with smaller layer height will improve the print quality. Tree supports where found to be easier to remove from prints in post processing although normal supports can be used instead. 
+Parts have been printed using PLA and TPU (TPU for the fingerpads) all with good results. The print was not affected very much by the print settings. However, printing slower and with smaller layer height will improve the print quality. Tree supports where found to be easier to remove from prints in post processing although normal supports can be used instead. Both .stl and .obj files have been provided.
 
 
 ## Bill of Materials
