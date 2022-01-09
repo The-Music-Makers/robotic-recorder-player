@@ -1,19 +1,35 @@
-# Music Makers
 
-## Fingering Module
+# Fingering Module
 
 
 <p float="left">
-  <img src="../../Documents/fingering_module_assembly_overview.png" height="300" />
+  <img src="../../Documents/fingering_module_assembly_overview_with_frame.png" height="300" />
 </p>
 
-You will need the following prepared parts (some may require printing) in order to build the Fingering module.
+You will need the following prepared parts (some will require 3D printing) in order to build the Fingering module.
 
-1) Recorder base frame stand [top](recorder_base_frame_stand_top_slider.stl) and [bottom](recorder_base_frame_stand_bottom.stl). This consists of two separate components which will need printing individually.
+## 3D Printed Parts
 
-2) 2 x off recorder [clamps](recorder_clamp.stl) that will hold the recorder in position during play
+1) 1 off 3D printed recorder base frame stand [bottom](recorder_base_frame_stand_bottom.stl). 
 
-3) A single 350mm x 250mm x 20mm piece of wood (plywood is ideal) used to mount the fingering module components and act as a base frame for the recorder robot. This will be placed in the recorder base frame stand.
+2) 1 off 3D printed recorder base frame stand [top](recorder_base_frame_stand_top.stl). This fits to the base frame bottom creating a clamp for the plywood mounting frame.
+
+3) 2 off 3D printed recorder [clamps](recorder_clamp.stl) that will hold the recorder in position on the plywood mounting frame
+
+4) 1 off 3D printed [five solenoid container body](five_seater_container_body.stl) (for finger tune hole solenoids)
+
+5) 1 off 3D printed [single solenoid container body](one_seater_container_body.stl) (for thumb tune hole solenoid)
+
+6) 1 off 3D printed [four solenoid container body](four_seater_container_body.stl) (for two double tune hole solenoids)
+
+7) 6 off 3D printed [square finger pads](square_finger_pad.stl) (one for each of the recorder middle joint five solenoids and one for the single thumb solenoid)
+
+8) 2 off 3D printed [large fingerpads](double_hole_finger_pad_large.stl) (for larger hole in the double tune hole)
+
+8) 2 off 3D printed [small fingerpads](double_hole_finger_pad_small.stl) (for smaller hole in the double tune hole)
+
+9) 2 off 3D printed [extension arms](double_tune_hole_extension_arms.stl) (one for each of the double tune hole large fingerpads)
+
 
 Most printers should be able to print the parts, with all parts being able to fit on a 150mmx140mm build plate.
 
@@ -26,10 +42,10 @@ On an Ultimaker 2+, we achieved good results with the following settings:
 - print speed 80 mm/s
 - supports where required for the recorder base frame.
 
-Parts have been printed using PLA and TPU (TPU for the fingerpads) all with good results. The print was not affected very much by the print settings. However, printing slower and with smaller layer height will improve the print quality. Tree supports where found to be easier to remove from prints in post processing although normal supports can be used instead. 
+Parts have been printed using PLA and TPU (TPU for the fingerpads) all with good results. The print was not affected very much by the print settings. However, printing slower and with smaller layer height will improve the print quality. Tree supports where found to be easier to remove from prints in post processing although normal supports can be used instead. Both .stl and .obj files have been provided.
 
 
-## Bill of materials
+## Bill of Materials
 The robot recorder player relies on readily available hobby electronics components. The components can be changed for other makes or types but changing the components will have an effect on how each module operates, for some types of woodwind instruments changes may be needed to allow the modules to operate as desired. Links have been provided for UK suppliers for the components used to create the module, these suppliers are not the only source of the components and they can be bought from other suppliers or locations. 
 
 You will need the following components:
@@ -42,26 +58,10 @@ You will need the following components:
 
 - 10 off JF-0530B solenoids [UK](https://www.amazon.co.uk/Rtengtunn-JF-0530B-Push-Pull-Gangbei-0530B-Electromagnet/dp/B08291L2XL/ref=sr_1_7?dchild=1&keywords=JF-0530B&qid=1614263171&sr=8-7)
 
-- 1 off 3-D printed five solenoid container body (for finger tune hole solenoids)
-
-- 1 off 3-D printed single solenoid container body (for thumb tune hole solenoid)
-
-- 1 off 3D printed four solenoid container body (for two double tune hole solenoids)
-
 - 10 off M3 nut and bolt, 1 for each solenoid to add tension and keep secured in position [UK](https://www.amazon.co.uk/Screw-Bolts-Stainless-Steel-340pcs/dp/B08RRW6B3H/ref=sr_1_12?dchild=1&keywords=M3+nut+and+bolt&qid=1614263398&sr=8-12)
 
 
-The following are needed per double tune hole solenoid use (two double tune holes in total):
-
-- 1 off 3D printed large fingerpad (for larger hole in the double tune hole)
-
-- 1 off 3D printed small fingerpad (for smaller hole in the double tune hole)
-
-- 1 off 3D printed extension arm (one for each solenoid fingerpad)
-
-
 The following are needed per-solenoids used:
-- 3-D printed solenoid fingerpads
 
 - TIP120 Darlington Transistor [UK](https://www.amazon.co.uk/BOJACK-Epitaxial-Transistor-Darlington-Transistors/dp/B08D8SJPCG/ref=sr_1_4?dchild=1&keywords=TIP120+Darlington+Transistor&qid=1614263478&sr=8-4)
 
@@ -69,10 +69,13 @@ The following are needed per-solenoids used:
 
 - 1N4001 Diode [UK](https://www.amazon.co.uk/ExcLent-100Pcs-1N4001-50V-Diode/dp/B07J3ZT55G/ref=sr_1_8?dchild=1&keywords=1N4001+Diode&qid=1614263550&sr=8-8)
 
+The following is needed on a per build basis:
 
-### Build instructions
+- 1 off 350mm x 250mm x 20mm piece of wood (plywood is ideal) used to mount the fingering module components and act as a mounting frame for the recorder robot. This will be placed in the recorder base frame stand.
 
-#### Fingering Module
+## Build Instructions
+
+## Fingering Module
 <p float="left">
   <img src="../../Documents/singleSolenoidWiringDiagram.PNG" height="300" />
 </p>
