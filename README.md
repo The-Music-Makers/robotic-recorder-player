@@ -1,9 +1,21 @@
 # Music Makers
 
-## Automated Recorder
+## Robotic Recorder Player
 
-This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. 
+This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. Use the [Python Interface](Python%20Interface) to send your MIDI files to the robotic recorder player and hear them played on the recorder!
 
+## How to Build and Use
+
+This project had been designed so that it only requires a modest toolset and ability to build. 
+### Tools
+- FDM 3D Printer and slicer software.
+- Basic workshop tools including spanners, screwdrivers, allen keys, drill,
+- A computer with the Arduino IDE and Python installed.
+
+### Build process
+1. Get the hardware listed in the [Hardware](Hardware) folder - you may even have some of what you need!
+2. Follow the hardware build instructions.
+3. Upload the firmware to the Arduino.
 
 ## How to Contribute
 
