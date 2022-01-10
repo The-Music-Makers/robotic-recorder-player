@@ -6,16 +6,21 @@ This project is an open source hardware project that is intended to be an automa
 
 ## How to Build and Use
 
-This project had been designed so that it only requires a modest toolset and ability to build. 
-### Tools
+This project had been designed so that it only requires a limited toolset and you don't have to be an expert to build it. An overview is below but more detailed instructions can be found in each folder.
+
+### Tools Required
 - FDM 3D Printer and slicer software.
-- Basic workshop tools including spanners, screwdrivers, allen keys, drill,
+- Basic workshop tools including spanners, screwdrivers, allen keys, drill.
 - A computer with the Arduino IDE and Python installed.
 
 ### Build process
-1. Get the hardware listed in the [Hardware](Hardware) folder - you may even have some of what you need!
-2. Follow the hardware build instructions.
-3. Upload the firmware to the Arduino.
+1. Get the hardware you need (you may even have some of what you need!) and follow the [Hardware build instructions](Hardware/README).
+3. Upload the [Firmware](Firmware) to the Arduino.
+4. Load the [Python Interface](Python%20Interface) onto your computer.
+
+### Play a Song
+1. Create your song in MIDI format as a `.mid` file, use one of our [examples](Python%20Interface/examples), or find one someone else has made.
+2. Connect your computer to the robotic recorder player and use the [Python Interface](Python%20Interface) to hear your song played on the recorder!
 
 ## How to Contribute
 
