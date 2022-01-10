@@ -2,7 +2,9 @@
 
 ## Robotic Recorder Player
 
-This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. Use the [Python Interface](Python%20Interface) to send your MIDI files to the robotic recorder player and hear them played on the recorder!
+This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. Build it for yourself and use the [Python Interface](Python%20Interface) to send your MIDI files to the robotic recorder player and hear them played on the recorder!
+
+![robotic-recorder-player-image](Documents\automated_recorder_player.png)
 
 ## How to Build and Use
 
@@ -22,7 +24,22 @@ This project had been designed so that it only requires a limited toolset and yo
 1. Create your song in MIDI format as a `.mid` file, use one of our [examples](Python%20Interface/examples), or find one someone else has made.
 2. Connect your computer to the robotic recorder player and use the [Python Interface](Python%20Interface) to hear your song played on the recorder!
 
-## How to Contribute
+
+## Project Development
+This is an open souce hardware project and anyone is welcome to use and develop this project in line with the licences. We also encourage anyone interested to contribute to this development, especially in the areas outlined below.
+
+### Development Areas
+These are some of the areas we intend to focus future development:
+- **Double-sided or twin lung** hardware and control to allow playing with reduced pauses.
+- **Half-hole thumb technique** to reach highest notes.
+- **Tounging mechanism** to implement the tounging technique and achieve staccato notes.
+- **Increase OSH depth** adapt the project to depend more on open source components.
+- **Improved usability** through an improved, maybe graphical, user interface.
+- **Improved documentation** and build instructions.
+- **Increased robotic intelligence** such as giving foresight of notes to make decisions on breathing.
+- **Expanded scope of calibration** to include timing and facilitate robot musicians playing together.
+
+### How to Contribute
 
 Contributing to the project is easy and we encourage anyone who is interested to make pull requests. 
 
