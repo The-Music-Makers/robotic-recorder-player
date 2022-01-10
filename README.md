@@ -21,7 +21,7 @@ This project had been designed so that it only requires a limited toolset and yo
 4. Load the [Python Interface](Python_Interface) onto your computer.
 
 ### Play a Song
-1. Create your song in MIDI format as a `.mid` file ([guide](Python_Interface/README.md#creating-.mid-files)), use one of our [examples](Python_Interface/examples), or find one someone else has made.
+1. Create your song in MIDI format as a `.mid` file ([guide](Python_Interface/README.md#creating-mid-files)), use one of our [examples](Python_Interface/examples), or find one someone else has made.
 2. Connect your computer to the robotic recorder player and use the [Python Interface](Python_Interface) to hear your song played on the recorder!
 
 
