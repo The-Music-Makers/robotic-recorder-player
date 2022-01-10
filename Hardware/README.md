@@ -1,13 +1,14 @@
-# Music Makers
+# Hardware
+You can either build the system as is or you may need to modify the design to fit your recorder. Please see [Modifying the Design](#mod-design) for instructions.
 
-## Automated Recorder: CAD Files
+## You Will Need
 
-The automation for the recorder robot player is separated into two modules
+- 1 x Recorder - we used the Aulos A205.
+- 1 x [Bellow Module](Bellow%20Module).
+- 1 x [Fingering Module](Fingering%20Module).
 
-## 3D printed parts
+## Assembly Instructions
 
-You will need to print the following parts in order to build your robot recorder player:
+## Modifying the Design {#mod-design}
 
-1) [Bellow Module](Bellow%20Module) 
 
-2) [Fingering Module](Fingering%20Module) 
