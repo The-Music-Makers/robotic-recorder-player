@@ -4,7 +4,7 @@
 
 This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. Build it for yourself and use the [Python Interface](Python_Interface) to send your MIDI files to the robotic recorder player and hear them played on the recorder!
 
-![robotic-recorder-player-image](Documents\automated_recorder_player.png)
+![robotic-recorder-player-image](Documents/automated_recorder_player.png)
 
 ## How to Build and Use
 
