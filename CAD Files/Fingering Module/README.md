@@ -3,7 +3,7 @@
 
 
 <p float="left">
-  <img src="../../Documents/fingering_module_assembly_overview_with_frame.png" height="300" />
+  <img src="../../Documents/fingering_module_assembly_overview_with_frame.png" height="500" />
 </p>
 
 You will need the following prepared parts (some will require 3D printing) in order to build the Fingering module.
@@ -30,6 +30,7 @@ You will need the following prepared parts (some will require 3D printing) in or
 
 9) 2 off 3D printed [extension arms](double_tune_hole_extension_arms.stl) (one for each of the double tune hole large fingerpads)
 
+### Printing 
 
 Most printers should be able to print the parts, with all parts being able to fit on a 150mmx140mm build plate.
 
@@ -46,7 +47,7 @@ Parts have been printed using PLA and TPU (TPU for the fingerpads) all with good
 
 
 ## Bill of Materials
-The robot recorder player relies on readily available hobby electronics components. The components can be changed for other makes or types but changing the components will have an effect on how each module operates, for some types of woodwind instruments changes may be needed to allow the modules to operate as desired. Links have been provided for UK suppliers for the components used to create the module, these suppliers are not the only source of the components and they can be bought from other suppliers or locations. 
+The robot recorder player relies on readily available hobby electronics components in the spirit of the CERN-OHL-W. The components can be changed for other makes or types but changing the components will have an effect on how each module operates, for some types of woodwind instruments changes may be needed to allow the modules to operate as desired. Links have been provided for UK suppliers for the components used to create the module, these suppliers are not the only source of the components and they can be bought from other suppliers or locations. 
 
 You will need the following components:
 
@@ -75,7 +76,7 @@ The following is needed on a per build basis:
 
 ## Build Instructions
 
-## Fingering Module
+### Fingering Module
 <p float="left">
   <img src="../../Documents/singleSolenoidWiringDiagram.PNG" height="300" />
 </p>
@@ -87,16 +88,16 @@ location where a solenoid is required for tune hole fingering.
 4. Insert a M3 bolt through solenoid container and through the M3 nut to tighten the solenoids into position. Only a light finger tight is required. If the plunger does not move freely and gets stuck carefully un-tighten the bolt and move the solenoid until the plunger moves freely.
 5. Repeat the above for each solenoid location in the five seater container body, the single container body and four seater container body
 6. connected solenoid circuit following the wiring diagram 
- -   connect one solenoid contact to the common power rail.
- -   connect the other solenoid contacts to the middle pin (pin C) of the darlington transistor.
- -   connect the diode between the two solenoid contacts, make sure that the
+    -   connect one solenoid contact to the common power rail.
+    -   connect the other solenoid contacts to the middle pin (pin C) of the darlington transistor.
+    -   connect the diode between the two solenoid contacts, make sure that the
 white stripe on the diode is on the negative side of the connection. The
 diode acts as a power snubber preventing power spikes from the solenoid
 damaging the other electrical components.
--   connect the resistor to pin B of the transistor then to one of the digital
+    -   connect the resistor to pin B of the transistor then to one of the digital
 ports of the arduino, the port depends on the tune hole the solenoid seals
 down on, currently the thumb tune hole is to port 1 on the arduino.
--   connect pin E of the transistor to the common ground rail.
+    -   connect pin E of the transistor to the common ground rail.
 7. Once the connections are made attach the finger pads to each of the the required solenoids. The square fingerpads with a concave seal should be used on the five seat container body solenoids. The small domed finger pads are intended for the two 3mm diameter holes in double tune holes. The large domed finger pads are intended for the 4mm diameter holes in the double tone holes.
 8. Mark out on the plywood mounting frame the position of each tone hole and the top edge and bottom edge of the recorder. When placing the solenoid container bodies into position onto the mounting frame, it is important to not mount them further than 10mm from the top and bottom edges of the recorder otherwise the solenoids will not seal against the holes when actuated. 
 8. To attach the five solenoid container body to the recorder base frame insert a M3 nut in to the slot on the top and bottom of the container body, then align the container bodies as required to cover the holes and previously marked out. This may require some further measurements and tweaking on the plywood mounting frame.  
