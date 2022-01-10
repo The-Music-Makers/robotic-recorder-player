@@ -2,7 +2,7 @@
 
 ## Robotic Recorder Player
 
-This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. Build it for yourself and use the [Python Interface](Python%20Interface) to send your MIDI files to the robotic recorder player and hear them played on the recorder!
+This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. Build it for yourself and use the [Python Interface](Python_Interface) to send your MIDI files to the robotic recorder player and hear them played on the recorder!
 
 ![robotic-recorder-player-image](Documents\automated_recorder_player.png)
 
@@ -18,11 +18,11 @@ This project had been designed so that it only requires a limited toolset and yo
 ### Build process
 1. Get the hardware you need (you may even have some of what you need!) and follow the [Hardware build instructions](Hardware/README).
 3. Upload the [Firmware](Firmware) to the Arduino.
-4. Load the [Python Interface](Python%20Interface) onto your computer.
+4. Load the [Python Interface](Python_Interface) onto your computer.
 
 ### Play a Song
-1. Create your song in MIDI format as a `.mid` file, use one of our [examples](Python%20Interface/examples), or find one someone else has made.
-2. Connect your computer to the robotic recorder player and use the [Python Interface](Python%20Interface) to hear your song played on the recorder!
+1. Create your song in MIDI format as a `.mid` file, use one of our [examples](Python_Interface/examples), or find one someone else has made.
+2. Connect your computer to the robotic recorder player and use the [Python Interface](Python_Interface) to hear your song played on the recorder!
 
 
 ## Project Development
