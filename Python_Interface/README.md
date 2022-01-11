@@ -32,7 +32,7 @@ Help at anytime can be found by using the command showHelp().
 
 ## Creating `.mid` Files
 
-The [examples](examples) folder contains some example MIDI files. You can create your own too.
+The [examples](midi_examples) folder contains some example MIDI files. You can create your own too.
 
 The MIDI files were created using Aria Maestosa, an open-source (GPL) MIDI sequencer/editor (https://ariamaestosa.github.io/ariamaestosa/docs/index.html). The system uses the MIDI numbering whereby MIDI note 60 corresponds to Middle C, also known as C4 which has a fundametnal frequency = 261.63 hz (https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies). To compose a simple tune for the system, download a MIDI sequencer/editor (Aria Maestosa runs on Mac OS X, Windows and Linux/Unix), select the tempo for the composition, add the notes to the sequencer, and export the track as a MIDI file. 
 
