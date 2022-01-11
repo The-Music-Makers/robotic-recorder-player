@@ -1,26 +1,45 @@
 # Music Makers
 
-## Automated Recorder
+## Robotic Recorder Player
 
-This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. 
+This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. Build it for yourself and use the [Python Interface](Python_Interface) to send your MIDI files to the robotic recorder player and hear them played on the recorder!
 
-It is developed to aid young and first time players to follow tunes, learn fingering and become more confident on their first instrument. There are also opportunities to increase the capability of the final artifact by employing AI techniques to help the player see where they can improve.
+![robotic-recorder-player-image](Documents/automated_recorder_player.png)
 
-This project is a Foundations of Robotics module project for the University of Lincoln <a href="https://www.lincoln.ac.uk/home/course/robasyms/">MSc Robotics and Automated Systems</a> program.
+## How to Build and Use
+
+This project had been designed so that it only requires a limited toolset and you don't have to be an expert to build it. An overview is below but more detailed instructions can be found in each folder.
+
+### Tools Required
+- FDM 3D Printer and slicer software.
+- Basic workshop tools including spanners, screwdrivers, allen keys, drill.
+- A computer with the Arduino IDE and Python installed.
+
+### Build process
+1. Get the hardware you need (you may even have some of what you need!) and follow the [Hardware build instructions](Hardware/README).
+3. Upload the [Firmware](Firmware) to the Arduino.
+4. Load the [Python Interface](Python_Interface) onto your computer.
+
+### Play a Song
+1. Create your song in MIDI format as a `.mid` file ([guide](Python_Interface/README.md#creating-mid-files)), use one of our [examples](Python_Interface/examples), or find one someone else has made.
+2. Connect your computer to the robotic recorder player and use the [Python Interface](Python_Interface) to hear your song played on the recorder!
 
 
-## Team
+## Project Development
+This is an open souce hardware project and anyone is welcome to use and develop this project in line with the licences. We also encourage anyone interested to contribute to this development, especially in the areas outlined below.
 
-1. Kyle Fogarty
+### Development Areas
+These are some of the areas we intend to focus future development:
+- **Double-sided or twin lung** hardware and control to allow playing with reduced pauses.
+- **Half-hole thumb technique** to reach highest notes.
+- **Tounging mechanism** to implement the tounging technique and achieve staccato notes.
+- **Increase OSH depth** adapt the project to depend more on open source components.
+- **Improved usability** through an improved, maybe graphical, user interface.
+- **Improved documentation** and build instructions.
+- **Increased robotic intelligence** such as giving foresight of notes to make decisions on breathing.
+- **Expanded scope of calibration** to include timing and facilitate robot musicians playing together.
 
-1. Bethan Moncur
-
-1. James Bennett
-
-1. Garry Clawson
-
-
-## How to Contribute
+### How to Contribute
 
 Contributing to the project is easy and we encourage anyone who is interested to make pull requests. 
 
@@ -34,7 +53,6 @@ The general process of contributing on GitHub is widely documented however the o
     ```bash
     git clone https://github.com/Kyle-Fogarty/music_makers
     ```
-
 
 1. Update the project and then make a pull request!
 
@@ -58,5 +76,6 @@ Just for fun we thought it would be interesting to include other robotic music p
 
 We want to thank <b>Dr Charles Fox</b> for the inspiration for this project as well as <b>Andrew Henry</b>, whose <b><a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a></b> is not only amazing, but is something we hope our modularised fingering system may extend onto. 
 
+## License
 
-
+This project is licensed under the [GNU General Public License v3.0](LICENSE) and [CERN-OHL-W](LICENCE)
