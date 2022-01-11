@@ -74,7 +74,7 @@ Just for fun we thought it would be interesting to include other robotic music p
 
 ## Acknowledgements
 
-We want to thank <b>Dr Charles Fox</b> for the inspiration for this project as well as <b>Andrew Henry</b>, whose <b><a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a></b> is not only amazing, but is something we hope our modularised fingering system may extend onto. 
+The inspiration for this project was Andrew Henry's <a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a>.
 
 ## License
 
