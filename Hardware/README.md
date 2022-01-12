@@ -6,8 +6,8 @@ You can either build the system as is or you may need to modify the design to fi
 - 1 x Recorder - we used the Aulos A205.
 - 1 x [Blowing Module](Blowing%20Module).
 - 1 x [Fingering Module](Fingering%20Module).
-- 1 x Arduino Mega (with USB cable).
-- 1 x High sensitivity sound sensor module ([e.g.](https://www.amazon.co.uk/gp/product/B06WLHK6BY)).
+- 1 x [Arduino Mega (with USB cable)](https://store.arduino.cc/products/arduino-mega-2560-rev3).
+- 1 x [High sensitivity sound sensor module](https://www.amazon.co.uk/gp/product/B06WLHK6BY).
 
 ## Assembly Instructions
 1. Gather and make everything required in the 'You Will Need' list according to the instructions within each module.

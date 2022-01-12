@@ -108,6 +108,6 @@ down on, currently the thumb tune hole is to port 1 on the arduino.
 
 
 ### Acknowledgements
-The page has been 'forked' from <b>Andrew Henry's</b>, GitLab whose <b><a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a></b> was the inspiration for this project. 
+The page has been 'forked' from Andrew Henry's, <a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a>
 
 

@@ -76,8 +76,8 @@ const int solenoidPins[10] = {11,2,3,4,5,6,7,8,9,10};
 // stepper setup
 #define MOTOR_STEPS 200
 #define MICROSTEPS 1
-#define DIR_PIN 12
-#define STEP_PIN 13
+#define DIR_PIN 32
+#define STEP_PIN 30
 #define INIT_RPM 100
 
 // create stepper object

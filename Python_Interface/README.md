@@ -17,7 +17,7 @@ To build the code download the python Python API and run through ether the comma
 
 A small, hacky, but helpful utility to aid in testing by making it easier to send MIDI data to the Arduino and read any messages it sends back. To use:
 1. Set `Raspberry_Pi/` as the current directory.
-2. Ensure the Serial port is correct in `jukebox_testing.py`.
+2. Ensure the Serial port is correct in `jukebox_testing.py`. Your serial port can be found by `Arduino -> Tools -> Port` or in the bottom right of your Arduino sketch console. 
 3. Enter an interactive python session (by executing `python3` in your command line).
 4. Run `from jukebox_testing import *`.
 5. Use as described by the prompts given.
