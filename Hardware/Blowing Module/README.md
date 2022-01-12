@@ -31,7 +31,7 @@ All of our parts were printed in PLA. 0.4 mm nozzle, 0.2 mm layer height, 2 wall
 ## Assembly Instructions
 
 <p float="left">
-  <img src="../../Documents/blower_circuit_diagram.png" height="300" />
+  <img src="../../Documents/blower_circuit_diagram.png" height="400" />
 </p>
 
 1. Obtain and make all the parts listed above.
