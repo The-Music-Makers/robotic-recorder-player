@@ -16,7 +16,7 @@ This project had been designed so that it only requires a limited toolset and yo
 - A computer with the Arduino IDE and Python installed.
 
 ### Build process
-1. Get the hardware you need (you may even have some of what you need!) and follow the [Hardware build instructions](Hardware/README).
+1. Get the hardware you need (you may even have some of what you need!) and follow the [Hardware build instructions](Hardware/README.md).
 3. Upload the [Firmware](Firmware) to the Arduino.
 4. Load the [Python Interface](Python_Interface) onto your computer.
 
