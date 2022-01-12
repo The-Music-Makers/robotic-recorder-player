@@ -11,12 +11,12 @@ This project is an open source hardware project that is intended to be an automa
 This project had been designed so that it only requires a limited toolset and you don't have to be an expert to build it. An overview is below but more detailed instructions can be found in each folder.
 
 ### Tools Required
-- FDM 3D Printer and slicer software.
+- FDM 3D Printer and slicer software such as [Slic3r](https://slic3r.org/about/).
 - Basic workshop tools including spanners, screwdrivers, allen keys, drill.
 - A computer with the Arduino IDE and Python installed.
 
 ### Build process
-1. Get the hardware you need (you may even have some of what you need!) and follow the [Hardware build instructions](Hardware/README).
+1. Get the hardware you need (you may even have some of what you need!) and follow the [Hardware build instructions](Hardware/README.md).
 3. Upload the [Firmware](Firmware) to the Arduino.
 4. Load the [Python Interface](Python_Interface) onto your computer.
 
