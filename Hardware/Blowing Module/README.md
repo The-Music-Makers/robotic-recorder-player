@@ -30,6 +30,10 @@ All of our parts were printed in PLA. 0.4 mm nozzle, 0.2 mm layer height, 2 wall
 
 ## Assembly Instructions
 
+<p float="left">
+  <img src="../../Documents/blower_circuit_diagram.png" height="400" />
+</p>
+
 1. Obtain and make all the parts listed above.
 2. Insert the bearing into the lung base and the lead screw nut into the lung top and attach using the M3 bolts and nuts.
 3. Attach the lung walls to the base using a cable tie.
