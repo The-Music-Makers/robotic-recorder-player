@@ -1,7 +1,7 @@
 This folder contains demonstration videos
 
-- Demo for Chromatic scale
+- Demo for Chromatic scale (to be added)
 
-- Demo for Ostinato
+- Demo for Ostinato (to be added)
 
-- Demo for Jingle Bells
+- Demo for Jingle Bells (to be added)
