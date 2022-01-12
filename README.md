@@ -45,7 +45,7 @@ Contributing to the project is easy and we encourage anyone who is interested to
 
 The general process of contributing on GitHub is widely documented however the outline process is below:
 
-1. Identify where you want to host the project locally. This could be a Music makes projects folder for example. 
+1. Identify where you want to host the project locally. This could be a Music Makers projects folder for example. 
 
 
 1. Clone or fork the repository using GitHub desktop or the CLI into this location (CLI is recommended as this helps you become more familiar with Git in general). You can do this with the following command:
