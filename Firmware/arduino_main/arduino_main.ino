@@ -30,13 +30,6 @@ typedef struct{
     int blowVel;
 } Note;
 
-//add program start time
-unsigned long startMillis;
-unsigned long currentMillis;
-
-//add count to show how many notes have been played
-unsigned int count = 0;
-
 // define notes recorder can play
 const int lowNote = 72; //C5
 const int highNote = 86; //D6
@@ -203,8 +196,6 @@ void homeStepper() {
 
 void setup() {
 
-    startMillis = millis(); //initial program start time
-    
     Serial.begin(115200); //9600
     
     // set all solenoid pins for OUTPUT
@@ -262,7 +253,7 @@ void loop(){
         stepper.nextAction();
         stepsToEnd--;  
     }
-
+    
     // if data availabe, read serial port in expectation of a MIDI message
     if (Serial.available() > 0) {
         cmdByte = Serial.read();
@@ -271,8 +262,6 @@ void loop(){
         //Serial.print("Cmd: ");
         //Serial.println(cmdByte);
         #endif
-
-        currentMillis = millis(); //gets current time 
 
         // if >= 128 it is a status byte so decode, else it's a surplus data byte so ignore
         if (cmdByte >= 128) {
@@ -291,8 +280,6 @@ void loop(){
 
                     #ifdef DEBUG
                     Serial.println("NoteOn case");
-                    Serial.print("Time in ms: ");
-                    Serial.println( currentMillis);
                     Serial.print("Notes played: ");
                     Serial.println(count);
                     #endif
@@ -324,8 +311,6 @@ void loop(){
 
                     #ifdef DEBUG
                     Serial.println("NoteOff case");
-                    Serial.print("Time in ms: ");
-                    Serial.println( currentMillis);
                     #endif
 
                     // read following data bytes
