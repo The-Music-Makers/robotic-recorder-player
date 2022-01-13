@@ -266,6 +266,7 @@ void loop(){
         // if wait time has elapsed then de-energise fingers
         bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
         setFingers(fingersOff);
+        // should disable stepper motor here too
     }
     
     // if data availabe, read serial port in expectation of a MIDI message
