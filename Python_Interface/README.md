@@ -6,9 +6,11 @@
 Some additional libraries are required to allow the program to run these are:
 
 - [python 3.7](https://www.python.org/downloads/release/python-370/) is required to run the Python API
-- The [pyserial](https://pyserial.readthedocs.io/en/latest/pyserial.html) library is used to provide the backends support to connect to the Aurdino.
 - The [time](https://docs.python.org/3/library/time.html#module-time) library is used to provide the timing and delays in the python script.
+- The [pyserial](https://pyserial.readthedocs.io/en/latest/pyserial.html) library is used to provide the backends support to connect to the Aurdino.
+    - To install open a command terminal and type `python -m pip install pyserial`
 - [MIDO](https://mido.readthedocs.io/en/latest/#) is required for working with MIDI messages and ports
+    - To install open a command terminal and type `pip install mido`
 
 ### Building
 To build the code download the python Python API and run through ether the command prompt or an IDE such as Spyder.
