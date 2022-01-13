@@ -42,18 +42,18 @@ const int noteOffset = lowNote; //Review this line as change to noteOffset no lo
 // note range C5 to D6 is 15 notes
 
 Note notes[arrSize] = {
-  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 523, 200}, //C5 (MIDI 72) https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies
-  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, 554, 210}, //Db5 (MIDI 73)
-  {{ 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, 587, 220}, //D5 (MIDI 74)
-  {{ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, 622, 230}, //Eb5 (MIDI 75)
-  {{ 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 }, 659, 240}, //E5 (MIDI 76)
-  {{ 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 }, 698, 250}, //F5 (MIDI 77)
-  {{ 1, 1, 1, 1, 0, 1, 1, 1, 0, 0 }, 740, 260}, //Gb5 (MIDI 78)
-  {{ 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 }, 784, 270}, //G5 (MIDI 79)
-  {{ 1, 1, 1, 0, 1, 1, 1, 0, 0, 0 }, 831, 280}, //Ab5 (MIDI 80)
-  {{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 880, 290}, //A5 (MIDI 81)
-  {{ 1, 1, 0, 1, 1, 0, 0, 0, 0, 0 }, 932, 300}, //Bb5 (MIDI 82)
-  {{ 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 }, 988, 310}, //B5 (MIDI 83)
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 523, 130}, //C5 (MIDI 72) https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, 554, 140}, //Db5 (MIDI 73)
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, 587, 150}, //D5 (MIDI 74)
+  {{ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, 622, 160}, //Eb5 (MIDI 75)
+  {{ 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 }, 659, 170}, //E5 (MIDI 76)
+  {{ 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 }, 698, 180}, //F5 (MIDI 77)
+  {{ 1, 1, 1, 1, 0, 1, 1, 1, 0, 0 }, 740, 190}, //Gb5 (MIDI 78)
+  {{ 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 }, 784, 200}, //G5 (MIDI 79)
+  {{ 1, 1, 1, 0, 1, 1, 1, 0, 0, 0 }, 831, 220}, //Ab5 (MIDI 80)
+  {{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 880, 240}, //A5 (MIDI 81)
+  {{ 1, 1, 0, 1, 1, 0, 0, 0, 0, 0 }, 932, 265}, //Bb5 (MIDI 82)
+  {{ 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 }, 988, 290}, //B5 (MIDI 83)
   {{ 1, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, 1047, 320}, //C6 (MIDI 84)
   {{ 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 1109, 330}, //Db6 (MIDI 85)
   {{ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, 1175, 340}, //D6 (MIDI 86)
@@ -77,7 +77,7 @@ const int solenoidPins[10] = {11,2,3,4,5,6,7,8,9,10};
 BasicStepperDriver stepper(MOTOR_STEPS, DIR_PIN,STEP_PIN);
 
 //const int limitPin = 33;
-const int maxSteps = 2000; // worked out experimentally
+const int maxSteps = 4000; // worked out experimentally
 const int homeRPM = 300;
 int stepsToEnd = maxSteps; // steps remaining to max position
 const int endThreshold = 200; // after a note off, if motor is within this distance of end, it will home before another note is played
