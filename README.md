@@ -10,7 +10,6 @@ This project is an open source hardware project that is intended to be an automa
 
 https://user-images.githubusercontent.com/44243266/149389541-84850e01-babc-4631-832e-8d369a3c46f7.mp4
 
-
 ## How to Build and Use
 
 This project had been designed so that it only requires a limited toolset and you don't have to be an expert to build it. An overview is below but more detailed instructions can be found in each folder.
