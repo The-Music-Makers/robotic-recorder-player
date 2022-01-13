@@ -102,12 +102,12 @@ ports of the arduino, the port depends on the tune hole the solenoid seals
 down on, currently the thumb tune hole is to port 1 on the arduino.
     -   connect pin E of the transistor to the common ground rail.
 7. Once the connections are made attach the finger pads to each of the the required solenoids. The square fingerpads with a concave seal should be used on the five seat container body solenoids. The small domed finger pads are intended for the two 3mm diameter holes in double tune holes. The large domed finger pads are intended for the 4mm diameter holes in the double tone holes. The extension arms can also be used for the larger 4mm diameter tone holes. 
-8. Mark out on the plywood mounting frame the position of each tone hole and the top edge and bottom edge of the recorder. When placing the solenoid container bodies into position onto the mounting frame, it is important to not mount them further than 10mm from the top and bottom edges of the recorder otherwise the solenoids will not seal against the holes when actuated. 
+8. Mark out on the plywood mounting frame the position of each tone hole and the top edge and bottom edge of the recorder. Aos mark out suitable locations for the solenoid cable holes to be drilled through the plywood mounting frame to connect later to the breadboard that will be placed at the back of the nmounting frame. When placing the solenoid container bodies into position onto the mounting frame, it is important to not mount them further than 10mm from the top and bottom edges of the recorder otherwise the solenoids will not seal against the holes when actuated. 
 8. To attach the five solenoid container body to the recorder base frame insert a M3 nut in to the slot on the top and bottom of the container body, then align the container bodies as required to cover the holes and previously marked out. This may require some further measurements and tweaking on the plywood mounting frame.  
 9. Mark out and attach the two recorder clamps as to ensure that the middle joint holes are directly under the five seater container body and that the single seater container body is located directly under the recorder thumb hole. Feel free to use a small piece of rubber to add grip to the recorder when in the clamp.
 10. Secure all the components using 3mm nuts and bolts. 
 11. Once completed seat your new recorder mounting frame with the new components added into the recorder base stand. It should now being standing vertically, making it easy for you to see the fingering actuation during play.
-12. Test the placement of the components and adjust where required. 
+12. Test the placement of the components and adjust where required. To finish, thread the solenoid cables to the rear of the plywood moutning frame where they can then be connected onto the breadboard. 
 
 
 ### Acknowledgements
