@@ -261,6 +261,7 @@ void loop(){
         stepper.nextAction();
         stepsToEnd--;  
     }
+    // when the above if statement is entered a note is currently being played so else if only checks when a note isn't being played
     else if ((millis() - idleTimeStart) > idleWait) {
         // if wait time has elapsed then de-energise fingers
         bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
