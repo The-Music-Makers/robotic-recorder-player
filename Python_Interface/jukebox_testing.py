@@ -66,7 +66,7 @@ print('''
 ''')
 
 try:
-    ser = serial.Serial('/dev/cu.usbmodem14201', 115200, timeout=0.5) #Note: the string should be COM3 or whatever port you connect your Arduino 
+    ser = serial.Serial('/dev/ttyACM0', 115200, timeout=0.5) #Note: the string should be COM3 or whatever port you connect your Arduino 
 except serial.SerialException:
     print("Error opening serial port.")
 else:
