@@ -89,6 +89,10 @@ const byte channel = 0;
 const byte noteOn = 0x90 + channel;
 const byte noteOff = 0x80 + channel;
 
+// variable to start timing after a note off so fingers will de-energise after specified period
+unsigned long idleTimeStart;
+const int idleWait = 1000; //ms
+
 
 /////////////////////////
 //    FUNCTION DEFS    //
@@ -151,10 +155,14 @@ void doNoteOff(byte vel) {
     // stop blowing
     stepper.stop();
     
+    // UPDATE: undesirable so implementing a delay for before de-energising
     // all fingers off - unneccesary to function but will de-energise solenoids to let them rest
     // Update so that there is a check and only de-energise those that aren't needed on the following note
-    bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
-    setFingers(fingersOff);
+    //bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
+    //setFingers(fingersOff);
+
+    // record start time of timer
+    idleTimeStart = millis();
 
     // if we are close to end, home the stepper before we play another note
     if (stepsToEnd < endThreshold) {
@@ -253,6 +261,11 @@ void loop(){
         stepper.nextAction();
         stepsToEnd--;  
     }
+    else if ((millis() - idleTimeStart) > idleWait) {
+        // if wait time has elapsed then de-energise fingers
+        bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
+        setFingers(fingersOff);
+    }
     
     // if data availabe, read serial port in expectation of a MIDI message
     if (Serial.available() > 0) {
@@ -275,13 +288,8 @@ void loop(){
             switch (cmdByte) {
                 case noteOn:
 
-                    // Counts courrent number of Note Ons
-                    count++;
-
                     #ifdef DEBUG
                     Serial.println("NoteOn case");
-                    Serial.print("Notes played: ");
-                    Serial.println(count);
                     #endif
 
                     // read following data bytes
