@@ -1,7 +1,7 @@
-This folder contains demonstration videos
+This folder contains demonstration videos:
 
-- Demo for Chromatic scale (to be added)
 
-- Demo for Ostinato (to be added)
+## Hot Cross Buns:
 
-- Demo for Jingle Bells (to be added)
+https://user-images.githubusercontent.com/44243266/149391845-76f4dd76-a566-4abe-994c-94fd7d0f7a44.mp4
+
