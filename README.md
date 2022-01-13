@@ -6,6 +6,11 @@ This project is an open source hardware project that is intended to be an automa
 
 ![robotic-recorder-player-image](Documents/automated_recorder_player.png)
 
+## Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lGDBowPHg4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## How to Build and Use
 
 This project had been designed so that it only requires a limited toolset and you don't have to be an expert to build it. An overview is below but more detailed instructions can be found in each folder.
