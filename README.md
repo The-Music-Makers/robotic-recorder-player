@@ -6,12 +6,6 @@ This project is an open source hardware project that is intended to be an automa
 
 ![robotic-recorder-player-image](Documents/automated_recorder_player.png)
 
-## Video
-<a href="h"https://www.youtube.com/embed/lGDBowPHg4M" >
-<p> Automated grecorder playing hot cross buns. </p>
-  <img align="center" width="500" alt="youtube video" src="Documents/automated_recorder_player.png" />
-</a>
-
 ## How to Build and Use
 
 This project had been designed so that it only requires a limited toolset and you don't have to be an expert to build it. An overview is below but more detailed instructions can be found in each folder.
