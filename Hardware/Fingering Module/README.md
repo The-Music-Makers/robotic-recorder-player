@@ -20,13 +20,16 @@ You will need the following prepared parts (some will require 3D printing) in or
 
 5) 1 off 3D printed [single solenoid container body](one_seater_container_body.stl) (for thumb tune hole solenoid)
 
-6) 1 off 3D printed [four solenoid container body](four_seater_container_body.stl) (for two double tune hole solenoids)
+6) a) 1 off 3D printed [four solenoid container body](four_seater_container_body.stl) (for two double tone hole solenoids)
+
+6) b) 1 off 3D printed [two solenoid container body](two_seater_container_body.stl) (for two double tone hole solenoids)
+    -   To simplify the build, you can use this part instead of the four solenoid container body on the double tone holes. This means both double tone holes will get covered at the same time. Print off two extra square finger pads to use with this part.
 
 7) 6 off 3D printed [square finger pads](square_finger_pad.stl) (one for each of the recorder middle joint five solenoids and one for the single thumb solenoid)
 
-8) 2 off 3D printed [large fingerpads](double_hole_finger_pad_large.stl) (for larger hole in the double tune hole)
+8) 2 off 3D printed [large fingerpads](double_hole_finger_pad_large.stl) (for larger hole in the double tone hole)
 
-8) 2 off 3D printed [small fingerpads](double_hole_finger_pad_small.stl) (for smaller hole in the double tune hole)
+8) 2 off 3D printed [small fingerpads](double_hole_finger_pad_small.stl) (for smaller hole in the double tone hole)
 
 9) 2 off 3D printed [extension arms](double_tune_hole_extension_arms.stl) (one for each of the double tune hole large fingerpads)
 
