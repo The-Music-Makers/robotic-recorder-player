@@ -9,7 +9,7 @@ The main script that needs to be uploaded to the Arduino board is located within
 1. Set `channel` (default `0`).
 1. Ensure the notes you desire to play are defined in `notes` and `lowNote` and `highNote` are defined accordingly.
 1. Connect the Arduino board to the computer and set the port it is attached to (`Tools -> Ports -> your_port`)
-1. Upload the sketch (see below)
+1. Upload the sketch (see settings below)
 
 ### Settings
 
