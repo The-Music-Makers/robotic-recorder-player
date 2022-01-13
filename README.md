@@ -9,8 +9,8 @@ This project is an open source hardware project that is intended to be an automa
 ## Video
 
 <div align="left">
-      <a href="https://www.youtube.com/watch?v=5yLzZikS15k">
-         <img src="https://img.youtube.com/vi/5yLzZikS15k/0.jpg" style="width:100%;">
+      <a href="https://www.youtube.com/watch?v=lGDBowPHg4M">
+         <img src="https://www.youtube.com/watch?v=lGDBowPHg4M.jpg" style="width:100%;">
       </a>
 </div>
 
