@@ -31,7 +31,7 @@ You will need the following prepared parts (some will require 3D printing) in or
 
 8) 2 off 3D printed [small fingerpads](double_hole_finger_pad_small.stl) (for smaller hole in the double tone hole)
 
-9) 2 off 3D printed [extension arms](double_tone_hole_extension_arms.stl) (one for each of the double tune hole large fingerpads)
+9) 2 off 3D printed [extension arms](double_tone_hole_extension_arm.stl) (one for each of the double tune hole large fingerpads)
 
 ### Printing 
 
