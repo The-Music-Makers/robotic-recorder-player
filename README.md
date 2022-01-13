@@ -8,8 +8,6 @@ This project is an open source hardware project that is intended to be an automa
 
 ## Video
 
-<img href="https://user-images.githubusercontent.com/44243266/149389541-84850e01-babc-4631-832e-8d369a3c46f7.mp4" width="400">
-
 https://user-images.githubusercontent.com/44243266/149389541-84850e01-babc-4631-832e-8d369a3c46f7.mp4
 
 ## How to Build and Use
