@@ -55,7 +55,7 @@ The general process of contributing on GitHub is widely documented however the o
 1. Clone or fork the repository using GitHub desktop or the CLI into this location (CLI is recommended as this helps you become more familiar with Git in general). You can do this with the following command:
 
     ```bash
-    git clone https://github.com/Kyle-Fogarty/music_makers
+    git clone https://github.com/ICMC22-tmp/OSH_Automated_Recorder
     ```
 
 1. Update the project and then make a pull request!
