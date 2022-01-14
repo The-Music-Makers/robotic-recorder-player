@@ -6,7 +6,7 @@ This project is an open source hardware project that is intended to be an automa
 
 [![robotic-recorder-player-image](Documents/automated_recorder_player.png)](https://www.youtube.com/watch?v=lGDBowPHg4M)
 
-## Video
+### Demonstration
 
 https://user-images.githubusercontent.com/44243266/149389541-84850e01-babc-4631-832e-8d369a3c46f7.mp4
 
@@ -15,7 +15,7 @@ https://user-images.githubusercontent.com/44243266/149389541-84850e01-babc-4631-
 This project had been designed so that it only requires a limited toolset and you don't have to be an expert to build it. An overview is below but more detailed instructions can be found in each folder.
 
 ### Tools Required
-- FDM 3D Printer and slicer software such as [Slic3r](https://slic3r.org/about/).
+- FDM 3D Printer and slicer software such as [Cura](https://ultimaker.com/software/ultimaker-cura).
 - Basic workshop tools including spanners, screwdrivers, allen keys, drill.
 - A computer with the Arduino IDE and Python installed.
 
