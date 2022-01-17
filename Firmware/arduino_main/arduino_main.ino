@@ -30,13 +30,6 @@ typedef struct{
     int blowVel;
 } Note;
 
-//add program start time
-unsigned long startMillis;
-unsigned long currentMillis;
-
-//add count to show how many notes have been played
-unsigned int count = 0;
-
 // define notes recorder can play
 const int lowNote = 72; //C5
 const int highNote = 86; //D6
@@ -49,18 +42,18 @@ const int noteOffset = lowNote; //Review this line as change to noteOffset no lo
 // note range C5 to D6 is 15 notes
 
 Note notes[arrSize] = {
-  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 523, 200}, //C5 (MIDI 72) https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies
-  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, 554, 210}, //Db5 (MIDI 73)
-  {{ 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, 587, 220}, //D5 (MIDI 74)
-  {{ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, 622, 230}, //Eb5 (MIDI 75)
-  {{ 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 }, 659, 240}, //E5 (MIDI 76)
-  {{ 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 }, 698, 250}, //F5 (MIDI 77)
-  {{ 1, 1, 1, 1, 0, 1, 1, 1, 0, 0 }, 740, 260}, //Gb5 (MIDI 78)
-  {{ 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 }, 784, 270}, //G5 (MIDI 79)
-  {{ 1, 1, 1, 0, 1, 1, 1, 0, 0, 0 }, 831, 280}, //Ab5 (MIDI 80)
-  {{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 880, 290}, //A5 (MIDI 81)
-  {{ 1, 1, 0, 1, 1, 0, 0, 0, 0, 0 }, 932, 300}, //Bb5 (MIDI 82)
-  {{ 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 }, 988, 310}, //B5 (MIDI 83)
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 523, 130}, //C5 (MIDI 72) https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, 554, 140}, //Db5 (MIDI 73)
+  {{ 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, 587, 150}, //D5 (MIDI 74)
+  {{ 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, 622, 160}, //Eb5 (MIDI 75)
+  {{ 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 }, 659, 170}, //E5 (MIDI 76)
+  {{ 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 }, 698, 180}, //F5 (MIDI 77)
+  {{ 1, 1, 1, 1, 0, 1, 1, 1, 0, 0 }, 740, 190}, //Gb5 (MIDI 78)
+  {{ 1, 1, 1, 1, 0, 0, 0, 0, 0, 0 }, 784, 200}, //G5 (MIDI 79)
+  {{ 1, 1, 1, 0, 1, 1, 1, 0, 0, 0 }, 831, 220}, //Ab5 (MIDI 80)
+  {{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 880, 240}, //A5 (MIDI 81)
+  {{ 1, 1, 0, 1, 1, 0, 0, 0, 0, 0 }, 932, 265}, //Bb5 (MIDI 82)
+  {{ 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 }, 988, 290}, //B5 (MIDI 83)
   {{ 1, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, 1047, 320}, //C6 (MIDI 84)
   {{ 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, 1109, 330}, //Db6 (MIDI 85)
   {{ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, 1175, 340}, //D6 (MIDI 86)
@@ -84,7 +77,7 @@ const int solenoidPins[10] = {11,2,3,4,5,6,7,8,9,10};
 BasicStepperDriver stepper(MOTOR_STEPS, DIR_PIN,STEP_PIN);
 
 //const int limitPin = 33;
-const int maxSteps = 2000; // worked out experimentally
+const int maxSteps = 4000; // worked out experimentally
 const int homeRPM = 300;
 int stepsToEnd = maxSteps; // steps remaining to max position
 const int endThreshold = 200; // after a note off, if motor is within this distance of end, it will home before another note is played
@@ -95,6 +88,10 @@ const byte channel = 0;
 // construct status bytes where left hex digit represents the command and right the channel
 const byte noteOn = 0x90 + channel;
 const byte noteOff = 0x80 + channel;
+
+// variable to start timing after a note off so fingers will de-energise after specified period
+unsigned long idleTimeStart;
+const int idleWait = 1000; //ms
 
 
 /////////////////////////
@@ -158,10 +155,14 @@ void doNoteOff(byte vel) {
     // stop blowing
     stepper.stop();
     
+    // UPDATE: undesirable so implementing a delay for before de-energising
     // all fingers off - unneccesary to function but will de-energise solenoids to let them rest
     // Update so that there is a check and only de-energise those that aren't needed on the following note
-    bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
-    setFingers(fingersOff);
+    //bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
+    //setFingers(fingersOff);
+
+    // record start time of timer
+    idleTimeStart = millis();
 
     // if we are close to end, home the stepper before we play another note
     if (stepsToEnd < endThreshold) {
@@ -203,8 +204,6 @@ void homeStepper() {
 
 void setup() {
 
-    startMillis = millis(); //initial program start time
-    
     Serial.begin(115200); //9600
     
     // set all solenoid pins for OUTPUT
@@ -262,7 +261,13 @@ void loop(){
         stepper.nextAction();
         stepsToEnd--;  
     }
-
+    // when the above if statement is entered a note is currently being played so else if only checks when a note isn't being played
+    else if ((millis() - idleTimeStart) > idleWait) {
+        // if wait time has elapsed then de-energise fingers
+        bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
+        setFingers(fingersOff);
+    }
+    
     // if data availabe, read serial port in expectation of a MIDI message
     if (Serial.available() > 0) {
         cmdByte = Serial.read();
@@ -271,8 +276,6 @@ void loop(){
         //Serial.print("Cmd: ");
         //Serial.println(cmdByte);
         #endif
-
-        currentMillis = millis(); //gets current time 
 
         // if >= 128 it is a status byte so decode, else it's a surplus data byte so ignore
         if (cmdByte >= 128) {
@@ -286,15 +289,8 @@ void loop(){
             switch (cmdByte) {
                 case noteOn:
 
-                    // Counts courrent number of Note Ons
-                    count++;
-
                     #ifdef DEBUG
                     Serial.println("NoteOn case");
-                    Serial.print("Time in ms: ");
-                    Serial.println( currentMillis);
-                    Serial.print("Notes played: ");
-                    Serial.println(count);
                     #endif
 
                     // read following data bytes
@@ -324,8 +320,6 @@ void loop(){
 
                     #ifdef DEBUG
                     Serial.println("NoteOff case");
-                    Serial.print("Time in ms: ");
-                    Serial.println( currentMillis);
                     #endif
 
                     // read following data bytes
