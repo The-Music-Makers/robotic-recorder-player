@@ -1,5 +1,12 @@
 # Blowing Module
 
+<p float="left">
+  <img src="../../Documents/blowing_module_assembly_overview.png" height="500" />
+</p>
+
+
+You will need the following prepared parts (some will require 3D printing) in order to build the Blowing module.
+
 ## Bill of Materials
 
 ### Purchase
