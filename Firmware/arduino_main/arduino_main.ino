@@ -41,6 +41,7 @@ const int noteOffset = lowNote; //Review this line as change to noteOffset no lo
 // C5 is MIDI note 84 so we will access the desired note using that offset
 // note range C5 to D6 is 15 notes
 
+
 Note notes[arrSize] = {
   {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 523, 130}, //C5 (MIDI 72) https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies
   {{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, 554, 140}, //Db5 (MIDI 73)
@@ -60,6 +61,7 @@ Note notes[arrSize] = {
 };
 
 
+
 // define pins the solenoids are connected to in hole order starting with thumb
 // usage: solenoidPins[2] returns pin corresponding to actuator covering hole 2
 // Pin 7 & 8 are for the first double hole and 9 & 10 for the second
@@ -71,7 +73,7 @@ const int solenoidPins[10] = {11,2,3,4,5,6,7,8,9,10};
 #define MICROSTEPS 1
 #define DIR_PIN 32
 #define STEP_PIN 30
-#define INIT_RPM 100
+#define INIT_RPM 200
 
 // create stepper object
 BasicStepperDriver stepper(MOTOR_STEPS, DIR_PIN,STEP_PIN);
@@ -80,7 +82,7 @@ BasicStepperDriver stepper(MOTOR_STEPS, DIR_PIN,STEP_PIN);
 const int maxSteps = 4000; // worked out experimentally
 const int homeRPM = 300;
 int stepsToEnd = maxSteps; // steps remaining to max position
-const int endThreshold = 200; // after a note off, if motor is within this distance of end, it will home before another note is played
+const int endThreshold = 40; // after a note off, if motor is within this distance of end, it will home before another note is played
 
 // MIDI channels 1-16 are zero based so minus 1 for byte
 const byte channel = 0;
