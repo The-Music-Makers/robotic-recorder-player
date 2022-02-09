@@ -5,18 +5,3 @@ This folder contains demonstration videos:
 
 https://user-images.githubusercontent.com/44243266/149391845-76f4dd76-a566-4abe-994c-94fd7d0f7a44.mp4
 
-## Chromatic Scale
-
-TBC
-
-## Ostinato
-
-TBC
-
-## Jingle Bells
-
-TBC
-
-## Something really fast!
-
-TBC
