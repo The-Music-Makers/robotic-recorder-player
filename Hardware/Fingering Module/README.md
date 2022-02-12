@@ -20,15 +20,18 @@ You will need the following prepared parts (some will require 3D printing) in or
 
 5) 1 off 3D printed [single solenoid container body](one_seater_container_body.stl) (for thumb tune hole solenoid)
 
-6) 1 off 3D printed [four solenoid container body](four_seater_container_body.stl) (for two double tune hole solenoids)
+6) a) 1 off 3D printed [four solenoid container body](four_seater_container_body.stl) (for two double tone hole solenoids)
+
+6) b) 1 off 3D printed [two solenoid container body](two_seater_container_body.stl) (for two double tone hole solenoids)
+    -   To simplify the build, you can use this part instead of the four solenoid container body on the double tone holes. This means both double tone holes will get covered at the same time. Print off two extra square finger pads to use with this part.
 
 7) 6 off 3D printed [square finger pads](square_finger_pad.stl) (one for each of the recorder middle joint five solenoids and one for the single thumb solenoid)
 
-8) 2 off 3D printed [large fingerpads](double_hole_finger_pad_large.stl) (for larger hole in the double tune hole)
+8) 2 off 3D printed [large fingerpads](double_hole_finger_pad_large.stl) (for larger hole in the double tone hole)
 
-8) 2 off 3D printed [small fingerpads](double_hole_finger_pad_small.stl) (for smaller hole in the double tune hole)
+8) 2 off 3D printed [small fingerpads](double_hole_finger_pad_small.stl) (for smaller hole in the double tone hole)
 
-9) 2 off 3D printed [extension arms](double_tune_hole_extension_arms.stl) (one for each of the double tune hole large fingerpads)
+9) 2 off 3D printed [extension arms](double_tone_hole_extension_arm.stl) (one for each of the double tune hole large fingerpads)
 
 ### Printing 
 
@@ -98,13 +101,13 @@ damaging the other electrical components.
 ports of the arduino, the port depends on the tune hole the solenoid seals
 down on, currently the thumb tune hole is to port 1 on the arduino.
     -   connect pin E of the transistor to the common ground rail.
-7. Once the connections are made attach the finger pads to each of the the required solenoids. The square fingerpads with a concave seal should be used on the five seat container body solenoids. The small domed finger pads are intended for the two 3mm diameter holes in double tune holes. The large domed finger pads are intended for the 4mm diameter holes in the double tone holes.
-8. Mark out on the plywood mounting frame the position of each tone hole and the top edge and bottom edge of the recorder. When placing the solenoid container bodies into position onto the mounting frame, it is important to not mount them further than 10mm from the top and bottom edges of the recorder otherwise the solenoids will not seal against the holes when actuated. 
+7. Once the connections are made attach the finger pads to each of the the required solenoids. The square fingerpads with a concave seal should be used on the five seat container body solenoids. The small domed finger pads are intended for the two 3mm diameter holes in double tune holes. The large domed finger pads are intended for the 4mm diameter holes in the double tone holes. The extension arms can also be used for the larger 4mm diameter tone holes. 
+8. Mark out on the plywood mounting frame the position of each tone hole and the top edge and bottom edge of the recorder. Aos mark out suitable locations for the solenoid cable holes to be drilled through the plywood mounting frame to connect later to the breadboard that will be placed at the back of the nmounting frame. When placing the solenoid container bodies into position onto the mounting frame, it is important to not mount them further than 10mm from the top and bottom edges of the recorder otherwise the solenoids will not seal against the holes when actuated. 
 8. To attach the five solenoid container body to the recorder base frame insert a M3 nut in to the slot on the top and bottom of the container body, then align the container bodies as required to cover the holes and previously marked out. This may require some further measurements and tweaking on the plywood mounting frame.  
-9. Mark out and attach the two recorder clamps as to ensure that the middle joint holes are directly under the five seater container body and that the single seater container body is located directly under the recorder thumb hole.
+9. Mark out and attach the two recorder clamps as to ensure that the middle joint holes are directly under the five seater container body and that the single seater container body is located directly under the recorder thumb hole. Feel free to use a small piece of rubber to add grip to the recorder when in the clamp.
 10. Secure all the components using 3mm nuts and bolts. 
 11. Once completed seat your new recorder mounting frame with the new components added into the recorder base stand. It should now being standing vertically, making it easy for you to see the fingering actuation during play.
-12. Test the placement of the components and adjust where required. 
+12. Test the placement of the components and adjust where required. To finish, thread the solenoid cables to the rear of the plywood moutning frame where they can then be connected onto the breadboard. 
 
 
 ### Acknowledgements

@@ -4,14 +4,18 @@
 
 This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. Build it for yourself and use the [Python Interface](Python_Interface) to send your MIDI files to the robotic recorder player and hear them played on the recorder!
 
-![robotic-recorder-player-image](Documents/automated_recorder_player.png)
+[![robotic-recorder-player-image](Documents/automated_recorder_player.png)](https://www.youtube.com/watch?v=lGDBowPHg4M)
+
+### Demonstration
+
+https://user-images.githubusercontent.com/44243266/149389541-84850e01-babc-4631-832e-8d369a3c46f7.mp4
 
 ## How to Build and Use
 
 This project had been designed so that it only requires a limited toolset and you don't have to be an expert to build it. An overview is below but more detailed instructions can be found in each folder.
 
 ### Tools Required
-- FDM 3D Printer and slicer software such as [Slic3r](https://slic3r.org/about/).
+- FDM 3D Printer and slicer software such as [Cura](https://ultimaker.com/software/ultimaker-cura).
 - Basic workshop tools including spanners, screwdrivers, allen keys, drill.
 - A computer with the Arduino IDE and Python installed.
 
@@ -51,7 +55,7 @@ The general process of contributing on GitHub is widely documented however the o
 1. Clone or fork the repository using GitHub desktop or the CLI into this location (CLI is recommended as this helps you become more familiar with Git in general). You can do this with the following command:
 
     ```bash
-    git clone https://github.com/Kyle-Fogarty/music_makers
+    git clone https://github.com/ICMC22-tmp/OSH_Automated_Recorder
     ```
 
 1. Update the project and then make a pull request!
