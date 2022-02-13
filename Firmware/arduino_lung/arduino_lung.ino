@@ -53,20 +53,27 @@ int reading = 0;
 
 void setup() {
 
+    Serial.begin(9600);
+    Serial.println("Hello");
+
     // RPM set to 90 initially
-    stepperA.begin(90, MICROSTEPS);
-    stepperB.begin(90, MICROSTEPS);
+    stepperA.begin(120, MICROSTEPS);
+    stepperB.begin(120, MICROSTEPS);
     
     // set limit pins to read HIGH unless grounded by switch closed
     pinMode(LIMIT_A_EMPTY, INPUT_PULLUP);
     pinMode(LIMIT_B_EMPTY, INPUT_PULLUP);
     pinMode(LIMIT_A_FULL, INPUT_PULLUP);
     pinMode(LIMIT_B_FULL, INPUT_PULLUP);
+
+    Serial.println("Pins setup. Just about to home.");
     
+    /*
     getMaxStepsA();
     homeStepperA();
     getMaxStepsB();
     homeStepperB();
+    */
     
     Wire.begin(4);                // join i2c bus with address #4
     Wire.onReceive(receiveEvent); // register event
@@ -78,6 +85,7 @@ void setup() {
 // function that executes whenever data is received from master
 // this function is registered as an event, see setup()
 void receiveEvent(int howMany) {
+    //Serial.println("In receiveEvent");
 
     if (2 <= Wire.available()) { // if two bytes were received
 
@@ -85,9 +93,9 @@ void receiveEvent(int howMany) {
         reading = reading << 8;    // shift high byte to be high 8 bits
         reading |= Wire.read(); // receive low byte as lower 8 bits
 
-        //Serial.println(reading);   // print the reading
+        Serial.println(reading);   // print the reading
         // use highByte() and lowByte #defines to send the int as two bytes
-
+/*
         // start or update blowing rpm
         if (reading > 0) {
             getActiveStepper().setRPM(reading);
@@ -103,7 +111,7 @@ void receiveEvent(int howMany) {
             // stop the stepper currently blowing
             getActiveStepper().stop();
             stopped = true;
-        }
+        }*/
     }
 }
 
@@ -125,6 +133,9 @@ BasicStepperDriver& getActiveStepper() {
 }
 
 void homeStepperA() {
+
+    Serial.println("In Home A");
+
     // move towards home 
     stepperA.startMove(-DEFINITELY_ENOUGH_STEPS);
     
@@ -132,9 +143,13 @@ void homeStepperA() {
     while (digitalRead(LIMIT_A_FULL) != LOW) {
        stepperA.nextAction();
     }
+    stepperA.stop();
+    Serial.println("Homed");
 }
 
 void getMaxStepsA() {
+
+    Serial.println("In Max Steps A");
     
     // move to home position
     homeStepperA();
@@ -149,6 +164,8 @@ void getMaxStepsA() {
        steps++;
     }
 
+    stepperA.stop();
+
     // set max steps
     maxStepsA = steps;
 }
@@ -161,6 +178,7 @@ void homeStepperB() {
     while (digitalRead(LIMIT_B_FULL) != LOW) {
        stepperB.nextAction();
     }
+    stepperB.stop();
 }
 
 void getMaxStepsB() {
@@ -178,6 +196,8 @@ void getMaxStepsB() {
        steps++;
     }
 
+    stepperB.stop();
+
     // set max steps
     maxStepsB = steps;
 }
@@ -186,6 +206,7 @@ void loop() {
 
     // check limit pins
     if (digitalRead(LIMIT_A_EMPTY) == LOW) { // or reached its max steps?? use stepper.STOPPED? nope because 
+        Serial.println("A Empty");
         /* 
          * set other one as active
          * check other one is at home? using its steps remaining while
@@ -195,12 +216,15 @@ void loop() {
         */ 
     }
     if (digitalRead(LIMIT_B_EMPTY) == LOW) {
+        Serial.println("B Empty");
 
     }
     if (digitalRead(LIMIT_A_FULL) == LOW) {
+        Serial.println("A Full");
         // set steps reamining as max and flag as ready
     }
     if (digitalRead(LIMIT_B_FULL) == LOW) {
+        Serial.println("B Full");
         // set steps reamining as max and flag as ready
     }
 
