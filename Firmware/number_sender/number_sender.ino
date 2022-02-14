@@ -12,16 +12,26 @@
 
 #include <Wire.h>
 
+int x = 150;
+
 void setup()
 {
   Wire.begin(); // join i2c bus (address optional for master)
   Serial.begin(9600);
+
+  Wire.beginTransmission(4); // transmit to device #4
+  Wire.write(highByte(x));              // sends one byte  
+  Wire.write(lowByte(x));
+  Wire.endTransmission();    // stop transmitting
+
+  Serial.println(x);
 }
 
-int x = 0;
+
 
 void loop()
 {
+  /*
   Wire.beginTransmission(4); // transmit to device #4
   //Wire.write("x is ");        // sends five bytes
   Wire.write(highByte(x));              // sends one byte  
@@ -32,4 +42,5 @@ void loop()
 
   x=x+20;
   delay(1000);
+  */
 }

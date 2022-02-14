@@ -19,6 +19,7 @@
 // for both steppers
 const int MOTOR_STEPS = 200;
 const int MICROSTEPS = 1;
+const int HOME_RPM = 200;
 
 // stepper A
 const int DIR_A = 6;
@@ -45,6 +46,12 @@ const int DEFINITELY_ENOUGH_STEPS = 10000;
 // number of steps from full to empty
 int maxStepsA;
 int maxStepsB;
+// number of steps left to empty - only updated on stop()
+int stepsRemA;
+int stepsRemB;
+
+bool aIsFilling = false;
+bool bIsFilling = false;
 
 char activeStepper = 'A';
 bool stopped = true;
@@ -53,7 +60,7 @@ int reading = 0;
 
 void setup() {
 
-    Serial.begin(9600);
+    Serial.begin(115200);
     Serial.println("Hello");
 
     // RPM set to 90 initially
@@ -68,12 +75,24 @@ void setup() {
 
     Serial.println("Pins setup. Just about to home.");
     
-    /*
+    Serial.println("Getting Max Steps A.");
     getMaxStepsA();
+    Serial.println("Homing A.");
     homeStepperA();
+    Serial.println("Getting Max Steps B.");
     getMaxStepsB();
+    Serial.println("Homing B.");
     homeStepperB();
-    */
+
+    Serial.print("Max Steps A: ");
+    Serial.println(maxStepsA);
+    Serial.print("Max Steps B: ");
+    Serial.println(maxStepsB);
+
+    activeStepper = 'A';
+    stepsRemA = maxStepsA;
+    stepsRemB = maxStepsB;
+    
     
     Wire.begin(4);                // join i2c bus with address #4
     Wire.onReceive(receiveEvent); // register event
@@ -93,25 +112,73 @@ void receiveEvent(int howMany) {
         reading = reading << 8;    // shift high byte to be high 8 bits
         reading |= Wire.read(); // receive low byte as lower 8 bits
 
+        Serial.print("RPM Request: ");
         Serial.println(reading);   // print the reading
         // use highByte() and lowByte #defines to send the int as two bytes
-/*
+
         // start or update blowing rpm
         if (reading > 0) {
-            getActiveStepper().setRPM(reading);
-           
+            Serial.print("Setting RPM. Current A RPM: ");
+            Serial.print(stepperA.getRPM());
+
+            //getActiveStepper().setRPM(reading); NOT WORKING
+
+            switch (activeStepper)
+                {
+                case 'A':
+                    stepperA.setRPM(reading);
+                    break;
+
+                case 'B':
+                    stepperB.setRPM(reading);
+                    break;
+                
+                default:
+                    break;
+                }
+
+            Serial.print("New A RPM: ");
+            Serial.println(stepperA.getRPM());
+            
+
+                      
             // if we had stopped then need to start again but if not updating RPM is enough
             if (stopped) {
-                getActiveStepper().startMove(maxStepsA);
+                switch (activeStepper)
+                {
+                case 'A':
+                    stepperA.startMove(stepsRemA);
+                    Serial.println("A started.");
+                    break;
+
+                case 'B':
+                    stepperB.startMove(stepsRemB);
+                    break;
+                
+                default:
+                    break;
+                }
                 stopped = false;
             }
         }
         // else reading == 0 and we want to stop blowing
         else {
             // stop the stepper currently blowing
-            getActiveStepper().stop();
+            switch (activeStepper)
+            {
+            case 'A':
+                stepsRemA = stepperA.stop();
+                break;
+
+            case 'B':
+                stepsRemB = stepperB.stop();
+                break;
+            
+            default:
+                break;
+            }
             stopped = true;
-        }*/
+        }
     }
 }
 
@@ -134,8 +201,6 @@ BasicStepperDriver& getActiveStepper() {
 
 void homeStepperA() {
 
-    Serial.println("In Home A");
-
     // move towards home 
     stepperA.startMove(-DEFINITELY_ENOUGH_STEPS);
     
@@ -149,8 +214,6 @@ void homeStepperA() {
 
 void getMaxStepsA() {
 
-    Serial.println("In Max Steps A");
-    
     // move to home position
     homeStepperA();
 
@@ -179,6 +242,7 @@ void homeStepperB() {
        stepperB.nextAction();
     }
     stepperB.stop();
+    Serial.println("Homed");
 }
 
 void getMaxStepsB() {
@@ -204,28 +268,72 @@ void getMaxStepsB() {
 
 void loop() {
 
+    
     // check limit pins
-    if (digitalRead(LIMIT_A_EMPTY) == LOW) { // or reached its max steps?? use stepper.STOPPED? nope because 
+    if (digitalRead(LIMIT_A_EMPTY) == LOW && activeStepper == 'A') { // or reached its max steps?? at start of loop see if active stepper has stopped whist stopped flag not set.
         Serial.println("A Empty");
-        /* 
-         * set other one as active
-         * check other one is at home? using its steps remaining while
-         * update this one's steps remaining
-         * set the other's rpm to this one
-         * start a move to send this one home and the other blowing
-        */ 
-    }
-    if (digitalRead(LIMIT_B_EMPTY) == LOW) {
-        Serial.println("B Empty");
+        
+        stepsRemA = 0;
+        int currentRPM = stepperA.getCurrentRPM();
+        stepperA.setRPM(HOME_RPM);
+        aIsFilling = true;
+        
+        if (bIsFilling) {
+            // in case it hasn't filled by now
+            int remaining = stepperB.stop();
+            // set the steps B will have til empty
+            stepsRemB = DEFINITELY_ENOUGH_STEPS - remaining;
+            bIsFilling = false;
+        } 
+        activeStepper = 'B';
+        stepperB.setRPM(currentRPM);
+
+        Serial.print("Starting move. Steps for B: ");
+        Serial.println(stepsRemB);
+
+        controller.startMove(-DEFINITELY_ENOUGH_STEPS, stepsRemB);
 
     }
-    if (digitalRead(LIMIT_A_FULL) == LOW) {
-        Serial.println("A Full");
-        // set steps reamining as max and flag as ready
+    if (digitalRead(LIMIT_B_EMPTY) == LOW && activeStepper == 'B') {
+        Serial.println("B Empty");
+
+        stepsRemB = 0;
+        int currentRPM = stepperB.getCurrentRPM();
+        stepperB.setRPM(HOME_RPM);
+        bIsFilling = true;
+        
+        if (aIsFilling) {
+            // in case it hasn't filled by now
+            int remaining = stepperA.stop();
+            // set the steps B will have til empty
+            stepsRemA = DEFINITELY_ENOUGH_STEPS - remaining;
+            aIsFilling = false;
+        } 
+        activeStepper = 'A';
+        stepperA.setRPM(currentRPM);
+
+        Serial.print("Starting move. Steps for A: ");
+        Serial.println(stepsRemA);
+
+        controller.startMove(stepsRemA, -DEFINITELY_ENOUGH_STEPS);
+
     }
-    if (digitalRead(LIMIT_B_FULL) == LOW) {
+    if (digitalRead(LIMIT_A_FULL) == LOW && aIsFilling) {
+        Serial.println("A Full");
+        
+        //
+        stepperA.stop();
+        aIsFilling = false;
+        stepsRemA = maxStepsA;
+    }
+    if (digitalRead(LIMIT_B_FULL) == LOW && bIsFilling) {
         Serial.println("B Full");
-        // set steps reamining as max and flag as ready
+
+        //
+        stepperB.stop();
+        bIsFilling = false;
+        stepsRemB = maxStepsB;
+        
     }
 
     // do the next step
