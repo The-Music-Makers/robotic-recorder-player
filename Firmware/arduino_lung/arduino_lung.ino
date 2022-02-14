@@ -42,6 +42,8 @@ const int LIMIT_B_FULL = 5;
 
 // a number definitely more than the number of steps from full to empty
 const int DEFINITELY_ENOUGH_STEPS = 10000;
+// temporary fix to add to max steps and make sure it reaches switch
+const int SOME_EXTRA = 400;
 
 // number of steps from full to empty
 int maxStepsA;
@@ -90,8 +92,8 @@ void setup() {
     Serial.println(maxStepsB);
 
     activeStepper = 'A';
-    stepsRemA = maxStepsA;
-    stepsRemB = maxStepsB;
+    stepsRemA = maxStepsA + SOME_EXTRA;
+    stepsRemB = maxStepsB + SOME_EXTRA;
     
     
     Wire.begin(4);                // join i2c bus with address #4

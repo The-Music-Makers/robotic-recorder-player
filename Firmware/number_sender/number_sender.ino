@@ -25,6 +25,25 @@ void setup()
   Wire.endTransmission();    // stop transmitting
 
   Serial.println(x);
+
+  delay(2000);
+  
+  x = 0;
+  Wire.beginTransmission(4); // transmit to device #4
+  Wire.write(highByte(x));              // sends one byte  
+  Wire.write(lowByte(x));
+  Wire.endTransmission();    // stop transmitting
+
+  Serial.println(x);
+  delay(2000);
+
+  x = 180;
+  Wire.beginTransmission(4); // transmit to device #4
+  Wire.write(highByte(x));              // sends one byte  
+  Wire.write(lowByte(x));
+  Wire.endTransmission();    // stop transmitting
+
+  Serial.println(x);
 }
 
 
