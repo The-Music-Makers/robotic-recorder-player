@@ -17,6 +17,8 @@
 
 // https://github.com/laurb9/StepperDriver
 #include "BasicStepperDriver.h"
+#include <Wire.h>
+// Includes Wire Master Writer by Nicholas Zambetti <http://www.zambetti.com>
 
 /////////////////////////
 //    DECLARATIONS &   //
@@ -66,23 +68,7 @@ Note notes[arrSize] = {
 // usage: solenoidPins[2] returns pin corresponding to actuator covering hole 2
 // Pin 7 & 8 are for the first double hole and 9 & 10 for the second
 // Pin 11 is thumbhole
-const int solenoidPins[10] = {11,2,3,4,5,6,7,8,9,10}; 
-
-// stepper setup
-#define MOTOR_STEPS 200
-#define MICROSTEPS 1
-#define DIR_PIN 32
-#define STEP_PIN 30
-#define INIT_RPM 200
-
-// create stepper object
-BasicStepperDriver stepper(MOTOR_STEPS, DIR_PIN,STEP_PIN);
-
-//const int limitPin = 33;
-const int maxSteps = 4000; // worked out experimentally
-const int homeRPM = 300;
-int stepsToEnd = maxSteps; // steps remaining to max position
-const int endThreshold = 40; // after a note off, if motor is within this distance of end, it will home before another note is played
+const int solenoidPins[10] = {45,47,49,51,53,43,41,39,37,35}; 
 
 // MIDI channels 1-16 are zero based so minus 1 for byte
 const byte channel = 0;
@@ -124,6 +110,13 @@ bool isInRange(byte note) {
     }
 }
 
+void setRPM(int rpm){
+    Wire.beginTransmission(4); // transmit to device #4
+    Wire.write(highByte(rpm));              // sends one byte  
+    Wire.write(lowByte(rpm));
+    Wire.endTransmission();    // stop transmitting
+}
+
 void doNoteOn(byte note, byte vel) {
 
     // convert from MIDI note number to index in our note array
@@ -137,25 +130,14 @@ void doNoteOn(byte note, byte vel) {
     // set fingers
     setFingers(notes[ndx].fPattern);
 
-    // start blowing
     // set RPM corresponding to note
-    stepper.setRPM(notes[ndx].blowVel);
-
-    //supporting print statments for debugging stepper
-    //Serial.print("Stepper.getRPM():");
-    //Serial.println(stepper.getRPM());
-
-    //Serial.print("STEPS TO END: ");
-    //Serial.println(stepsToEnd);
-    
-    // set motor to move all steps it has remaining (as we don't know how many steps we'll need)
-    stepper.startMove(stepsToEnd);
+    setRPM(notes[ndx].blowVel);
 }
 
 void doNoteOff(byte vel) {
     
     // stop blowing
-    stepper.stop();
+    setRPM(0);
     
     // UPDATE: undesirable so implementing a delay for before de-energising
     // all fingers off - unneccesary to function but will de-energise solenoids to let them rest
@@ -165,39 +147,6 @@ void doNoteOff(byte vel) {
 
     // record start time of timer
     idleTimeStart = millis();
-
-    // if we are close to end, home the stepper before we play another note
-    if (stepsToEnd < endThreshold) {
-        Serial.println("END THRESHHOLD REACHED");
-        homeStepper();
-    }
-}
-
-void homeStepper() {
-
-    //Serial.print("HOME STEPPER ROUTINE");
-  
-    // save current rpm so it can be reassigned after homing
-    int rpm = stepper.getCurrentRPM();
-    
-    stepper.setRPM(homeRPM);
-    stepper.move(-(maxSteps-stepsToEnd)); //double to make sure it definitely reaches home
-    
-    // while stepper not at limit pin, move towards it.
-    //while (digitalRead(limitPin) != LOW) {
-    //    stepper.nextAction();
-    //}
-    
-    //home reached
-    stepper.stop();
-    stepsToEnd = maxSteps;
-    stepper.setRPM(rpm); // set RPM to what it was before homing
-
-    #ifdef DEBUG
-    //Serial.println("Stepper reached home");
-    #endif
-
-    return;
 }
 
 /////////////////////////
@@ -216,12 +165,7 @@ void setup() {
         digitalWrite(solenoidPins[f], LOW);
     }
 
-    stepper.begin(INIT_RPM, MICROSTEPS);
-
-    // set limit pin to read HIGH unless grounded by switch closed
-    //pinMode(limitPin, INPUT_PULLUP);
-
-    homeStepper();
+    Wire.begin(); // join i2c bus (address optional for master)
 
     // TESTING
     /*delay(2000);
@@ -247,24 +191,7 @@ void loop(){
 
     static byte currNote;
 
-    // if stepper at end then home and let move continue
-    if (stepsToEnd <= 0) {
-        Serial.println("RUN OUT OF STEPS");
-        homeStepper();
-        stepper.startMove(stepsToEnd); // so move can be continued
-    }
-
-    // move another step at the right time
-    // once nextAction called, program will sit in that function until the right time to pulse the motor.
-    // its okay to call even if we don't want the motor to move because it will return if there are no steps to move.
-    // EDIT: whilst the above is okay, don't want to decrement stepsToEnd so if we're checking stepper is stopped we might as well put nextAction in the loop too
-    // stepper.getStepsRemaining() <= 0 probably quicker than stepper.getCurrentState() != stepper.STOPPED but should measure.
-    if (stepper.getStepsRemaining() > 0) {
-        stepper.nextAction();
-        stepsToEnd--;  
-    }
-    // when the above if statement is entered a note is currently being played so else if only checks when a note isn't being played
-    else if ((millis() - idleTimeStart) > idleWait) {
+    if ((millis() - idleTimeStart) > idleWait) {
         // if wait time has elapsed then de-energise fingers
         bool fingersOff[10] = {0,0,0,0,0,0,0,0,0,0};
         setFingers(fingersOff);
