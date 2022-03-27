@@ -65,8 +65,10 @@ The general process of contributing on GitHub is widely documented however the o
 
 Just for fun we thought it would be interesting to include other robotic music players. They range from the sublime to the wacky, but each one is beautiful. 
 
+- Shimon, the robotic marimba player https://www.shimonrobot.com
 - Squarepusher x Z-Machines https://www.youtube.com/watch?v=VkUq4sO4LQM&t=66s
 - Andrew Henry's self playing guitar https://www.youtube.com/watch?v=I_BBCmcAXcs
+- Yamaha Disklavier self playing robot piano https://www.youtube.com/watch?v=m_GROsS4I7A
 - Waseda Flutist Robot https://www.youtube.com/watch?v=jx8U1FgILCE
 - The original Flute automaton - Floutiste https://www.youtube.com/watch?v=1TxrjpWGRXU
 - A variety of robotic players including violin, piano, guitar, bongos, xylophone and others https://www.youtube.com/watch?v=rwh_acqT6J0
