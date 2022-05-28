@@ -62,7 +62,7 @@ The general process of contributing on GitHub is widely documented however the o
 
 ## Citation
 
-If you use this package for research, please cite [the paper](https://eprints.lincoln.ac.uk/id/eprint/49154/):
+If you use this project for research, please cite [the paper](https://eprints.lincoln.ac.uk/id/eprint/49154/):
 
 ```
 @inproceedings{bennett2022woodwind,
