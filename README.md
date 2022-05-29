@@ -65,7 +65,7 @@ The general process of contributing on GitHub is widely documented however the o
 If you use this project for research, please cite [the paper](https://eprints.lincoln.ac.uk/id/eprint/49154/):
 
 ```
-@inproceedings{bennett2022woodwind,
+@inproceedings{bennett2022towards,
   title={Towards Open Source Hardware Robotic Woodwind: an Internal Duct Flute Player},
   author={Bennett, James and Moncur, Bethan and Fogarty, Kyle and Clawson, Garry and Fox, Charles},
   booktitle={International Computer Music Conference, ICMC; 2022 Jul 3-7}, 
