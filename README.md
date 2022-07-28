@@ -6,6 +6,11 @@ This project is an open source hardware project that is intended to be an automa
 
 [![robotic-recorder-player-image](Documents/automated_recorder_player.png)](https://www.youtube.com/watch?v=lGDBowPHg4M)
 
+
+### ICMC 2022 Presentation
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/91aKZUQ2KXA/0.jpg)](https://www.youtube.com/watch?v=91aKZUQ2KXA)
+
 ### Demonstration
 
 https://user-images.githubusercontent.com/44243266/149389541-84850e01-babc-4631-832e-8d369a3c46f7.mp4
@@ -60,13 +65,29 @@ The general process of contributing on GitHub is widely documented however the o
 
 1. Update the project and then make a pull request!
 
+## Citation
+
+If you use this project for research, please cite [the paper](https://eprints.lincoln.ac.uk/id/eprint/49154/):
+
+```
+@inproceedings{bennett2022towards,
+  title={Towards Open Source Hardware Robotic Woodwind: an Internal Duct Flute Player},
+  author={Bennett, James and Moncur, Bethan and Fogarty, Kyle and Clawson, Garry and Fox, Charles},
+  booktitle={International Computer Music Conference, ICMC; 2022 Jul 3-7}, 
+  year={2022},
+  %organization={International Computer Music Association}
+}
+```
+
 
 ## Other Robotic and Autonomous Music Players
 
 Just for fun we thought it would be interesting to include other robotic music players. They range from the sublime to the wacky, but each one is beautiful. 
 
+- Shimon, the robotic marimba player https://www.shimonrobot.com
 - Squarepusher x Z-Machines https://www.youtube.com/watch?v=VkUq4sO4LQM&t=66s
 - Andrew Henry's self playing guitar https://www.youtube.com/watch?v=I_BBCmcAXcs
+- Yamaha Disklavier self playing robot piano https://www.youtube.com/watch?v=m_GROsS4I7A
 - Waseda Flutist Robot https://www.youtube.com/watch?v=jx8U1FgILCE
 - The original Flute automaton - Floutiste https://www.youtube.com/watch?v=1TxrjpWGRXU
 - A variety of robotic players including violin, piano, guitar, bongos, xylophone and others https://www.youtube.com/watch?v=rwh_acqT6J0
