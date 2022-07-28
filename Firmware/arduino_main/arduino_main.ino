@@ -68,7 +68,7 @@ Note notes[arrSize] = {
 // usage: solenoidPins[2] returns pin corresponding to actuator covering hole 2
 // Pin 7 & 8 are for the first double hole and 9 & 10 for the second
 // Pin 11 is thumbhole
-const int solenoidPins[10] = {45,47,49,51,53,43,41,39,37,35}; 
+const int solenoidPins[10] = {45,47,49,51,53,37,35,39,41,43}; 
 
 // MIDI channels 1-16 are zero based so minus 1 for byte
 const byte channel = 0;
