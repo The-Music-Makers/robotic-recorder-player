@@ -19,7 +19,7 @@
 // for both steppers
 const int MOTOR_STEPS = 200;
 const int MICROSTEPS = 1;
-const int HOME_RPM = 200;
+const int HOME_RPM = 300;
 
 // stepper A
 const int DIR_A = 6;
@@ -66,8 +66,8 @@ void setup() {
     Serial.println("Hello");
 
     // RPM set to 90 initially
-    stepperA.begin(120, MICROSTEPS);
-    stepperB.begin(120, MICROSTEPS);
+    stepperA.begin(HOME_RPM, MICROSTEPS);
+    stepperB.begin(HOME_RPM, MICROSTEPS);
     
     // set limit pins to read HIGH unless grounded by switch closed
     pinMode(LIMIT_A_EMPTY, INPUT_PULLUP);
