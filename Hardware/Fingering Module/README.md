@@ -19,7 +19,7 @@ The robot recorder player relies on readily available hobby electronics componen
 | TIP120 Darlington Transistor | 10 | | [UK](https://www.amazon.co.uk/BOJACK-Epitaxial-Transistor-Darlington-Transistors/dp/B08D8SJPCG/ref=sr_1_4?dchild=1&keywords=TIP120+Darlington+Transistor&qid=1614263478&sr=8-4)|
 | 1K Ohm Resistor | 10 | | [UK](https://www.amazon.co.uk/sourcing-map-Metal-Resistors-Tolerances/dp/B07LGM23Y4/ref=sr_1_10?dchild=1&keywords=1K+Ohm+Resistor&qid=1614263525&sr=8-10)|
 | 1N4001 Diode | 10 | | [UK](https://www.amazon.co.uk/ExcLent-100Pcs-1N4001-50V-Diode/dp/B07J3ZT55G/ref=sr_1_8?dchild=1&keywords=1N4001+Diode&qid=1614263550&sr=8-8)|
-| Stripboard, wires, connectors | | here[^breadboard]| |
+| Stripboard[^breadboard], wires, connectors | | Stipboard or perfboard depending on preference | |
 | Pan head wood screw | 22 | 12 mm x 3.5 mm | [UK](https://www.toolstation.com/self-tapping-pan-head-pozi-screw/p74035) |
 | M3 x 25 mm bolt and nut | 4 | | [UK](https://www.amazon.co.uk/Screw-Bolts-Stainless-Steel-340pcs/dp/B08RRW6B3H/ref=sr_1_12?dchild=1&keywords=M3+nut+and+bolt&qid=1614263398&sr=8-12)|
 | Board (plywood or breadboard) | 1 | 350 x 250 x 15 mm | |
@@ -38,7 +38,7 @@ The robot recorder player relies on readily available hobby electronics componen
 | Double Tone Hole Finger Box | 1 | 3D Print | [`finger-box_double-hole.3mf`](finger-box_double-hole.3mf) |
 | Stand | 1 | 3D Print | [`stand.3mf`](stand.3mf) |
 
-All of these parts were printed in PLA. 0.4 mm nozzle, 0.2 mm layer height, 2 walls, 20% infill are adequate settings. Supports aren't required if they are printed in the correct orientation. The files are supplied in 3MF format (https://github.com/The-Music-Makers/music_makers/issues/45#issue-1320772147) which mainstream slicers will load.
+All of these parts were printed in PLA. 0.4 mm nozzle, 0.2 mm layer height, 2 walls, 20% infill are adequate settings. Supports aren't required if they are printed in the correct orientation. The files are supplied in 3MF format (see issue https://github.com/The-Music-Makers/music_makers/issues/45) which mainstream slicers will load.
 
 ### Fingertips
 It is necessary to put a soft material on the end of the solenoid plungers to protect the recorder and ensure an adequate seal. They are still in the experimental stage and details of our attempts and ideas are below.
@@ -61,4 +61,4 @@ It is necessary to put a soft material on the end of the solenoid plungers to pr
 1. Insert the solenoids into the finger boxes and secure with a pan head screw if loose.
 1. Attach fingertips to the solenoid plungers.
 1. Line up the finger boxes to the recorder and attach to the board with pan head screws.
-1. The solenoids need to be connected to the power supply and Arduino (plus the resistor, diode and transistor) as per the following diagram. <img src="../../Documents/singleSolenoidWiringDiagram.PNG" height="300"/> We drilled holes in the board to pass the solenoid wires through and connected everything on stripboard. Each solenoid circuit as per the image needs to be connected to a different output pin of the Arduino, noting the pin number.
+1. The solenoids need to be connected to the power supply and Arduino (plus the resistor, diode and transistor) as per the following diagram. <p><img float="left" src="../../Documents/singleSolenoidWiringDiagram.PNG" height="300"/></p> We drilled holes in the board to pass the solenoid wires through and connected everything on stripboard. Each solenoid circuit as per the image needs to be connected to a different output pin of the Arduino, noting the pin number.
