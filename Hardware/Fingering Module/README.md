@@ -56,39 +56,9 @@ It is necessary to put a soft material on the end of the solenoid plungers to pr
 
 
 ## Assembly Instructions
-
-### Fingering Module
-<p float="left">
-  <img src="../../Documents/singleSolenoidWiringDiagram.PNG" height="300" />
-</p>
-
 1. Obtain and make all the parts listed above.
-2. Insert a M3 nut into the internal side wall of the 3D-printed five solenoid container body, repeat this for each
-location where a solenoid is required for tune hole fingering. 
-3. Push the solenoid wires through the holes at the rear of the container body and insert a solenoid into each seating position (one for each tune hole across the recorder), making sure that the solenoid plunger can freely move up and down. 
-4. Insert a M3 bolt through solenoid container and through the M3 nut to tighten the solenoids into position. Only a light finger tight is required. If the plunger does not move freely and gets stuck carefully un-tighten the bolt and move the solenoid until the plunger moves freely.
-5. Repeat the above for each solenoid location in the five seater container body, the single container body and four seater container body
-6. connected solenoid circuit following the wiring diagram 
-    -   connect one solenoid contact to the common power rail.
-    -   connect the other solenoid contacts to the middle pin (pin C) of the darlington transistor.
-    -   connect the diode between the two solenoid contacts, make sure that the
-white stripe on the diode is on the negative side of the connection. The
-diode acts as a power snubber preventing power spikes from the solenoid
-damaging the other electrical components.
-    -   connect the resistor to pin B of the transistor then to one of the digital
-ports of the arduino, the port depends on the tune hole the solenoid seals
-down on, currently the thumb tune hole is to port 1 on the arduino.
-    -   connect pin E of the transistor to the common ground rail.
-7. Once the connections are made attach the finger pads to each of the the required solenoids. The square fingerpads with a concave seal should be used on the five seat container body solenoids. The small domed finger pads are intended for the two 3mm diameter holes in double tune holes. The large domed finger pads are intended for the 4mm diameter holes in the double tone holes. The extension arms can also be used for the larger 4mm diameter tone holes. 
-8. Mark out on the plywood mounting frame the position of each tone hole and the top edge and bottom edge of the recorder. Aos mark out suitable locations for the solenoid cable holes to be drilled through the plywood mounting frame to connect later to the breadboard that will be placed at the back of the nmounting frame. When placing the solenoid container bodies into position onto the mounting frame, it is important to not mount them further than 10mm from the top and bottom edges of the recorder otherwise the solenoids will not seal against the holes when actuated. 
-8. To attach the five solenoid container body to the recorder base frame insert a M3 nut in to the slot on the top and bottom of the container body, then align the container bodies as required to cover the holes and previously marked out. This may require some further measurements and tweaking on the plywood mounting frame.  
-9. Mark out and attach the two recorder clamps as to ensure that the middle joint holes are directly under the five seater container body and that the single seater container body is located directly under the recorder thumb hole. Feel free to use a small piece of rubber to add grip to the recorder when in the clamp.
-10. Secure all the components using 3mm nuts and bolts. 
-11. Once completed seat your new recorder mounting frame with the new components added into the recorder base stand. It should now being standing vertically, making it easy for you to see the fingering actuation during play.
-12. Test the placement of the components and adjust where required. To finish, thread the solenoid cables to the rear of the plywood moutning frame where they can then be connected onto the breadboard. 
-
-
-### Acknowledgements
-The page has been 'forked' from Andrew Henry's, <a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a>
-
-
+1. Attach the head and foot holder to the board with pan head screws, insert the recorder and use the M3 bolts and nuts to secure.
+1. Insert the solenoids into the finger boxes and secure with a pan head screw if loose.
+1. Attach fingertips to the solenoid plungers.
+1. Line up the finger boxes to the recorder and attach to the board with pan head screws.
+1. The solenoids need to be connected to the power supply and Arduino (plus the resistor, diode and transistor) as per the following diagram. <img src="../../Documents/singleSolenoidWiringDiagram.PNG" height="300"/> We drilled holes in the board to pass the solenoid wires through and connected everything on stripboard. Each solenoid circuit as per the image needs to be connected to a different output pin of the Arduino, noting the pin number.
