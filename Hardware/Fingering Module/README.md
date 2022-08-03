@@ -6,85 +6,63 @@
   <img src="../../Documents/fingering_module_assembly_overview_with_frame.png" height="500" />
 </p>
 
-You will need the following prepared parts (some will require 3D printing) in order to build the Fingering module.
-
-## 3D Printed Parts
-
-1) 1 off 3D printed recorder base frame stand [bottom](recorder_base_frame_stand_bottom.stl). 
-
-2) 1 off 3D printed recorder base frame stand [top](recorder_base_frame_stand_top.stl). This fits to the base frame bottom creating a clamp for the plywood mounting frame.
-
-3) 2 off 3D printed recorder [clamps](recorder_clamp.stl) that will hold the recorder in position on the plywood mounting frame
-
-4) 1 off 3D printed [five solenoid container body](five_seater_container_body.stl) (for finger tune hole solenoids)
-
-5) 1 off 3D printed [single solenoid container body](one_seater_container_body.stl) (for thumb tune hole solenoid)
-
-6) a) 1 off 3D printed [four solenoid container body](four_seater_container_body.stl) (for two double tone hole solenoids)
-
-6) b) 1 off 3D printed [two solenoid container body](two_seater_container_body.stl) (for two double tone hole solenoids)
-    -   To simplify the build, you can use this part instead of the four solenoid container body on the double tone holes. This means both double tone holes will get covered at the same time. Print off two extra square finger pads to use with this part.
-
-7) 6 off 3D printed [square finger pads](square_finger_pad.stl) (one for each of the recorder middle joint five solenoids and one for the single thumb solenoid)
-
-8) 2 off 3D printed [large fingerpads](double_hole_finger_pad_large.stl) (for larger hole in the double tone hole)
-
-8) 2 off 3D printed [small fingerpads](double_hole_finger_pad_small.stl) (for smaller hole in the double tone hole)
-
-9) 2 off 3D printed [extension arms](double_tone_hole_extension_arm.stl) (one for each of the double tune hole large fingerpads)
-
-### Printing 
-
-Most printers should be able to print the parts, with all parts being able to fit on a 150mmx140mm build plate.
-
-On an Ultimaker 2+, we achieved good results with the following settings:
-
-- layer height: 0.2mm
-- wall thickness: 1.5mm
-- infill density: 20%
-- infill pattern: grid
-- print speed 80 mm/s
-- supports where required for the recorder base frame.
-
-Parts have been printed using PLA and TPU (TPU for the fingerpads) all with good results. The print was not affected very much by the print settings. However, printing slower and with smaller layer height will improve the print quality. Tree supports where found to be easier to remove from prints in post processing although normal supports can be used instead. Both .stl and .obj files have been provided.
-
-
 ## Bill of Materials
-The robot recorder player relies on readily available hobby electronics components in the spirit of the CERN-OHL-W. The components can be changed for other makes or types but changing the components will have an effect on how each module operates, for some types of woodwind instruments changes may be needed to allow the modules to operate as desired. Links have been provided for UK suppliers for the components used to create the module, these suppliers are not the only source of the components and they can be bought from other suppliers or locations. 
 
-You will need the following components:
+The robot recorder player relies on readily available hobby electronics components in the spirit of the CERN-OHL-W. The components can be changed for other makes or types but changing the components will have an effect on how each module operates, for some types of woodwind instruments changes may be needed to allow the modules to operate as desired. Links have been provided for UK suppliers for the components used to create the module, these suppliers are not the only source of the components and they can be bought from other suppliers or locations.
 
-### General
+### Purchase
+| Item | Quantity | Details | Example |
+| - | - | - | - |
+| Arduino Mega | 1 | | [UK](https://www.amazon.co.uk/ELEGOO-Controller-ATmega2560-ATMEGA16U2-Compatible/dp/B06XKMZ3T9/)|
+| Power Supply | 1 | ~~12V, 10A~~ [^voltage] | [UK](https://www.amazon.co.uk/SHNITPWR-100V-240V-Converter-Transformer-5-5x2-5mm/dp/B08BJRN5SX/)|
+| Solenoid | 10 | Model: JF-0530B, 12V | [UK](https://www.amazon.co.uk/Rtengtunn-JF-0530B-Push-Pull-Gangbei-0530B-Electromagnet/dp/B08291L2XL/)|
+| TIP120 Darlington Transistor | 10 | | [UK](https://www.amazon.co.uk/BOJACK-Epitaxial-Transistor-Darlington-Transistors/dp/B08D8SJPCG/ref=sr_1_4?dchild=1&keywords=TIP120+Darlington+Transistor&qid=1614263478&sr=8-4)|
+| 1K Ohm Resistor | 10 | | [UK](https://www.amazon.co.uk/sourcing-map-Metal-Resistors-Tolerances/dp/B07LGM23Y4/ref=sr_1_10?dchild=1&keywords=1K+Ohm+Resistor&qid=1614263525&sr=8-10)|
+| 1N4001 Diode | 10 | | [UK](https://www.amazon.co.uk/ExcLent-100Pcs-1N4001-50V-Diode/dp/B07J3ZT55G/ref=sr_1_8?dchild=1&keywords=1N4001+Diode&qid=1614263550&sr=8-8)|
+| Stripboard, wires, connectors | | here[^breadboard]| |
+| Pan head wood screw | 22 | 12 mm x 3.5 mm | [UK](https://www.toolstation.com/self-tapping-pan-head-pozi-screw/p74035) |
+| M3 x 25 mm bolt and nut | 4 | | [UK](https://www.amazon.co.uk/Screw-Bolts-Stainless-Steel-340pcs/dp/B08RRW6B3H/ref=sr_1_12?dchild=1&keywords=M3+nut+and+bolt&qid=1614263398&sr=8-12)|
+| Board (plywood or breadboard) | 1 | 350 x 250 x 15 mm | |
 
-- 1 off Arduino mega was used for this project although any Arduino can be used [UK](https://www.amazon.co.uk/ELEGOO-Controller-ATmega2560-ATMEGA16U2-Compatible/dp/B06XKMZ3T9/ref=sr_1_1_sspa?dchild=1&keywords=Arduino+mega&qid=1614255721&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzM1FEMENJVzdIVEk4JmVuY3J5cHRlZElkPUEwNTU1OTQ0MjQ4N0QxTTZZNFdDUCZlbmNyeXB0ZWRBZElkPUEwMzI4MTAzMTlYOUw0TUpKUThYMiZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)
+[^voltage]: If the solenoids are run continuously at 12V they will overheat. Currently the system is being run at 8V but we intend to implement a PWM solution so 12V can be used for initial actuation then 8V for a holding current.
 
-- 12V battery is needed to power the modules [UK](https://www.amazon.co.uk/SUNPADOW-Battery-Airplane-Quadcopter-Helicopter/dp/B08Q79M7QB/ref=sr_1_2?dchild=1&keywords=12V+LIPO&qid=1614255912&sr=8-2)
+[^breadboard]: Note, a breadboard cannot be used here as it won't handle the current.
 
-- 10 off JF-0530B solenoids [UK](https://www.amazon.co.uk/Rtengtunn-JF-0530B-Push-Pull-Gangbei-0530B-Electromagnet/dp/B08291L2XL/ref=sr_1_7?dchild=1&keywords=JF-0530B&qid=1614263171&sr=8-7)
+### Make
+| Item | Quantity | Method | Model |
+| - | - | - | - |
+| Holder Foot End | 1 | 3D Print | [`holder_foot.3mf`](holder_foot.3mf) |
+| Holder Head End | 1 | 3D Print | [`holder_head.3mf`](holder_head.3mf) |
+| Five Finger Box | 1 | 3D Print | [`finger-box_five.3mf`](finger-box_five.3mf) |
+| Thumb Finger Box | 1 | 3D Print | [`finger-box_thumb.3mf`](finger-box_thumb.3mf) |
+| Double Tone Hole Finger Box | 1 | 3D Print | [`finger-box_double-hole.3mf`](finger-box_double-hole.3mf) |
+| Stand | 1 | 3D Print | [`stand.3mf`](stand.3mf) |
 
-- 10 off M3 nut and bolt, 1 for each solenoid to add tension and keep secured in position [UK](https://www.amazon.co.uk/Screw-Bolts-Stainless-Steel-340pcs/dp/B08RRW6B3H/ref=sr_1_12?dchild=1&keywords=M3+nut+and+bolt&qid=1614263398&sr=8-12)
+All of these parts were printed in PLA. 0.4 mm nozzle, 0.2 mm layer height, 2 walls, 20% infill are adequate settings. Supports aren't required if they are printed in the correct orientation. The files are supplied in 3MF format (https://github.com/The-Music-Makers/music_makers/issues/45#issue-1320772147) which mainstream slicers will load.
+
+### Fingertips
+It is necessary to put a soft material on the end of the solenoid plungers to protect the recorder and ensure an adequate seal. They are still in the experimental stage and details of our attempts and ideas are below.
+
+1. **Foam ear plugs.** A hole can be made in the end and they can be glued to the plunger.
+2. **3D Printed Flexible Filament.** Print the following parts in a flexible filament.
+    | Item | Quantity | Model |
+    | - | - | - |
+    | Main fingertip | 6 | [`finger-tip_main.3mf`](finger-tip_main.3mf)|
+    | Double tone hole large fingertip | 2 | [`finger-tip_double-big.3mf`](finger-tip_double-big.3mf)|
+    | Double tone hole small fingertip | 2 | [`finger-tip_double-small.3mf`](finger-tip_double-small.3mf)|
+
+    We used TPU with a shore hardness of 95A. They were printed in vase mode but with 3 mm of bottom layers. This results in a solid bottom which will screw onto the plunger and a hollow top which will deform to the tone holes.
+3. **Casting silicone.** We would like to try casting silicone fingertips.
 
 
-The following are needed per-solenoids used:
-
-- TIP120 Darlington Transistor [UK](https://www.amazon.co.uk/BOJACK-Epitaxial-Transistor-Darlington-Transistors/dp/B08D8SJPCG/ref=sr_1_4?dchild=1&keywords=TIP120+Darlington+Transistor&qid=1614263478&sr=8-4)
-
-- 1K Ohm Resistor [UK](https://www.amazon.co.uk/sourcing-map-Metal-Resistors-Tolerances/dp/B07LGM23Y4/ref=sr_1_10?dchild=1&keywords=1K+Ohm+Resistor&qid=1614263525&sr=8-10)
-
-- 1N4001 Diode [UK](https://www.amazon.co.uk/ExcLent-100Pcs-1N4001-50V-Diode/dp/B07J3ZT55G/ref=sr_1_8?dchild=1&keywords=1N4001+Diode&qid=1614263550&sr=8-8)
-
-The following is needed on a per build basis:
-
-- 1 off 350mm x 250mm x 20mm piece of wood (plywood is ideal) used to mount the fingering module components and act as a mounting frame for the recorder robot. This will be placed in the recorder base frame stand.
-
-## Build Instructions
+## Assembly Instructions
 
 ### Fingering Module
 <p float="left">
   <img src="../../Documents/singleSolenoidWiringDiagram.PNG" height="300" />
 </p>
 
-1. Print out the recorder base frame (1 off x 2 parts), five seater container body (1 x off), four seater container body (1 x off), a single seater container body (1 x off), large finger pad (2 x off), small finger pad (2 x off) and small finger pad extension arms (2 x off). Use the assembly drawing as an aid. Remove any other stray parts from the printing process
+1. Obtain and make all the parts listed above.
 2. Insert a M3 nut into the internal side wall of the 3D-printed five solenoid container body, repeat this for each
 location where a solenoid is required for tune hole fingering. 
 3. Push the solenoid wires through the holes at the rear of the container body and insert a solenoid into each seating position (one for each tune hole across the recorder), making sure that the solenoid plunger can freely move up and down. 
