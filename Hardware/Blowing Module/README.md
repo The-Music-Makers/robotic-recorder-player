@@ -23,6 +23,8 @@
 | M5 x 25 mm bolt and nut | 4 | | [Kayfast](https://www.kayfast.co.uk/category/537/Metric-Socket-Cap-Screws) |
 | M3 x 8 mm bolt | 8 | | [Kayfast](https://www.kayfast.co.uk/category/537/Metric-Socket-Cap-Screws) |
 | Pan head wood screw | 16 | 1/2" x no.6 (12 mm x 3.5 mm) | [Toolstation](https://www.toolstation.com/self-tapping-pan-head-pozi-screw/p74035) *or* [Kayfast](https://www.kayfast.co.uk/category/584/Pozi-Pan-Self-Tapping-Screws)|
+| Limit switch | 4 |  | Ooznest |
+| Arduino Uno | 1 | | |
 | DRV8825 motor driver | 2 |  |
 | 100 uF capacitor | 1 |  |
 | 12V 2A power supply | 1 |  |
@@ -57,11 +59,21 @@ A major limitation of the current implementation is no effective way to combine 
 </p> -->
 
 1. Obtain and make all the parts listed above.
-2. Insert the bearing into the lung base and the lead screw nut into the lung top and attach using the M3 bolts and nuts.
-3. Attach the lung walls to the base using a cable tie.
-4. Thread the lead screw through the nut and into the bearing. Tighten the grub screws of the bearing onto the lead screw.
-5. Attach the lung walls to the top using a cable tie.
-6. Push the 8 mm tubing onto the lung base and the mouthpiece connector onto the tubing.
-6. Use the coupler to attach the motor shaft to the lead screw, tightening the grub screws.
-7. On a breadboard, using jumper wires, connect the stepper motor, motor driver, power supply and capacitor as detailed on the [DRV8825 page](https://www.pololu.com/product/2133).
-8. Connect one end of each jumper wire 5V, GND, STEP, DIR pins ready for connection to the Arudino.
+1. Attach the bottom cap to its support with pan head screws.
+1. Secure the bottom cap and support to the board with pan head screws.
+1. Attach the motor to the bottom cap using M3 x 16 mm screws.
+1. Join the lead screw to the motor shaft with the coupler.
+1. Slide the lung wall over the lead screw.
+1. Insert the lead screw nut into the top cap and secure with M3 x 20 mm screws. Thread the assembly onto the lead screw.
+1. Attach the bearing to the bearing support with M5 x 25 mm screws and slide over the lead screw.
+1. Line up the bearing so it is inline with the shaft and lead screw, secure the bearing support to the board with pan head screws and tighten the bearing grub screws onto the lead screw.
+1. Attach the lung walls to the top and bottom cap using cable ties.
+1. Attach the limit switch mount to the bottom cap with a pan head screw.
+1. Attach the limit switches to the mount and bearing support using the M3 x 8 mm screws.
+1. Thread the hose fitting and plug fitting into the base
+1. Push the 8 mm tubing onto the fitting and the mouthpiece connector onto the tubing.
+1. Repeat steps 2 to 14 for the other lung.
+1. On a using stripboard or a breadboard, connect each stepper motor to a motor driver, and the power supply and capacitor as detailed on the [DRV8825 page](https://www.pololu.com/product/2133).
+1. Connect 5V, GND, STEP, DIR pins of the driver to the Arduino, noting the pin numbers.
+1. Wire the limit switches in N.O. configuration with one lead to ground and the other to a pin on the Arduino, noting the pin number.
+1. Prepare a cable to connect the GND, and I2C (SCL & SDA) lines of the Arduino to the Arduino of the Fingering Module.
