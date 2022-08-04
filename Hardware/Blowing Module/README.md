@@ -47,7 +47,7 @@
 | Plug fitting | 2 | 3D Print | [`plug.3mf`](plug.3mf)|
 | Mouthpiece connector | 1 | 3D Print | [`pipe-to-mouthpiece.3mf`](pipe-to-mouthpiece.3mf)|
 
-All of our parts were printed in PLA. 0.4 mm nozzle, 0.2 mm layer height, 2 walls, 20% infill are adequate settings. Depending on our printer you may need support for the Lung Base.
+All of our parts were printed in PLA. 0.4 mm nozzle, 0.2 mm layer height, 2 walls, 20% infill are adequate settings. No supports should be necessary if part are printed in the correct orientation.
 
 ### Combining air
 A major limitation of the current implementation is no effective way to combine the air streams from the two lungs. We have experimented with off the shelf one way valves (passive solution) but they took too much pressure to overcome. We have also tried building a solenoid actuated diverter 4/2 valve (active solution) but was too leaky or took too much force to actuate. Experimentation is ongoing in the lung-hardware branch. A passive solution is preferred that is low cost and open source friendly.
