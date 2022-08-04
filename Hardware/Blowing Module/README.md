@@ -47,12 +47,13 @@
 All of our parts were printed in PLA. 0.4 mm nozzle, 0.2 mm layer height, 2 walls, 20% infill are adequate settings. Depending on our printer you may need support for the Lung Base.
 
 ### Combining air
+A major limitation of the current implementation is no effective way to combine the air streams from the two lungs. We have experimented with off the shelf one way valves (passive solution) but they took too much pressure to overcome. We have also tried building a solenoid actuated diverter 4/2 valve (active solution) but was too leaky or took too much force to actuate. Experimentation is ongoing in the lung-hardware branch. A passive solution is preferred that is low cost and open source friendly.
 
 ## Assembly Instructions
 
-<p float="left">
+<!-- <p float="left">
   <img src="../../Documents/blower_circuit_diagram.png" height="400" />
-</p>
+</p> -->
 
 1. Obtain and make all the parts listed above.
 2. Insert the bearing into the lung base and the lead screw nut into the lung top and attach using the M3 bolts and nuts.
