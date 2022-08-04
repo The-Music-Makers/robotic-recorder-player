@@ -33,8 +33,8 @@
 | 8 mm tubing | 200 mm |  | |
 | Stripboard, wires, connectors *OR* breadboard[^breadboard] and jumper wires |  |  |
 
-[^breadboard] Whilst a breadboard can be used, we recommend soldering to a stripboard for reliability.
-[^bearing] A pillowblock bearing could also be used if the bearing support was modified but we had flange bearings so used them.
+[^breadboard]: Whilst a breadboard can be used, we recommend soldering to a stripboard for reliability.
+[^bearing]: A pillowblock bearing could also be used if the bearing support was modified but we had flange bearings so used them.
 
 ### Make
 | Item | Quantity | Method | Model |
