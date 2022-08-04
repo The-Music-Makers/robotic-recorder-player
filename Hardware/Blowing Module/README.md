@@ -1,10 +1,10 @@
 # Blowing Module
 
 <p float="left">
-  <img src="../../Documents/blowing_module_assembly_overview.png" width="1200" />
+  <img src="../../Documents/blowing_module_assembly_overview.png" width="800" />
 </p>
 <p float="left">
-  <img src="../../Documents/blowing_module_assembly_overview_2.png" width="1200" />
+  <img src="../../Documents/blowing_module_assembly_overview_2.png" width="800" />
 </p>
 
 ## Bill of Materials
@@ -21,6 +21,7 @@
 | M3 x 20 mm bolt and nut | 8 | | [Kayfast](https://www.kayfast.co.uk/category/537/Metric-Socket-Cap-Screws) |
 | M3 x 16 mm bolt | 8 | | [Kayfast](https://www.kayfast.co.uk/category/537/Metric-Socket-Cap-Screws) |
 | M5 x 25 mm bolt and nut | 4 | | [Kayfast](https://www.kayfast.co.uk/category/537/Metric-Socket-Cap-Screws) |
+| M3 x 8 mm bolt | 8 | | [Kayfast](https://www.kayfast.co.uk/category/537/Metric-Socket-Cap-Screws) |
 | Pan head wood screw | 16 | 1/2" x no.6 (12 mm x 3.5 mm) | [Toolstation](https://www.toolstation.com/self-tapping-pan-head-pozi-screw/p74035) *or* [Kayfast](https://www.kayfast.co.uk/category/584/Pozi-Pan-Self-Tapping-Screws)|
 | DRV8825 motor driver | 2 |  |
 | 100 uF capacitor | 1 |  |
