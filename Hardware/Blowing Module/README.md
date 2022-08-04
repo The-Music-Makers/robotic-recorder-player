@@ -1,39 +1,52 @@
 # Blowing Module
 
 <p float="left">
-  <img src="../../Documents/blowing_module_assembly_overview.png" height="500" />
+  <img src="../../Documents/blowing_module_assembly_overview.png" width="1200" />
 </p>
-
-
-You will need the following prepared parts (some will require 3D printing) in order to build the Blowing module.
+<p float="left">
+  <img src="../../Documents/blowing_module_assembly_overview_2.png" width="1200" />
+</p>
 
 ## Bill of Materials
 
 ### Purchase
-| Item | Quantity | Details |
-| -------- | -------- | -------- |
-| Stepper Motor | 1 | NEMA 17, 4 wire |
-| Lead screw | 1 | 8 mm lead |
-| Lead screw nut | 1 |  |
-| Lead screw to motor coupler | 1 |  |
-| Bottom bearing | 1 | To accept lead screw |
-| M3 x 20 mm bolt and nut | 4 |  |
-| DRV8825 motor driver | 1 |  |
+| Item | Quantity | Details | Example Supplier |
+| -------- | -------- | -------- | ------- |
+| Board (plywood or breadboard) | 1 | 350 x 250 x 15 mm | |
+| Stepper Motor | 2 | NEMA 17, 4 wire | [Ooznest](https://ooznest.co.uk/product/nema17-stepper-motors/?attribute_pa_model=1-8-1703hs168a-62oz-1-68a)|
+| Lead screw | 2 | 8 mm lead, 290 mm | [Ooznest](https://ooznest.co.uk/product/acme-8mm-lead-screw/?attribute_pa_screw-length=290mm)|
+| Lead screw nut | 2 | | [Ooznest](https://ooznest.co.uk/product/acme-nut/) |
+| Lead screw to motor coupler | 2 | | [Ooznest](https://ooznest.co.uk/product/rigid-motor-shaft-coupler/?attribute_pa_size=5x8mm) |
+| Bearing | 2 |  Flange[^bearing] bearing, 8 mm ID ||
+| M3 x 20 mm bolt and nut | 8 | | [Kayfast](https://www.kayfast.co.uk/category/537/Metric-Socket-Cap-Screws) |
+| M3 x 16 mm bolt | 8 | | [Kayfast](https://www.kayfast.co.uk/category/537/Metric-Socket-Cap-Screws) |
+| M5 x 25 mm bolt and nut | 4 | | [Kayfast](https://www.kayfast.co.uk/category/537/Metric-Socket-Cap-Screws) |
+| Pan head wood screw | 16 | 1/2" x no.6 (12 mm x 3.5 mm) | [Toolstation](https://www.toolstation.com/self-tapping-pan-head-pozi-screw/p74035) *or* [Kayfast](https://www.kayfast.co.uk/category/584/Pozi-Pan-Self-Tapping-Screws)|
+| DRV8825 motor driver | 2 |  |
 | 100 uF capacitor | 1 |  |
 | 12V 2A power supply | 1 |  |
-| Lung walls: flexible concertina material | 300 mm | e.g [Ducting Hose](https://www.screwfix.com/p/manrose-pvc-flexible-ducting-hose-white-1m-x-100mm/17297)|
-| Cable ties | 2 | 450 mm long |
-| 8 mm tubing | 200 mm |  |
-| Breadboard and jumper wires | 1 |  |
+| Lung walls: flexible concertina material | 2 x 300 mm | e.g Ducting Hose | [Screwfix](https://www.screwfix.com/p/manrose-pvc-flexible-ducting-hose-white-1m-x-100mm/17297)|
+| Cable ties | 4 | 450 mm long | |
+| 8 mm tubing | 200 mm |  | |
+| Stripboard, wires, connectors *OR* breadboard[^breadboard] and jumper wires |  |  |
+
+[^breadboard] Whilst a breadboard can be used, we recommend soldering to a stripboard for reliability.
+[^bearing] A pillowblock bearing could also be used if the bearing support was modified but we had flange bearings so used them.
 
 ### Make
-| Item | Quantity | Method | Details |
+| Item | Quantity | Method | Model |
 | - | - | - | - |
-| Lung Base | 1 | 3D Print | [STL](lung-base.stl) |
-| Lung Top | 1 | 3D Print | [STL](lung-top.stl) |
-| Mouthpiece Connector | 1 | 3D Print | [STL](pipe-to-mouthpiece.stl) |
+| Bottom cap | 2 | 3D Print | [`bottom-cap.3mf`](bottom-cap.3mf) |
+| Bottom cap support | 2 | 3D Print | [`bottom-cap-support.3mf`](bottom-cap-support.3mf) |
+| Top cap | 2 | 3D Print | [`top-cap.3mf`](top-cap.3mf) |
+| Limit switch mount | 2 | 3D Print | [`limit-switch-mount.3mf`](limit-switch-mount.3mf)
+| Hose fitting | 2 | 3D Print | [`hose-fitting.3mf`](hose-fitting.3mf)
+| Plug fitting | 2 | 3D Print | [`plug.3mf`](plug.3mf)|
+| Mouthpiece connector | 1 | 3D Print | [`pipe-to-mouthpiece.3mf`](pipe-to-mouthpiece.3mf)|
 
 All of our parts were printed in PLA. 0.4 mm nozzle, 0.2 mm layer height, 2 walls, 20% infill are adequate settings. Depending on our printer you may need support for the Lung Base.
+
+### Combining air
 
 ## Assembly Instructions
 
