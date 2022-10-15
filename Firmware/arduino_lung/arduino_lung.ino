@@ -1,12 +1,31 @@
-/* from https://github.com/laurb9/StepperDriver/blob/master/examples/MultiAxis/MultiAxis.ino
- * and https://docs.arduino.cc/learn/communication/wire#controller-writer
+/*
+ *  Music Makers: Robotic Recorder Player
+ *  Lung Arduino sketch
  *
+ *  Copyright © 2022 Music Makers
+ *
+ *  This file is part of the Music Makers' Robotic Recorder Player project.
+ *  The Robotic Recorder Player is an open source hardware and software
+ *  project. A copy of the licences that cover this project are found in the
+ *  root of this repository.
+ *
+ *  Description
+ *  • Receives desired blowing velocity as integers via I2C.
+ *  • Actuates stepper motors via drivers to turn at desired RPM
+ *  • Implements a twin lung system such that one can fill while other empties.
+ */
+
+/*
+ * Resources
+ * https://github.com/laurb9/StepperDriver/blob/master/examples/MultiAxis/MultiAxis.ino
+ * https://docs.arduino.cc/learn/communication/wire#controller-writer
+ */
+
+/* 
  * Improvements:
  * 1. Use array or something for multiple motors to avoid repeated functions
  * 2. Use interrupts for limit pins (Uno only has 2)
  * 3. Implement switching active if within threshold of end
- *      - if keeping track of each motor's position is difficult then maybe use getStepsRemaining before calling stop.
- *      - infact, stop returns the number of steps remaining! (as long)
  * 4. ENABLE/DISABLE steppers
 */
 
