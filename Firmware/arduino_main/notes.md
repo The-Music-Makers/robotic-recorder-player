@@ -1,10 +1,6 @@
 # Notes for Arduino sketch
 
-## Blowing
-- `maxSteps` and `homeRPM` to be worked out experimentally.
-- `ENABLE` currently not utilised.
-- No acceleration behaviour currently implemented. The plan is to map blowing velocity of MIDI message to a motor acceleration (in steps/s^2 ?). The motor speed will ramp up and down to the set RPM.
-- Currently only implemented for one lung. Behaviour is somewhat unsophisticated. In `loop()` it checks stepper is not at maximum extent before moving another step. If it is, motor will home and then execution will continue, preserving the current move. When a note off is called, if the motor is within a threshold of the end, it will home before starting a new note.
-
-## ♫ Notes ♫
-For initial testing purposes, only notes C5 to D#5 implemented. Any notes sent outside this range will be ignored.
+- Note velocity not currently handled. The plan is to map blowing velocity of MIDI message to a motor acceleration (in steps/s^2 ?). The motor speed will ramp up and down to the set RPM.
+- For initial testing purposes, only notes C5 to D6 implemented. Any notes sent outside this range will be ignored.
+- Testing showed we wanted to keep fingers energised after a note on but if that was infinite then overheating occured. Currently a 2 second delay is hard coded which is undesirable. If heating issues fixed then could keep energised and decode an end of song MIDI message.
+- Target frequency currently not utilised but plans exist to do so.
