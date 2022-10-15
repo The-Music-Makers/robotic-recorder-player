@@ -4,16 +4,15 @@
 
 This project is an open source hardware project that is intended to be an automated way to play a recorder instrument. Build it for yourself and use the [Python Interface](Python_Interface) to send your MIDI files to the robotic recorder player and hear them played on the recorder!
 
-[![robotic-recorder-player-image](Documents/automated_recorder_player.png)](https://www.youtube.com/watch?v=lGDBowPHg4M)
-
-
-### ICMC 2022 Presentation
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/91aKZUQ2KXA/0.jpg)](https://www.youtube.com/watch?v=91aKZUQ2KXA)
+![robotic-recorder-player-image](Documents/automated_recorder_player.jpeg)
 
 ### Demonstration
 
-https://user-images.githubusercontent.com/44243266/149389541-84850e01-babc-4631-832e-8d369a3c46f7.mp4
+https://user-images.githubusercontent.com/53816688/196008536-8c850554-d10a-48c4-a584-36b9e6b4f8ee.mp4
+
+### ICMC 2022 Presentation
+
+[![ICMC presentation thumbnail click to visit YouTube presentation](Documents/icmc-presentation-thumbnail.png)](https://www.youtube.com/watch?v=91aKZUQ2KXA)
 
 ## How to Build and Use
 
