@@ -19,7 +19,6 @@
 // comment out to not compile debugging sections of code
 #define DEBUG
 
-#include "BasicStepperDriver.h" // https://github.com/laurb9/StepperDriver
 #include <Wire.h>
 
 /////////////////////////
