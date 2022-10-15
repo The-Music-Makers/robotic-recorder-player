@@ -101,6 +101,8 @@ Just for fun we thought it would be interesting to include other robotic music p
 
 The inspiration for this project was Andrew Henry's <a href="https://gitlab.com/Andrew_Henry/automated-guitar">automated guitar player</a>.
 
-## License
+## Licences
 
-This project is licensed under the [GNU General Public License v3.0](LICENSE) and [CERN-OHL-W](LICENCE)
+This is an open-source project and licences have been chosen so to give you the freedom to use, modify, and share this project. The licences also protect the project (by ensuring contributions remain open) and its contributors (by limiting liability and warranty). Please read the licences; helpful summaries are linked below and copies of the full licences are found in the repository root. 
+
+Software is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/) [`LICENCE_GNU-GPL-3.0`](LICENCE_GNU-GPL-3.0). Hardware is licensed under the [CERN Open Hardware Licence Version 2 - Weakly Reciprocal](https://choosealicense.com/licenses/cern-ohl-w-2.0/) [`LICENCE_CERN-OHL-W-2.0`](LICENCE_CERN-OHL-W-2.0). The other content of this repository including images, media, documentation, examples, sample MIDI files and anything not licensed under the other licences is licenced under the [Creative Commons Attribution Share Alike 4.0 International](https://choosealicense.com/licenses/cc-by-sa-4.0/) [`LICENCE_CC-BY-SA-4.0`](LICENCE_CC-BY-SA-4.0).
