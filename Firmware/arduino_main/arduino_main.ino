@@ -1,15 +1,19 @@
 /*
- *  Main Arduino sketch for Music Makers recorder.
+ *  Music Makers: Robotic Recorder Player
+ *  Main Arduino sketch
  *
- *  Receives MIDI messages from a companion computer over the serial port.
- *  Actuates solenoids to cover holes on recorder replication the action of fingers.
- *  Actuates a single stepper motor, attached to a lead screw, to compress/expand an
- *  artificial lung to blow air through the recorder.
+ *  Copyright © 2022 Music Makers
  * 
- *  Authors
- *  Date
+ *  This file is part of the Music Makers' Robotic Recorder Player project. 
+ *  The Robotic Recorder Player is an open source hardware and software
+ *  project. A copy of the licences that cover this project are found in the
+ *  root of this repository.
  * 
- *  Licence
+ *  Description
+ *  • Receives MIDI messages from a companion computer over the serial port.
+ *  • Actuates solenoids to cover tone holes on the recorder, replicating the
+ *    action of fingers.
+ *  • Sends a blowing RPM via I2C to the lung module to produce air.
  */
 
 // comment out to not compile debugging sections of code
